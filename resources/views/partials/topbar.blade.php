@@ -18,7 +18,7 @@
                 <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><img src="assets/images/cocsslogo22.png" alt="homepage" class="dark-logo " style="width: 130px; margin-left: 0px; vertical-align: text-top;"/></a> </li>
                 <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="icon-arrow-left-circle"></i></a> </li>
             </ul>
-            <a href="">Log In</a>
+            <a href="{{ route('login') }}" class="nav-item text-light me-5">Log In</a>
         </div>
     </nav>
 </header>
