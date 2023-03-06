@@ -11,6 +11,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/hospitallogosmall.png">
     <title>Clinic Online Consultation</title>
+    @stack('links')
     <!-- Bootstrap Core CSS -->
     <link href="admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="admin/assets/plugins/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
@@ -54,12 +55,12 @@
     </div>
 
     <div id="main-wrapper">
-        @include('layout.partials.topbar') 
+        @include('layout.partials.topbar')
         @include('layout.partials.sidebar')
 
         <div class="page-wrapper">
 
-            <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
+            <div class="container-fluid " style="padding: 20px 20px;">
                 @section('content') @show
             </div>
 
@@ -93,15 +94,8 @@
 <script src="admin/js/bootstrap-table.init.js"></script>
 <script src="admin/js/toastr.js"></script>
 <script>
-// $.toast({
-//     heading: 'Welcome to Monster admin',
-//     text: 'Use the predefined ones, or specify a custom position object.',
-//     position: 'top-right',
-//     loaderBg: '#ff6849',
-//     icon: 'info',
-//     hideAfter: 3000,
-//     stack: 6
-// });
+     @stack('scripts')
+
 </script>
 <!-- Sweet-Alert  -->
 <!-- <script src="admin/assets/plugins/sweetalert2/dist/sweetalert2.all.min.js"></script> -->
