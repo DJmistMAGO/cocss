@@ -9,10 +9,12 @@ use App\Http\Controllers\DashboardController;
 Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/verify', [AuthController::class, 'verify'])->name('auth.verify');
     Route::post('/register', [AuthController::class, 'registerStore'])->name('register.store');
     Route::get('/register', [AuthController::class, 'registerForm'])->name('register');
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.home');
 });
