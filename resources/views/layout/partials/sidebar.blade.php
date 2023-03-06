@@ -1,42 +1,57 @@
-<aside class="left-sidebar">
+<aside class="left-sidebar" style="width: 247px !important;">
     <!-- Sidebar scroll-->
         <div class="scroll-sidebar">
             <!-- User profile -->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li id="maindashboard">
-                        <a href="index.php?url=dashboard"><i class="fas fa-home"></i>
+                    <li>
+                        <a href="{{route('dashboard.home')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Dashboard</span>
                         </a>
                     </li>
-
-                    <li id="mainappointmenthis">
-                        <a href="index.php?url=forapproval"><i class="fas fa-clipboard-check"></i>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Book Appointment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Health Records</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;For Approval</span>
                         </a>
                     </li>
-
-                    <li id="mainappointmenthis">
-                        <a href="index.php?url=appointment"><i class="far fa-calendar-alt"></i>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Appointment</span>
                         </a>
                     </li>
-
-                    <li id="mainappointmenthis">
-                        <a href="index.php?url=appointmenthistory"><i class="fas fa-clipboard-list"></i>
-                            <span class="hide-menu">&nbsp;&nbsp;Appointment History</span>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Apppointment History</span>
                         </a>
                     </li>
-
-                    <li id="mainpatients">
-                        <a href="index.php?url=patientaccount"><i class="fas fa-user"></i>
-                            <span class="hide-menu">&nbsp;&nbsp;Patients</span>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Medicine Inventory</span>
                         </a>
                     </li>
-
-                    <li id="mainusersession">
-                        <a href="index.php?url=patientsession"><i class="fas fa-list"></i>
-                            <span class="hide-menu">&nbsp;&nbsp;Patient Session Logs</span>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Forcasting</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Student List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-home"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Forcasting</span>
                         </a>
                     </li>
                 </ul>
