@@ -112,8 +112,15 @@
                         <div class="form-group row">
                             <span class="text-danger"></span>
                             <div class="col-md-11" style="flex: 0 0 98.2%; max-width: 98.2%;">
-                                <input type="email" class="form-control underlined" name="txtusername"
-                                    id="txtusername" placeholder="Enter your username" required style="height: 40px;">
+                                <input type="text"
+                                    class="form-control underlined @error('user_name') is-invalid @enderror"
+                                    name="user_name" id="txtusername" placeholder="Enter your username" required
+                                    style="height: 40px;" />
+                                @error('username')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group">
@@ -121,9 +128,15 @@
                             <span class="text-danger"></span>
                             <div class="row">
                                 <div class="col-md-11" style="padding-right: 0px; flex: 0 0 95%; max-width: 95%;">
-                                    <input type="password" class="form-control underlined" name="txtpassword"
-                                        id="txtpassword" placeholder="Enter your password" required
+                                    <input type="password"
+                                        class="form-control underlined @error('password') is-invalid @enderror"
+                                        name="password" placeholder="Enter your password" required
                                         style="height: 40px;">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="col-md-1"
                                     style="padding-left: 0px;padding-right: 0px; flex: 1%; max-width: 1%;">
