@@ -10,12 +10,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
+                        <a href="{{route('bookAppointment.index')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Book Appointment</span>
                         </a>
                     </li>
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
+                        <a href="{{route('')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Health Records</span>
                         </a>
                     </li>

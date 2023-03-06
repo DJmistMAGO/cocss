@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BookAppointmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,4 +16,4 @@ Route::post('/register', [AuthController::class, 'registerStore'])->name('regist
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.home');
-
+Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BookAppointment-mc extends Model
+class BookAppointment extends Model
 {
     use HasFactory;
 }
