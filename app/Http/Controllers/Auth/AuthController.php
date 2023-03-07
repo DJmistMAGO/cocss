@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\StudentUsers;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -51,26 +52,20 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function registerStore(Request $request)
+    public function registerStore(RegisterRequest $request)
     {
-        // $request->validate([
-        //     'schoolId' => 'required|string|max:255',
-        //     'fullname' => 'required|string|max:255',
-        //     'birthdate' => 'required|date',
-        //     'phone' => 'required|string|max:255',
-        //     'email' => 'required|string|email|unique:student_users|max:255',
-        //     'password' => 'required|string|min:8|confirmed',
-        // ]);
+        $validated = $request->validated();
+        // dd($validated);
 
-        // //create with validation
-        // $user = StudentUsers::create([
-        //     'schoolId' => $request->schoolId,
-        //     'fullname' => $request->fullname,
-        //     'birthdate' => $request->birthdate,
-        //     'phone' => $request->phone,
-        //     'email' => $request->email,
-        //     'password' => Hash::make($request->password),
-        // ]);
+        $user = User::create([
+            'school_id' => $validated['school_id'],
+            'name' => $validated['name'],
+            'bdate' => $validated['bdate'],
+            'phone_no' => $validated['phone_no'],
+            'sorsu_email' => $validated['sorsu_email'],
+            'password' => Hash::make($validated['password']),
+            'user_name' => $validated['name'],
+        ]);
 
         return redirect()->route('login');
     }
