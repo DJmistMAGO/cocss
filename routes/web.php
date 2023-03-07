@@ -10,8 +10,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/verify', [AuthController::class, 'verify'])->name('auth.verify');
-    Route::post('/register', [AuthController::class, 'registerStore'])->name('register.store');
     Route::get('/register', [AuthController::class, 'registerForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'registerStore'])->name('regsubmit');
 });
 
 Route::middleware('auth')->group(function () {
