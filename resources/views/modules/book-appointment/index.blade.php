@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Dashboard
+    Book Appointment
 @endsection
 
 @push('links')
