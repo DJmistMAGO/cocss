@@ -5,7 +5,7 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                     <li>
-                        <a href="{{route('dashboard.home')}}"><i class="fas fa-home"></i>
+                        <a href="{{route('dashboard')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Dashboard</span>
                         </a>
                     </li>
@@ -15,7 +15,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('')}}"><i class="fas fa-home"></i>
+                        <a href="{{route('healthRecord.index')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Health Records</span>
                         </a>
                     </li>
