@@ -11,20 +11,20 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="img-responsive slideimg" src="assets/images/homedoctors3.png" alt="First slide"
+                        <img class="img-responsive slideimg" src="assets/images/ssu.jpg" alt="First slide"
                             style="max-height:650px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets/images/homedoctors2.png" alt="Second slide"
-                            style="max-height:650px;">
+                        <img class="img-responsive slideimg" src="assets/images/ssufront.jpg" alt="Second slide"
+                            style="max-height:425px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="img-responsive slideimg" src="assets/images/homedoctors2.png" alt="Third slide"
-                            style="max-height:650px;">
+                            style="max-height:425px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
@@ -54,7 +54,7 @@
 
 
         <div class="col-md-6 mt-3">
-            <img class="img-responsive" src="assets/images/homedoctors4.png" alt="First slide" id="homeonlineimg1"
+            <img class="img-responsive" src="assets/images/ssufront.jpg" alt="First slide" id="homeonlineimg1"
                 style="min-height:408px; max-height:408px;">
         </div>
     </div>
