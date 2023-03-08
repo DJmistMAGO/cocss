@@ -2,22 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {{-- Favicon Icon --}}
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/hospitallogosmall.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Clinic Online Consultation</title>
-
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/hospitallogosmall.png">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('bs5/css/bootstrap.min.css') }}">
 
-    <link href="admin/css/colors/blue.css" id="theme" rel="stylesheet">
-
-    <link href="admin/css/style.css" rel="stylesheet">
-    <link href="admin/css/mystyle.css" rel="stylesheet">
-
-    <style type="text/css">
+    <style>
         .auth {
             background-color: #325170;
             height: 100vh;
@@ -27,7 +20,7 @@
         }
 
         .auth-container {
-            width: 450px;
+            width: 500px;
             min-height: 330px;
             position: absolute;
             top: 50%;
@@ -54,82 +47,111 @@
 
 <body>
     <div class="auth">
-        <div class="col-md-6">
+        <div class="col-md-8 auth-container">
             <div class="card">
-                <header class="auth-header">
-                    <a href="#" class="text-center db" style="padding-top: 15px;"><img
-                            src="assets/images/cocsslogo11.png" alt="Home"width="25%" height="auto" />
-                    </a>
+                <header class="text-center">
+                    <div class="text-center mt-2">
+                        <a href="#" class="text-center" style="padding-top: 15px; margin-top: 15px;">
+                            <img src="{{ asset('assets/images/cocsslogo11.png') }}" alt="Home" width="40%"
+                                height="auto" class="m-auto" />
+                        </a>
+                    </div>
                 </header>
                 <hr class="text-primary mb-0">
-                <div class="card-body cardbodylogin" style="padding: 1.25rem 1.8rem;">
-                    <div class=" row" style="margin-bottom: 5px;">
-                        <div class="col-md-12">
+                <div class="card-body" style="padding: 1.25rem 1.8rem;">
+                    <div style="margin-bottom: 5px;">
+                        <div>
                             <h3 class="text-center">CREATE AN ACCOUNT</h3>
                         </div>
                     </div>
 
-                    <form action="{{ route('regsubmit') }}" method="POST">
+                    <form action="{{ route('register') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label class="form-label" style="margin-bottom: 0px; font-weight: 500;">School
-                                    ID</label>
-                                <input type="text" placeholder="Enter School ID" name="school_id"
-                                    class="form-control" value="{{ old('school_id') }}" required>
+                                <label>School ID No.</label>
+                                <input type="text" name="school_id"
+                                    class="form-control @error('school_id') is-invalid @enderror"
+                                    value="{{ old('school_id') }}" required />
+                                @error('school_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="form-label" style="margin-bottom: 0px; font-weight: 500;">Full
-                                    Name</label>
-                                <input type="text" name="name" class="form-control" required
-                                    placeholder="Enter Full Name" value="{{ old('name') }}">
-
+                                <label>Fullname</label>
+                                <input type="text" name="name"
+                                    class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
+                                    required />
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="form-label"
-                                    style="margin-bottom: 0px; font-weight: 500;">Birthdate</label>
-                                <input type="date" name="bdate" class="form-control" required
-                                    value="{{ old('bdate') }}">
+                                <label>Birthdate</label>
+                                <input type="date" name="bdate"
+                                    class="form-control @error('bdate') is-invalid @enderror"
+                                    value="{{ old('bdate') }}" required>
+                                @error('bdate')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="form-label" style="margin-bottom: 0px; font-weight: 500;">Phone
-                                    No.</label>
-                                <input type="number" name="phone_no" class="form-control" required
-                                    placeholder="Enter Phone No." value="{{ old('phone_no') }}">
+                                <label>Phone No</label>
+                                <input type="text" name="phone_no"
+                                    class="form-control @error('phone_no') is-invalid @enderror"
+                                    value="{{ old('phone_no') }}" required>
+                                @error('phone_no')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="form-label" style="margin-bottom: 0px; font-weight: 500;">SORSU
-                                    E-mail.</label>
-                                <input type="email" name="sorsu_email" class="form-control" required
-                                    placeholder="Enter SORSU E-mail" value="{{ old('sorsu_email') }}">
+                                <label>SORSU E-mail</label>
+                                <input type="email" name="sorsu_email"
+                                    class="form-control @error('sorsu_email') is-invalid @enderror"
+                                    value="{{ old('sorsu_email') }}" required>
+                                @error('sorsu_email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Password</label>
+                                <input type="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror"
+                                    value="{{ old('password') }}" required autocomplete="new-password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Confirm Password</label>
+                                <input type="password" name="password_confirmation"
+                                    class="form-control @error('password_confirmation') is-invalid @enderror" required
+                                    autocomplete="new-password">
+                                @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="form-label" style="margin-bottom: 0px; font-weight: 500;">Password</label>
-                                <input type="password" name="password" class="form-control" required
-                                    placeholder="Enter Password" id="pass1">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="form-label" style="margin-bottom: 0px; font-weight: 500;">Confirm
-                                    Password</label>
-                                <input type="password" class="form-control" id="passcon" name="confirmPassword"
-                                    required placeholder="Confirm Password">
-                            </div>
-                            <div>
-                                <span class="text-danger small d-none" id="password-message">
-                                    <i class="fa fa-window-close" aria-hidden="true"></i>
-                                    Passwords do not match!
-                                </span>
-                            </div>
-                        </div>
-                        <div class="form-group mt-3">
-                            <div class="col-md-12">
-                                <button type="submit"
-                                    class="btn btn-info btn-md btn-block text-uppercase waves-effect waves-light mb-1 w-100"
-                                    style="padding: 10px 10px; font-weight: 500">Register</button>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary w-100 mt-3 mb-2">Register</button>
                             </div>
                         </div>
                     </form>
+
                     <span style="font-size: 14px;">Already have an account?
                         <a href="{{ route('login') }}" class="text-info"> Go to login.</a>
                     </span>
@@ -137,23 +159,8 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('bs5/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>
-
-<script src="{{ asset('bs5/js/bootstrap.bundle.min.js') }}"></script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#passcon , #pass1').on('input', function() {
-            var pass = $('#pass1').val();
-            var passcon = $('#passcon').val();
-
-            if (pass !== passcon) {
-                $('#password-message').removeClass('d-none');
-            } else {
-                $('#password-message').addClass('d-none');
-            }
-        });
-    });
-</script>
