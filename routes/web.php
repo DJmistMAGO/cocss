@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookAppointmentController;
 use App\Http\Controllers\HealthRecordController;
 use App\Http\Controllers\ApprovalController;
-use App\Http\Controllers\AppointmentControlle
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\RegistrationController;
 
 Route::middleware('guest')->group(function () {
