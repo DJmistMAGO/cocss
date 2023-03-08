@@ -28,6 +28,7 @@ class RegistrationController extends Controller
             'password' => Hash::make($validated['password']),
             'user_name' => $validated['name'],
         ]);
+        $user->assignRole('user');
 
         // automatic login of user once validated and registered
         if ($user) {
