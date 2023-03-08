@@ -45,7 +45,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link text-muted waves-effect waves-dark" href="#"
                         style="font-weight: 400; font-size: 18px; padding-right: 1px;"><span
-                            id=""><b>firstname</b></span></a>
+                            id=""><b>{{ auth()->user()->name}}</b></span></a>
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style="line-height: 0px; padding-left: 2px; padding-right: 5px;"><i

@@ -12,11 +12,11 @@
                 <div class="modal-body">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="form-label">Date:</label>
+                            <label class="form-label">Set Date:</label>
                             <input type="date" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Time:</label>
+                            <label class="form-label">Set Time:</label>
                             <input type="time" class="form-control">
                         </div>
                         <div class="form-group">

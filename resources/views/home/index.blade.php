@@ -44,13 +44,10 @@
     <div class="row">
         <div class="col-md-6 mt-3">
             <div class="card text-center"
-                style="min-height:408px; max-height:408px; margin-bottom:0px; background: linear-gradient(to right top,#0039e3,#4132e0,#5e28dd,#741bd9,#8600d4);">
+                style="min-height:408px; max-height:408px; margin-bottom:0px; background: linear-gradient(319deg, rgba(128,0,0,1) 0%, rgba(255,0,0,1) 74%);">
                 <div class="card-body">
-                    <h1 class="card-title text-white" style="font-weight: 500; font-size: 41px;">Hospital Management
-                        System</h1>
-                    <p class="card-text text-white" style="font-size: 18px;">The web based Hospital Management System
-                        Software for Hospitals, Clinics and Specialists. Automate core hospital processes, Saves time,
-                        resources, and improves the quality of patient care.</p>
+                    <h1 class="card-title text-white" style="font-weight: 500; font-size: 38px;">SorSU Bulan Campus Clinic</h1>
+                    <p class="card-text text-white" style="font-size: 18px;">A web-based capstone project, the Patient Management System with Medicine Demand Forecasting for SorSU Bulan Campus streamlines patient care and medication management. It enables healthcare providers to manage patient information, appointments, and medical histories while forecasting medicine demand using advanced analytics. This user-friendly system improves healthcare operations at SorSU Bulan Campus.</p>
                 </div>
             </div>
         </div>
