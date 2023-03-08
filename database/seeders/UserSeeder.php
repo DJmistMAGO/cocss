@@ -26,5 +26,19 @@ class UserSeeder extends Seeder
             ]);
             $user->assignRole('admin');
         }
+
+
+        if (!User::where('sorsu_email', 'juan@sorsu.edu.ph')->first()) {
+            $user = User::create([
+                'name' => 'Juan De la Cruz',
+                'user_name' => 'juansorsu',
+                'school_id' => '18-6788',
+                'sorsu_email' => 'juan@sorsu.edu.ph',
+                'bdate' => '1999-12-15',
+                'phone_no' => '09123456745',
+                'password' => Hash::make('12341234')
+            ]);
+            $user->assignRole('user');
+        }
     }
 }

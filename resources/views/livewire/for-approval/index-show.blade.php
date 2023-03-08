@@ -1,28 +1,18 @@
 <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
     <div class="row">
-        @include('livewire.book-appointment.create-modal')
-        @include('livewire.book-appointment.edit-modal')
-        @include('livewire.book-appointment.view-modal')
+        @include('livewire.for-approval.view-modal')
         <div class="col-12">
             <div class="card" style="margin-bottom: 0px;">
                 <div class="card-body" style="padding-top: 1rem; padding-bottom: .9rem;">
                     <div class="row page-titles" style="padding-bottom: 0px;">
                         <div class="col-md-6 align-self-center">
-                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal" data-target="#create">Book Appointment</h3>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-end">
-                            <div>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
-                                    Book an Appointment
-                                </button>
-                            </div>
+                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal" data-target="#create">For Approval</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-fluid"
         style="padding: 15px 15px; background-color: white; min-height: auto; margin-top: 15px;">
         <div class="row" style="margin-bottom: .5rem;">
@@ -53,6 +43,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="mb-3" style="overflow: auto;">
+
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
                         <thead class="bg-success text-white">
@@ -76,9 +67,8 @@
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">
-                                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#view">View</button>
-                            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
+                                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#view">Approval</button>
+                                <button class="btn btn-danger btn-sm">Cancel</button>
                         </td>
             </tr>
         </tbody>

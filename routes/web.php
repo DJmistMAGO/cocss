@@ -6,7 +6,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BookAppointmentController;
 use App\Http\Controllers\HealthRecordController;
-
+use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\AppointmentController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -21,6 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
-
+    Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');
+    Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
+    Route::get('/approval', [ApprovalController::class, 'index'])->name('approval.index');
+    Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
 });
 

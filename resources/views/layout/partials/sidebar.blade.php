@@ -9,51 +9,69 @@
                             <span class="hide-menu">&nbsp;&nbsp;Dashboard</span>
                         </a>
                     </li>
+                    @role('user')
                     <li>
                         <a href="{{route('bookAppointment.index')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Book Appointment</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('user')
                     <li>
                         <a href="{{route('healthRecord.index')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Health Records</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
+                        <a href="{{route('approval.index')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;For Approval</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
+                        <a href="{{route('appointment.index')}}"><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Appointment</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
                         <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Apppointment History</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
                         <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Medicine Inventory</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
                         <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Forcasting</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
                         <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Student List</span>
                         </a>
                     </li>
+                    @endrole
+                    @role('admin')
                     <li>
                         <a href=""><i class="fas fa-home"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Forcasting</span>
                         </a>
                     </li>
+                    @endrole
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
