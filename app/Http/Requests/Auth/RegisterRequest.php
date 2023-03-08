@@ -45,6 +45,7 @@ class RegisterRequest extends FormRequest
             'phone_no.required' => 'The phone number is required!',
             'sorsu_email.required' => 'The email is required!',
             'password.required' => 'The password is required!',
+            'password.confirmed' => 'The password confirmation does not match!',
         ];
     }
 }
