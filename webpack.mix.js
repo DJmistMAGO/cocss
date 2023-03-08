@@ -7,7 +7,6 @@ let getFiles = function (dir) {
   });
 };
 
-// TODO add the directories here relative to resources/js/
 var dirs = [
   "", // for files under js
 ];
