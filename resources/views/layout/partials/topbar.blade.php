@@ -30,22 +30,21 @@
                 </li>
 
                 <li class="nav-item dropdown kailangan2" style="padding-left:5px;">
-                    <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href=""
+                    <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="#"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="assets/images/cocsslogo22.png" alt="homepage" class="dark-logo imagetopbar"
-                            style="width: 120px;" />
+                        <span style="">
+                            <h3 class="text-white ms-5 mb-0" style="font-weight: 700 !important;">SorSU Clinic</h3>
+                        </span>
                     </a>
+
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i> <img src="assets/images/ladclothinglogo.jpg" alt="homepage" class="dark-logo" style="width: 100px;"/></a>
-                </li> -->
             </ul>
 
             <ul class="navbar-nav my-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link text-muted waves-effect waves-dark" href="#"
                         style="font-weight: 400; font-size: 18px; padding-right: 1px;"><span
-                            id=""><b>{{ auth()->user()->name}}</b></span></a>
+                            id=""><b>{{ auth()->user()->name }}</b></span></a>
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                         style="line-height: 0px; padding-left: 2px; padding-right: 5px;"><i
@@ -96,8 +95,7 @@
                             <input type="Password" class="form-control reqdistitem5" id="txtsetpassword">
                             <div class="input-group-prepend" style="cursor: pointer;"
                                 onclick="fncaddpassattribunHash();" id="inputaddusereye">
-                                <span class="input-group-text"><i class="fas fa-eye-slash"
-                                        id="addusereye"></i></span>
+                                <span class="input-group-text"><i class="fas fa-eye-slash" id="addusereye"></i></span>
                             </div>
                         </div>
                     </div>
