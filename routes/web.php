@@ -9,6 +9,7 @@ use App\Http\Controllers\HealthRecordController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\AppointmentHistoryController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -28,4 +29,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
     Route::get('/approval', [ApprovalController::class, 'index'])->name('approval.index');
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
+    Route::get('/appointment-history', [AppointmentHistoryController::class, 'index'])->name('appointhistory.index');
 });

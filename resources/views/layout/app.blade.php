@@ -10,7 +10,8 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/hospitallogosmall.png">
-    <title>Clinic Online Consultation</title>
+    <title>@yield('title')</title>
+
     @stack('links')
     <!-- Bootstrap Core CSS -->
     <link href="admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">

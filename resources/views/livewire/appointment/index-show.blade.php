@@ -68,8 +68,8 @@
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">
-                                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#view">Check Up</button>
-                                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#view_app">View</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#view">Check Up</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#view_app">View</button>
                         </td>
             </tr>
         </tbody>

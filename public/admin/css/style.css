@@ -6655,11 +6655,11 @@ a.mytooltip {
 
 .sidebar-nav>ul>li>a.active,
 .sidebar-nav>ul>li>a:hover {
-	border-left: 3px solid #1f87c0;
+	border-left: 5px solid #6F0000;
 }
 
 .sidebar-nav>ul>li>a.active i {
-	color: #1f87c0;
+	color: #ffffff;
 }
 
 .sidebar-nav>ul>li>a.active i:hover {
@@ -6667,7 +6667,7 @@ a.mytooltip {
 }
 
 .sidebar-nav>ul>li>a:hover i {
-	color: #1f87c0;
+	color: #6F0000;
 }
 
 .sidebar-nav>ul>li>a i {
@@ -6685,8 +6685,8 @@ a.mytooltip {
 
 .sidebar-nav>ul>li>a.active {
 	font-weight: 400;
-	background: #fff;
-	color: #1f87c0;
+	background: #FD4C4C;
+	color: #ffffff;
 }
 
 .sidebar-nav .has-arrow {
@@ -8321,7 +8321,7 @@ a.mytooltip {
 	}
 
 	.cardminheight {
-	    min-height: 350px !important; 
+	    min-height: 350px !important;
 	}
 
 	.textnorecdash {
@@ -8480,7 +8480,7 @@ a.mytooltip {
 	.bookdetcardheader {
     	padding: 0.5rem 1.25rem !important;
 	}
-	
+
 	.h1proddetname2{
 	    font-size: 22px !important;
 	  }

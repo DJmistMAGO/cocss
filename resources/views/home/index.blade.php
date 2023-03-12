@@ -1,3 +1,7 @@
+@section('title')
+    SORSU-BC CLINIC
+@endsection
+
 <link rel="stylesheet" type="text/css" href="home/dashboard.css" />
 
 <div class="container-fluid" style="padding: 12px 12px;">
@@ -11,20 +15,20 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="img-responsive slideimg" src="assets/images/ssu.jpg" alt="First slide"
-                            style="max-height:650px;">
+                        <img class="img-responsive slideimg" src="assets/ssu1.jpg" alt="First slide"
+                            style="max-height:500px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets/images/ssufront.jpg" alt="Second slide"
-                            style="max-height:425px;">
+                        <img class="img-responsive slideimg" src="assets/ssu2.jpg" alt="Second slide"
+                            style="max-height:500px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets/images/homedoctors2.png" alt="Third slide"
-                            style="max-height:425px;">
+                        <img class="img-responsive slideimg" src="assets/ssu3.jpg" alt="Third slide"
+                            style="max-height:500px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
@@ -54,7 +58,7 @@
 
 
         <div class="col-md-6 mt-3">
-            <img class="img-responsive" src="assets/images/ssufront.jpg" alt="First slide" id="homeonlineimg1"
+            <img class="img-responsive" src="assets/ssu5.jpg" alt="First slide" id="homeonlineimg1"
                 style="min-height:408px; max-height:408px;">
         </div>
     </div>

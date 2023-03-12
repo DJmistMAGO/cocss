@@ -36,13 +36,7 @@ File: scss
 /*Top bar
 *******************/
 .topbar {
-  background: #009efb;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #1f87c0 0%, #1f87c0 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #1f87c0 0%, #1f87c0 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #1f87c0 0%, #1f87c0 100%);
+  background: #800000;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 

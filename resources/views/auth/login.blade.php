@@ -92,11 +92,8 @@
     <div class="auth">
         <div class="auth-container">
             <div class="card">
-                <header class="auth-header">
-                    <a href="javascript:void(0)" class="text-center db"
-                        style="padding-top: 15px;padding-bottom: 15px;"><img src="assets/images/cocsslogo11.png"
-                            alt="Home"width="45%" height="auto" />
-                    </a>
+                <header class="auth-header d-flex align-items-center justify-content-center"  style="background-color: #800000 !important; height: 70px; border-bottom: 0px">
+                    <a href=""><h2 class="text-light mb-0">SORSU-BC CLINIC</h2></a>
                 </header>
                 <div class="card-body cardbodylogin" style="padding: 1.25rem 1.8rem;">
                     <form action="{{ route('auth.verify') }}" method="POST">
