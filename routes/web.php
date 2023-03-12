@@ -11,6 +11,10 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\AppointmentHistoryController;
 use App\Http\Controllers\MedicineInvController;
+use App\Http\Controllers\ForecastingController;
+use App\Http\Controllers\UserController;
+
+
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -32,4 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
     Route::get('/appointment-history', [AppointmentHistoryController::class, 'index'])->name('appointhistory.index');
     Route::get('/med-inv', [MedicineInvController::class, 'index'])->name('med.index');
+    Route::get('/forecasting', [ForecastingController::class, 'index'])->name('forecasting.index');
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
 });

@@ -53,14 +53,14 @@
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="far fa-chart-bar"></i>
+                        <a href="{{route('forecasting.index')}}"><i class="far fa-chart-bar"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Forecasting</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-id-card"></i>
+                        <a href="{{route('users.index')}}"><i class="fas fa-id-card"></i>
                             <span class="hide-menu">&nbsp;&nbsp;User's List</span>
                         </a>
                     </li>
