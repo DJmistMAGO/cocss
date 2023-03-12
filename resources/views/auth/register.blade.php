@@ -68,29 +68,29 @@
                     <form action="{{ route('register') }}" method="POST">
                         @csrf
                         <div class="row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-2">
                                 <label>School ID No.</label>
                                 <input type="text" name="school_id"
                                     class="form-control @error('school_id') is-invalid @enderror"
-                                    value="{{ old('school_id') }}" required />
+                                    value="{{ old('school_id') }}" placeholder="Enter School ID No." required />
                                 @error('school_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-2">
                                 <label>Fullname</label>
                                 <input type="text" name="name"
                                     class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
-                                    required />
+                                    required placeholder="Enter your fullname" />
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-2">
                                 <label>Birthdate</label>
                                 <input type="date" name="bdate"
                                     class="form-control @error('bdate') is-invalid @enderror"
@@ -101,32 +101,32 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-2">
                                 <label>Phone No</label>
                                 <input type="text" name="phone_no"
                                     class="form-control @error('phone_no') is-invalid @enderror"
-                                    value="{{ old('phone_no') }}" required>
+                                    value="{{ old('phone_no') }}" placeholder="Enter contact number" required>
                                 @error('phone_no')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-12 mb-2">
                                 <label>SORSU E-mail</label>
                                 <input type="email" name="sorsu_email"
                                     class="form-control @error('sorsu_email') is-invalid @enderror"
-                                    value="{{ old('sorsu_email') }}" required>
+                                    value="{{ old('sorsu_email') }}" required placeholder="sample@sorsu.edu.ph">
                                 @error('sorsu_email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-2">
                                 <label>Password</label>
                                 <input type="password" name="password"
-                                    class="form-control @error('password') is-invalid @enderror"
+                                    class="form-control @error('password') is-invalid @enderror" placeholder="*******"
                                     value="{{ old('password') }}" required autocomplete="new-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -134,9 +134,9 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-2">
                                 <label>Confirm Password</label>
-                                <input type="password" name="password_confirmation"
+                                <input type="password" name="password_confirmation" placeholder="*******"
                                     class="form-control @error('password_confirmation') is-invalid @enderror" required
                                     autocomplete="new-password">
                                 @error('password_confirmation')
