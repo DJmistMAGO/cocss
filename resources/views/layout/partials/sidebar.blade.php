@@ -11,64 +11,57 @@
                     </li>
                     @role('user')
                     <li>
-                        <a href="{{route('bookAppointment.index')}}"><i class="fas fa-home"></i>
+                        <a href="{{route('bookAppointment.index')}}"><i class="fas fa-book"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Book Appointment</span>
                         </a>
                     </li>
                     @endrole
                     @role('user')
                     <li>
-                        <a href="{{route('healthRecord.index')}}"><i class="fas fa-home"></i>
+                        <a href="{{route('healthRecord.index')}}"><i class="fas fa-heartbeat"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Health Records</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href="{{route('approval.index')}}"><i class="fas fa-home"></i>
+                        <a href="{{route('approval.index')}}"><i class="fas fa-clipboard-list"></i>
                             <span class="hide-menu">&nbsp;&nbsp;For Approval</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href="{{route('appointment.index')}}"><i class="fas fa-home"></i>
+                        <a href="{{route('appointment.index')}}"><i class="fas fa-clipboard-check"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Appointment</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
+                        <a href="{{ route('appointhistory.index') }}" class="text-nowrap"><i class="fas fa-notes-medical"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Apppointment History</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
+                        <a href=""><i class="fas fa-pills"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Medicine Inventory</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
-                            <span class="hide-menu">&nbsp;&nbsp;Forcasting</span>
+                        <a href=""><i class="far fa-chart-bar"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;Forecasting</span>
                         </a>
                     </li>
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-home"></i>
-                            <span class="hide-menu">&nbsp;&nbsp;Student List</span>
-                        </a>
-                    </li>
-                    @endrole
-                    @role('admin')
-                    <li>
-                        <a href=""><i class="fas fa-home"></i>
-                            <span class="hide-menu">&nbsp;&nbsp;Forcasting</span>
+                        <a href=""><i class="fas fa-id-card"></i>
+                            <span class="hide-menu">&nbsp;&nbsp;User's List</span>
                         </a>
                     </li>
                     @endrole

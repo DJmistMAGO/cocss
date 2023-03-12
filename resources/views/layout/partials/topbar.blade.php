@@ -1,5 +1,5 @@
 <!-----header for admin ----->
-<header class="topbar">
+<header class="topbar" style="background-color: #800000 !important;">
     <nav class="navbar top-navbar navbar-expand-md navbar-light">
 
         <div class="navbar-header" style="padding-bottom: 1px">
@@ -30,12 +30,7 @@
                 </li>
 
                 <li class="nav-item dropdown kailangan2" style="padding-left:5px;">
-                    <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="#"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span style="">
-                            <h3 class="text-white ms-5 mb-0" style="font-weight: 700 !important;">SorSU Clinic</h3>
-                        </span>
-                    </a>
+                    <a href="" class=""><h3 class="text-light ml-3">SORSU-BC CLINIC</h3></a>
 
                 </li>
             </ul>
@@ -115,74 +110,6 @@
 </div>
 
 <script type="text/javascript">
-    $(function() {
-        fncdisplayuserinfo();
-    })
-
-    function logoutuser() {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'You want to logout your account?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#28a745',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location = "logout.php";
-            }
-        });
-    }
-
-    function fncdisplayuserinfo() {
-        $.ajax({
-            type: 'POST',
-            url: 'adminclass.php',
-            data: 'form=fncdisplayuserinfo',
-            success: function(data) {
-                var show = data.split('|');
-                $('#txtusernametop').text(show[0]);
-                $('#txtusernamelogout').text(show[0]);
-                $('#txtemailaddlogout').text(show[1]);
-
-                $('#imgusertop').attr('src', show[2]);
-                $('#imguserlogout').attr('src', show[2]);
-            }
-        })
-    }
-    // displaying the change username and pass for admin---------------------------------------------------------------------
-    function opensettingmod() {
-        $("#modalupdateprofileset").modal('show');
-
-        $.ajax({
-            type: 'POST',
-            url: 'adminclass.php',
-            data: 'form=opensettingmod',
-            success: function(data) {
-                var arr = JSON.parse(data);
-                $("#txtsetemail").val(arr[0]);
-                $("#txtsetpassword").val(arr[1]);
-            }
-        });
-    } // displaying the change username and pass for admin---------------------------------------------------------------------
-
-    // design for confirming update on user---------------------------------------------------------------------
-    function reqField1(classN) {
-        var isValid = 1;
-        $('.' + classN).each(function() {
-            if ($(this).val() == '') {
-                $(this).css('border', '1px #a94442 solid');
-                $(this).addClass('lala');
-                isValid = 0;
-            } else {
-                $(this).css('border', '');
-                $(this).removeClass('lala');
-            }
-        });
-
-        return isValid;
-    } //for confirming update on user---------------------------------------------------------------------
 
     function fncaddpassattribHash() { //for unseeing the password----------------------------------------------------------------
         $("#txtsetpassword").attr("type", "password");
@@ -198,34 +125,4 @@
         $("#addusereye").removeClass("fa-eye-slash");
     } //for seeing the password----------------------------------------------------------------
 
-    //for confirming update on user---------------------------------------------------------------------
-    function updateuser2() {
-        var textsetemail = $("#txtsetemail").val();
-        var textsetpassword = $("#txtsetpassword").val();
-        if (reqField1('reqdistitem5') == 1) {
-            $(".preloader").show().css('background', 'rgba(255,255,255,0.5)');
-            $.ajax({
-                type: 'POST',
-                url: 'adminclass.php',
-                data: 'textsetemail=' + textsetemail + '&textsetpassword=' + textsetpassword +
-                    '&form=updateuser2',
-                success: function(data) {
-                    setTimeout(function() {
-                        $(".preloader").hide().css('background', '');
-                        $("#modalupdateprofileset").modal('hide');
-                        Swal.fire(
-                            'Success!',
-                            'Successfully Updated Account.',
-                            'success'
-                        )
-                    }, 1000);
-                    setTimeout(function() {
-                        window.location.reload();
-                    }, 3000);
-                }
-            })
-        } else {
-            alert('Please review your entries. Ensure all required fields are filled out');
-        }
-    } //for confirming update on user---------------------------------------------------------------------
 </script>
