@@ -1,13 +1,22 @@
 <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
     <div class="row">
-        @include('livewire.appointment.view-modal')
-        @include('livewire.appointment.view-app')
+        @include('livewire.med-inv.create')
+        @include('livewire.med-inv.restock')
+        @include('livewire.med-inv.edit')
+        @include('livewire.med-inv.view')
         <div class="col-12">
             <div class="card" style="margin-bottom: 0px;">
                 <div class="card-body" style="padding-top: 1rem; padding-bottom: .9rem;">
                     <div class="row page-titles" style="padding-bottom: 0px;">
                         <div class="col-md-6 align-self-center">
-                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal" data-target="#create">Appointment</h3>
+                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal" data-target="#create">Medicine Inventory</h3>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <div>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+                                    Add Medicine
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,22 +58,20 @@
                         style="margin-bottom: 0px;">
                         <thead class="text-white" >
                             <tr style="background-color: #b04f4f !important;">
-                                <th style="width: 25%">Name of Patient</th>
-                                <th style="width: 10%">School ID</th>
-                                <th style="width: 20%">Date & Time</th>
-                                <th style="width: 25%">Reason</th>
-                                <th style="width: 20%">Action</th>
+                                <th style="width: 25%">Medicine Name</th>
+                                <th style="width: 25%">Quantity</th>
+                                <th style="width: 25%">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
                             <tr style="cursor:pointer;">
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#view">Check Up</button>
-                                <button class="btn btn-info" data-toggle="modal" data-target="#view_app">View</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#restock">Restock</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#view">View</button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#edit">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
                         </td>
             </tr>
         </tbody>

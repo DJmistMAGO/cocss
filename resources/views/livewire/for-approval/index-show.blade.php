@@ -46,18 +46,13 @@
 
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
-                        <thead class="bg-success text-white">
-                            <tr>
-                                <th style="width: 5%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
-                                    Date </th>
-                                <th style="width: 20%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
-                                    Time </th>
-                                <th style="width: 10%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
-                                    Reason </th>
-                                <th style="width: 10%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
-                                        Status </th>
-                                <th style="width: 10%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
-                                    Action</th>
+                        <thead class="text-white" >
+                            <tr style="background-color: #b04f4f !important;">
+                                <th style="width: 25%">Name of Patient</th>
+                                <th style="width: 10%">School ID</th>
+                                <th style="width: 20%">Date & Time</th>
+                                <th style="width: 25%">Reason</th>
+                                <th style="width: 20%">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
@@ -67,8 +62,8 @@
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">test</td>
                             <td style="white-space: nowrap;">
-                                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#view">Approval</button>
-                                <button class="btn btn-danger btn-sm">Cancel</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#view">Approval</button>
+                                <button class="btn btn-danger">Cancel</button>
                         </td>
             </tr>
         </tbody>

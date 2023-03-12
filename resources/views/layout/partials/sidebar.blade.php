@@ -46,7 +46,7 @@
                     @endrole
                     @role('admin')
                     <li>
-                        <a href=""><i class="fas fa-pills"></i>
+                        <a href="{{ route('med.index')}}"><i class="fas fa-pills"></i>
                             <span class="hide-menu">&nbsp;&nbsp;Medicine Inventory</span>
                         </a>
                     </li>
