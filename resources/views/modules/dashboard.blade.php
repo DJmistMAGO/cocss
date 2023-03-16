@@ -1,6 +1,5 @@
 @extends('layout.app')
 
-
 @section('title')
     Dashboard
 @endsection
@@ -23,7 +22,8 @@
                         <div class="col-md-6 align-self-center">
                             <h4 class="mb-0 mt-0 float-right textdashboardbread textdashboardbread2"
                                 style="font-weight: 400; color: #5f5f5f;"><span class="textdashboardbread"
-                                    id="txtdatex">Date &nbsp;&nbsp;&nbsp;Time </span></h4>
+                                    id="txtdatex">{{ date('F d, Y') }}</span> <span id="clock"
+                                    class="textdashboardbread" </span></h4>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row page-titles" style="padding-bottom: 0px;">
-                        <div class="chart-container col-md-12" >
+                        <div class="chart-container col-md-12">
                             <div id="chart"></div>
                         </div>
                     </div>
@@ -71,5 +71,30 @@
 
                 chart.render();
             });
+        </script>
+        <script>
+            // Update the clock every second
+            setInterval(function() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var amOrPm = hours >= 12 ? 'PM' : 'AM';
+
+                hours = hours % 12;
+                hours = hours ? hours : 12; // Zero should be 12
+
+                var timeString = hours + ':' + padZero(minutes) + ':' + padZero(seconds) + ' ' + amOrPm;
+
+                // var dateString = now.toDateString();
+
+                var clockElement = $('#clock');
+                clockElement.html(timeString);
+            }, 1000);
+
+
+            function padZero(number) {
+                return number < 10 ? '0' + number : number;
+            }
         </script>
     @endpush

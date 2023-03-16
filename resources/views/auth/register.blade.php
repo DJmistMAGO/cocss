@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{ asset('bs5/css/bootstrap.min.css') }}">
 
     <style>
+        body {
+            font-family: Rubik, sans-serif;
+        }
+
         .auth {
             background-color: #325170;
             height: 100vh;
@@ -42,6 +46,16 @@
             text-align: center;
             border-bottom: 1px solid #000000;
         }
+
+        .btn-maroon {
+            background-color: #800000;
+            color: #fff;
+        }
+
+        .btn-maroon:hover {
+            background-color: #a70b0b;
+            color: #000000;
+        }
     </style>
 </head>
 
@@ -49,25 +63,23 @@
     <div class="auth">
         <div class="col-md-8 auth-container">
             <div class="card">
-                <header class="text-center">
-                    <div class="text-center mt-2">
-                        <a href="#" class="text-center" style="padding-top: 15px; margin-top: 15px;">
-                            <img src="{{ asset('assets/images/cocsslogo11.png') }}" alt="Home" width="40%"
-                                height="auto" class="m-auto" />
-                        </a>
-                    </div>
+                <header class="auth-header d-flex align-items-center justify-content-center"
+                    style="background-color: #800000 !important; height: 70px; border-bottom: 0px">
+                    <a href="" style="text-decoration:none;">
+                        <h2 class="text-light mb-0">SORSU-BC CLINIC</h2>
+                    </a>
                 </header>
-                <hr class="text-primary mb-0">
+                {{-- <hr class="text-primary mb-0"> --}}
                 <div class="card-body" style="padding: 1.25rem 1.8rem;">
-                    <div style="margin-bottom: 5px;">
+                    <div style="margin-bottom: 10px;">
                         <div>
                             <h3 class="text-center">CREATE AN ACCOUNT</h3>
                         </div>
                     </div>
 
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="{{ route('register') }}" method="POST" id="registerForm">
                         @csrf
-                        <div class="row">
+                        <div class="row mt-5">
                             <div class="form-group col-md-6 mb-2">
                                 <label>School ID No.</label>
                                 <input type="text" name="school_id"
@@ -90,11 +102,12 @@
                                     </span>
                                 @enderror
                             </div>
+                            {{-- maximum year for birthdate is -15 years ago from current date --}}
                             <div class="form-group col-md-6 mb-2">
                                 <label>Birthdate</label>
                                 <input type="date" name="bdate"
                                     class="form-control @error('bdate') is-invalid @enderror"
-                                    value="{{ old('bdate') }}" required>
+                                    value="{{ old('bdate') }}" max="<?php echo date('Y', strtotime('-10 years')) . '-12-31'; ?>" required>
                                 @error('bdate')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -125,7 +138,7 @@
                             </div>
                             <div class="form-group col-md-6 mb-2">
                                 <label>Password</label>
-                                <input type="password" name="password"
+                                <input type="password" name="password" id="password"
                                     class="form-control @error('password') is-invalid @enderror" placeholder="*******"
                                     value="{{ old('password') }}" required autocomplete="new-password">
                                 @error('password')
@@ -137,6 +150,7 @@
                             <div class="form-group col-md-6 mb-2">
                                 <label>Confirm Password</label>
                                 <input type="password" name="password_confirmation" placeholder="*******"
+                                    id="confirm_password"
                                     class="form-control @error('password_confirmation') is-invalid @enderror" required
                                     autocomplete="new-password">
                                 @error('password_confirmation')
@@ -147,7 +161,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary w-100 mt-3 mb-2">Register</button>
+                                <button type="submit" class="btn btn-maroon w-100 mt-3 mb-2">Register</button>
                             </div>
                         </div>
                     </form>

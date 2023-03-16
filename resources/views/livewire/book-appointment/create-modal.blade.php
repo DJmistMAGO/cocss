@@ -13,15 +13,16 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="form-label">Set Date:</label>
-                            <input type="date" class="form-control">
+                            <input type="date" min="{{ date('Y-m-d') }}" class="form-control" wire:model='date'>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Set Time:</label>
-                            <input type="time" class="form-control">
+                            <input type="time" class="form-control" required wire:model='time'>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Reason:</label>
-                            <textarea name="" id="" rows="3" class="form-control " style="resize: horizontal;"></textarea>
+                            <textarea name="" id="" rows="3" class="form-control" style="resize: horizontal;"
+                                wire:model='reason'></textarea>
                         </div>
                     </div>
                 </div>

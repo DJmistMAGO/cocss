@@ -78,6 +78,16 @@
             text-align: center;
             border-bottom: 1px solid #000000;
         }
+
+        .btn-maroon {
+            background-color: #800000;
+            color: #fff;
+        }
+
+        .btn-maroon:hover {
+            background-color: #a70b0b;
+            color: #000000;
+        }
     </style>
 </head>
 
@@ -92,8 +102,11 @@
     <div class="auth">
         <div class="auth-container">
             <div class="card">
-                <header class="auth-header d-flex align-items-center justify-content-center"  style="background-color: #800000 !important; height: 70px; border-bottom: 0px">
-                    <a href=""><h2 class="text-light mb-0">SORSU-BC CLINIC</h2></a>
+                <header class="auth-header d-flex align-items-center justify-content-center"
+                    style="background-color: #800000 !important; height: 70px; border-bottom: 0px">
+                    <a href="">
+                        <h2 class="text-light mb-0">SORSU-BC CLINIC</h2>
+                    </a>
                 </header>
                 <div class="card-body cardbodylogin" style="padding: 1.25rem 1.8rem;">
                     <form action="{{ route('auth.verify') }}" method="POST">
@@ -149,7 +162,7 @@
                             <div class="form-group mt-4">
                                 <div class="col-xs-12">
                                     <button type="submit"
-                                        class="btn btn-info btn-md btn-block text-uppercase waves-effect waves-light mb-1"
+                                        class="btn btn-maroon btn-md btn-block text-uppercase waves-effect waves-light mb-1"
                                         style="padding: 10px 10px; font-weight: 500">LogIn</button>
                                     <span style="font-size: 14px;">Don't have an account yet?<a
                                             href="{{ route('register') }}" class="text-info"> Create an

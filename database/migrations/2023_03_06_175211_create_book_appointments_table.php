@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('book_appointments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->date('appointment_date');
+            $table->time('appointment_time');
+            $table->string('reason');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
