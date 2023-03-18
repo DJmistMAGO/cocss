@@ -9,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/hospitallogosmall.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets1/images/hospitallogosmall.png">
     <title>@yield('title')</title>
     <!-- Bootstrap Core CSS -->
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/plugins/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <link href="assets1/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets1/plugins/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets1/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
     <link href="css/colors/green.css" id="theme" rel="stylesheet">
-    <link href="assets/plugins/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/fontawesome/css/brands.css" />
-    <link rel="stylesheet" href="assets/fontawesome/css/solid.css" />
-    <link href="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-    <link href="assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="assets/plugins/dropify/dist/css/dropify.min.css">
+    <link href="assets1/plugins/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets1/fontawesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="assets1/fontawesome/css/brands.css" />
+    <link rel="stylesheet" href="assets1/fontawesome/css/solid.css" />
+    <link href="assets1/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="assets1/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="assets1/plugins/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets1/plugins/dropify/dist/css/dropify.min.css">
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
-    <script src="assets/gmaps/gmaps.js"></script>
+    <script src="assets1/gmaps/gmaps.js"></script>
 
 
     <link href="css/style.css" rel="stylesheet">
@@ -67,12 +67,12 @@
         </div>
     </div>
 
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <script src="assets/plugins/calendar/jquery-ui.min.js"></script>
+    <script src="assets1/plugins/jquery/jquery.min.js"></script>
+    <script src="assets1/plugins/calendar/jquery-ui.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets1/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="assets1/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
@@ -80,41 +80,41 @@
     <!--Menu sidebar -->
     <script src="js/sidebarmenu.js"></script>
     <!--stickey kit -->
-    <!-- <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script> -->
+    <!-- <script src="assets1/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script> -->
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
-    <script src="assets/plugins/toast-master/js/jquery.toast.js"></script>
+    <script src="assets1/plugins/toast-master/js/jquery.toast.js"></script>
     <!-- Chart JS -->
-    <script src="assets/plugins/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="assets1/plugins/bootstrap-table/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <script src="assets/plugins/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
-    <script src="assets/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
+    <script src="assets1/plugins/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
+    <script src="assets1/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
     <script src="js/bootstrap-table.init.js"></script>
     <script src="js/toastr.js"></script>
     <script></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="assets1/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <!--Custom JavaScript -->
-    <script src="assets/plugins/moment/moment.js"></script>
-    <script src="assets/plugins/wizard/jquery.steps.min.js"></script>
-    <script src="assets/plugins/wizard/jquery.validate.min.js"></script>
+    <script src="assets1/plugins/moment/moment.js"></script>
+    <script src="assets1/plugins/wizard/jquery.steps.min.js"></script>
+    <script src="assets1/plugins/wizard/jquery.validate.min.js"></script>
 
-    <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
-    <script src="assets/plugins/wizard/steps.js"></script>
+    <script src="assets1/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="assets1/plugins/wizard/steps.js"></script>
 
-    <script src="assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="assets/plugins/echarts/echarts-all.js"></script>
-    <script src="assets/plugins/tableHeadFixer.js"></script>
-    <script src="assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-    <script src="assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
-    <script src="assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+    <script src="assets1/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="assets1/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="assets1/plugins/echarts/echarts-all.js"></script>
+    <script src="assets1/plugins/tableHeadFixer.js"></script>
+    <script src="assets1/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+    <script src="assets1/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="assets1/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+    <script src="assets1/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
-    <script src="assets/gmaps/gmaps.js"></script>
-    <script src="assets/plugins/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="assets1/gmaps/gmaps.js"></script>
+    <script src="assets1/plugins/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
     <script src="js/mask.init.js"></script>
 
     <script type="text/javascript">
@@ -134,7 +134,7 @@
     </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="assets/plugins/dropify/dist/js/dropify.min.js"></script>
+    <script src="assets1/plugins/dropify/dist/js/dropify.min.js"></script>
     <script>
         $(document).ready(function() {
             // Basic

@@ -1,196 +1,358 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/hospitallogosmall.png">
+    <meta charset="utf-8" />
     <title>@yield('title')</title>
-
+    <meta name="description" content="STHC" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="url" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     @stack('links')
-    <!-- Bootstrap Core CSS -->
-    <link href="admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="admin/assets/plugins/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
-    <link href="admin/assets/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
-    <link href="admin/css/colors/blue.css" id="theme" rel="stylesheet">
-    <link href="admin/assets/plugins/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
-    <link rel="stylesheet" href="admin/assets/fontawesome/css/fontawesome.css" />
-    <link rel="stylesheet" href="admin/assets/fontawesome/css/brands.css" />
-    <link rel="stylesheet" href="admin/assets/fontawesome/css/solid.css" />
-    <link href="admin/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-    <link href="admin/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
-    <script src="admin/assets/plugins/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="admin/assets/plugins/dropify/dist/css/dropify.min.css">
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ asset('images/blood-alt.png') }}" />
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
-    <script src="admin/assets/gmaps/gmaps.js"></script>
-
-    <link href="admin/css/style.css" rel="stylesheet">
-    <link href="admin/css/mystyle.css" rel="stylesheet">
-    <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-85622565-1', 'auto');
-    ga('send', 'pageview');
-    </script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
 </head>
 
-<body class="fix-header fix-sidebar card-no-border">
-
-    <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div>
-
-    <div id="main-wrapper">
-        @include('layout.partials.topbar')
-        @include('layout.partials.sidebar')
-
-        <div class="page-wrapper">
-
-            <div class="container-fluid " style="padding: 20px 20px;">
-                @section('content') @show
+<body id="kt_body" class="header-fixed header-mobile-fixed aside-enabled aside-fixed page-loading">
+    @include('layout.partials.header-mobile')
+    <div class="d-flex flex-column flex-root">
+        <div class="d-flex flex-row flex-column-fluid page">
+            @include('layout.partials.navigation')
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+                @include('layout.partials.header')
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <div class="d-flex flex-column-fluid">
+                        <div class="container-fluid">
+                            @section('content') @show
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            @include('layout.partials.footer')
         </div>
-
     </div>
-
-    <!-- All Jquery -->
-<!-- ============================================================== -->
-
-<!-- Bootstrap tether Core JavaScript -->
-<script src="admin/assets/plugins/bootstrap/js/popper.min.js"></script>
-<script src="admin/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
-<script src="admin/js/jquery.slimscroll.js"></script>
-<!--Wave Effects -->
-<script src="admin/js/waves.js"></script>
-<!--Menu sidebar -->
-<script src="admin/js/sidebarmenu.js"></script>
-<!--stickey kit -->
-<script src="admin/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-<!--Custom JavaScript -->
-<script src="admin/js/custom.min.js"></script>
-<script src="admin/assets/plugins/toast-master/js/jquery.toast.js"></script>
-<!-- Chart JS -->
-<script src="admin/assets/plugins/bootstrap-table/dist/bootstrap-table.min.js"></script>
-<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-<script src="admin/assets/plugins/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
-<script src="admin/assets/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
-<script src="admin/js/bootstrap-table.init.js"></script>
-<script src="admin/js/toastr.js"></script>
-<script>
-     @stack('scripts')
-
-</script>
-<!-- Sweet-Alert  -->
-<!-- <script src="admin/assets/plugins/sweetalert2/dist/sweetalert2.all.min.js"></script> -->
-<!-- <script src="admin/assets/plugins/sweetalert2/sweet-alert.init.js"></script> -->
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<!-- ============================================================== -->
-<!-- Style switcher -->
-<!-- ============================================================== -->
-<script src="admin/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-
-<script src="admin/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-<!--Custom JavaScript -->
-<script src="admin/assets/plugins/moment/moment.js"></script>
-<script src="admin/assets/plugins/wizard/jquery.steps.min.js"></script>
-<script src="admin/assets/plugins/wizard/jquery.validate.min.js"></script>
-
-<script src="admin/assets/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="admin/assets/plugins/wizard/steps.js"></script>
-
-<script src="admin/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-
-<script src="admin/assets/plugins/chartist-js/dist/chartist.min.js"></script>
-<script src="admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-<script src="admin/assets/plugins/echarts/echarts-all.js"></script>
-<!-- <script src="admin/assets/plugins/sweetalert2/dist/sweetalert2.all.min.js"></script> -->
-<script src="admin/assets/plugins/tableHeadFixer.js"></script>
-<script src="admin/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-<script src="admin/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<script src="admin/assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
-<script src="admin/assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
-<script src="admin/assets/gmaps/gmaps.js"></script>
-<script src="admin/assets/plugins/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-<script src="admin/js/mask.init.js"></script>
-
-<script type="text/javascript">
-    $(document).on('show.bs.modal', '.modal', function () {
-            var zIndex = 1040 + (10 * $('.modal:visible').length);
-        $(this).css('z-index', zIndex);
-        setTimeout(function() {
-            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-        }, 0);
-    });
-    var zIndex = Math.max.apply(null, Array.prototype.map.call(document.querySelectorAll('*'), function(el) {
-      return +el.style.zIndex;
-    })) + 10;
-    $(document).on('hidden.bs.modal', '.modal', function () {
-        $('.modal:visible').length && $(document.body).addClass('modal-open');
-    });
-</script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script src="admin/assets/plugins/dropify/dist/js/dropify.min.js"></script>
     <script>
-    $(document).ready(function() {
-        // Basic
-        $('.dropify').dropify();
-
-        // Translated
-        $('.dropify-fr').dropify({
-            messages: {
-                default: 'Glissez-déposez un fichier ici ou cliquez',
-                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-                remove: 'Supprimer',
-                error: 'Désolé, le fichier trop volumineux'
-            }
-        });
-
-        // Used events
-        var drEvent = $('#input-file-events').dropify();
-
-        drEvent.on('dropify.beforeClear', function(event, element) {
-            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-        });
-
-        drEvent.on('dropify.afterClear', function(event, element) {
-            alert('File deleted');
-        });
-
-        drEvent.on('dropify.errors', function(event, element) {
-            console.log('Has Errors');
-        });
-
-        var drDestroy = $('#input-file-to-destroy').dropify();
-        drDestroy = drDestroy.data('dropify')
-        $('#toggleDropify').on('click', function(e) {
-            e.preventDefault();
-            if (drDestroy.isDropified()) {
-                drDestroy.destroy();
-            } else {
-                drDestroy.init();
-            }
-        })
-    });
+        var KTAppSettings = {
+            "breakpoints": {
+                "sm": 576,
+                "md": 768,
+                "lg": 992,
+                "xl": 1200,
+                "xxl": 1400
+            },
+            "colors": {
+                "theme": {
+                    "base": {
+                        "white": "#ffffff",
+                        "primary": "#3699FF",
+                        "secondary": "#E5EAEE",
+                        "success": "#1BC5BD",
+                        "info": "#8950FC",
+                        "warning": "#FFA800",
+                        "danger": "#F64E60",
+                        "light": "#E4E6EF",
+                        "dark": "#181C32"
+                    },
+                    "light": {
+                        "white": "#ffffff",
+                        "primary": "#E1F0FF",
+                        "secondary": "#EBEDF3",
+                        "success": "#C9F7F5",
+                        "info": "#EEE5FF",
+                        "warning": "#FFF4DE",
+                        "danger": "#FFE2E5",
+                        "light": "#F3F6F9",
+                        "dark": "#D6D6E0"
+                    },
+                    "inverse": {
+                        "white": "#ffffff",
+                        "primary": "#ffffff",
+                        "secondary": "#3F4254",
+                        "success": "#ffffff",
+                        "info": "#ffffff",
+                        "warning": "#ffffff",
+                        "danger": "#ffffff",
+                        "light": "#464E5F",
+                        "dark": "#ffffff"
+                    }
+                },
+                "gray": {
+                    "gray-100": "#F3F6F9",
+                    "gray-200": "#EBEDF3",
+                    "gray-300": "#E4E6EF",
+                    "gray-400": "#D1D3E0",
+                    "gray-500": "#B5B5C3",
+                    "gray-600": "#7E8299",
+                    "gray-700": "#5E6278",
+                    "gray-800": "#3F4254",
+                    "gray-900": "#181C32"
+                }
+            },
+            "font-family": "Poppins"
+        };
     </script>
+    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+    <script>
+        var URL = '{{ config('app.url') }}'
+    </script>
+    @stack('scripts')
+
+    <script src="{{ mix('js/app.js') }}"></script>
+
+    <script>
+        if (window.livewire) {
+            window.livewire.on('hideModal', (modalId) => {
+                $(modalId).modal('hide');
+            });
+        }
+
+        window.addEventListener('swalSuccess', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: event.detail.message,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        });
+        window.addEventListener('OfficialError', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: event.detail.message,
+                showConfirmButton: true,
+            })
+        });
+        window.addEventListener('exportOfficialError', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: event.detail.message,
+                showConfirmButton: true,
+            })
+        });
+        window.addEventListener('CanvassError', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showConfirmButton: true,
+            })
+        });
+        window.addEventListener('swalDel', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: event.detail.message,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        });
+        window.addEventListener('already-confirmed', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        });
+
+        window.addEventListener('swal:confirm', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Cancel`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('delete', event.detail.id)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Deleted',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            });
+        });
+        window.addEventListener('swal:confirm-release', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Cancel`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('release', event.detail.id)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Released',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            });
+        });
+        window.addEventListener('swal:confirm-cancel', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Cancel`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('cancel', event.detail.id)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Cancelled',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            });
+        });
+        window.addEventListener('swal:confirm-uncancel', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Cancel`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('uncancel', event.detail.id)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Uncancelled',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            });
+        });
+        window.addEventListener('swal:restore', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Cancel`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('restore', event.detail.id)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Restored',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            });
+        });
+        window.addEventListener('swal:forceDel', event => {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: event.detail.message,
+                showCancelButton: true,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Cancel`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.livewire.emit('forceDelete', event.detail.id)
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Successfully Deleted',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+
+            $(document).on("click keyup change paste", ".rec-cost", function() {
+                $(".rec-qty").each(function(index, item) {
+                    var qty = $(".rec-qty").eq(index).val();
+                    var price = $(".rec-cost").eq(index).val();
+
+                    var output = parseFloat(qty) * parseFloat(price);
+
+                    if (!isNaN(output)) {
+                        $(".rec-total").eq(index).val(output);
+                    }
+                });
+            });
+
+            $(document).on("click keyup change paste", ".dis-qty", function() {
+                $(".dis-qty").each(function(index, item) {
+                    var dis_qty = $(".dis-qty").eq(index).val();
+                    var price = $(".rec-cost").eq(index).val();
+
+                    var dis_output = parseFloat(dis_qty) * parseFloat(price);
+
+                    if (!isNaN(dis_output)) {
+                        $(".dis-total").eq(index).val(dis_output);
+                    }
+
+                });
+
+                $(".qty1, .qty2").each(function(index, item) {
+                    var qty = $(".qty1").eq(index).val();
+                    var qty2 = $(".qty2").eq(index).val();
+
+                    var output = parseFloat(qty) - parseFloat(qty2);
+
+                    if (!isNaN(output)) {
+                        $(".bal-qty").eq(index).val(output);
+                    }
+                });
+
+                $(".cost, .qty3").each(function(index, item) {
+                    var qty = $(".cost").eq(index).val();
+                    var qty2 = $(".qty3").eq(index).val();
+
+                    var output = parseFloat(qty) * parseFloat(qty2);
+
+                    if (!isNaN(output)) {
+                        $(".bal-total").eq(index).val(output);
+                    }
+                });
+
+            });
+
+
+        });
+    </script>
+
 </body>
 
 </html>
