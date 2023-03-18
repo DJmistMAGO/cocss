@@ -62,32 +62,34 @@
                                     style="width: 5%; white-space: nowrap; background-color: #800000; position: relative; top: 0px;">
                                     Date </th>
                                 <th
-                                    style="width: 10%; white-space: nowrap; background-color: #800000; position: relative; top: 0px;">
+                                    style="width: 5%; white-space: nowrap; background-color: #800000; position: relative; top: 0px;">
                                     Time </th>
                                 <th
-                                    style="width: 20%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
+                                    style="width: 5%; white-space: nowrap; background-color: #800000; position: relative; top: 0px;">
                                     Reason </th>
                                 <th
-                                    style="width: 10%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
+                                    style="width: 5%; white-space: nowrap; background-color: #800000; position: relative; top: 0px;">
                                     Status </th>
                                 <th
-                                    style="width: 10%; white-space: nowrap; background-color: rgb(51, 52, 63); position: relative; top: 0px;">
+                                    style="width: 5%; white-space: nowrap; background-color: #800000; position: relative; top: 0px;">
                                     Action</th>
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
                             @forelse ($book_appointments as $ba)
                                 <tr style="cursor:pointer;">
-                                    <td style="white-space: nowrap;">{{ $ba->appointment->date }}</td>
-                                    <td style="white-space: nowrap;">{{ $ba->appointment->time }}</td>
+                                    <td style="white-space: nowrap;">{{ $ba->appointment_date->format('F d, Y') }}</td>
+                                    <td style="white-space: nowrap;">
+                                        {{ date('h:i A', strtotime($ba->appointment_time)) }}</td>
                                     <td style="white-space: nowrap;">{{ $ba->reason }}</td>
                                     <td style="white-space: nowrap;">{{ $ba->status }}</td>
                                     <td style="white-space: nowrap;">
-                                        <button class="btn btn-success btn-sm" data-toggle="modal"
-                                            data-target="#view">View</button>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#edit">Edit</button>
-                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#view"
+                                            wire:click='view({{ $ba->id }})'>View</button>
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit"
+                                            wire:click='edit({{ $ba->id }})'>Edit</button>
+                                        <button class="btn btn-danger btn-sm"
+                                            wire:click='deleteConfirm({{ $ba->id }})'>Delete</button>
                                     </td>
                                 </tr>
                             @empty

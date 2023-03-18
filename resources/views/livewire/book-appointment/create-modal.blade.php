@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Reason:</label>
-                            <textarea name="reason" rows="3" class="form-control" style="resize: horizontal;" wire:model="reason"></textarea>
+                            <textarea name="reason" rows="3" class="form-control" style="resize: vertical;" wire:model="reason"></textarea>
                         </div>
                     </div>
                 </div>

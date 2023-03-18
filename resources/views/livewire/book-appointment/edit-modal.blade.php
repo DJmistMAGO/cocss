@@ -12,22 +12,24 @@
                 <div class="modal-body">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="form-label">Date:</label>
-                            <input type="date" class="form-control">
+                            <label class="form-label">Set Date:</label>
+                            <input type="date" min="{{ date('Y-m-d') }}" class="form-control" name="appointment_date"
+                                wire:model="appointment_date">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Time:</label>
-                            <input type="time" class="form-control">
+                            <label class="form-label">Set Time:</label>
+                            <input type="time" class="form-control" required name="appointment_time"
+                                wire:model="appointment_time">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Reason:</label>
-                            <textarea rows="3" class="form-control" style="resize: horizontal;"></textarea>
+                            <textarea name="reason" rows="3" class="form-control" style="resize: vertical;" wire:model="reason"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
