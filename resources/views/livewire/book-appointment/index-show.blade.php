@@ -8,8 +8,7 @@
                 <div class="card-body" style="padding-top: 1rem; padding-bottom: .9rem;">
                     <div class="row page-titles" style="padding-bottom: 0px;">
                         <div class="col-md-6 align-self-center">
-                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal"
-                                data-target="#create">Book Appointment</h3>
+                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500">Book Appointment</h3>
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
                             <div>

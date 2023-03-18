@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Reason:</label>
-                            <textarea name="" id="" rows="3" class="form-control " style="resize: horizontal;"></textarea>
+                            <textarea rows="3" class="form-control" style="resize: horizontal;"></textarea>
                         </div>
                     </div>
                 </div>

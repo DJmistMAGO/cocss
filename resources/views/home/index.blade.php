@@ -15,19 +15,19 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="img-responsive slideimg" src="assets/ssu1.jpg" alt="First slide"
+                        <img class="img-responsive slideimg" src="assets1/ssu1.jpg" alt="First slide"
                             style="max-height:500px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets/ssu2.jpg" alt="Second slide"
+                        <img class="img-responsive slideimg" src="assets1/ssu2.jpg" alt="Second slide"
                             style="max-height:500px;">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets/ssu3.jpg" alt="Third slide"
+                        <img class="img-responsive slideimg" src="assets1/ssu3.jpg" alt="Third slide"
                             style="max-height:500px;">
                         <div class="carousel-caption bottomneed">
                         </div>
@@ -58,7 +58,7 @@
 
 
         <div class="col-md-6 mt-3">
-            <img class="img-responsive" src="assets/ssu5.jpg" alt="First slide" id="homeonlineimg1"
+            <img class="img-responsive" src="assets1/ssu5.jpg" alt="First slide" id="homeonlineimg1"
                 style="min-height:408px; max-height:408px;">
         </div>
     </div>
@@ -113,5 +113,5 @@
     </div>
 </div>
 
-<script src="assets/plugins/Chart.js/Chart.min.js"></script>
+<script src="assets1/plugins/Chart.js/Chart.min.js"></script>
 @include('home.script')
