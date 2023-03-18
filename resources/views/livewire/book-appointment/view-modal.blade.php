@@ -12,16 +12,23 @@
                 <div class="modal-body">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="form-label">Date:</label>
-                            <input type="date" class="form-control">
+                            <label class="form-label">Set Date:</label>
+                            <input type="date" min="{{ date('Y-m-d') }}" readonly class="form-control" name="appointment_date"
+                                wire:model="appointment_date">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Time:</label>
-                            <input type="time" class="form-control">
+                            <label class="form-label">Set Time:</label>
+                            <input type="time" class="form-control" readonly required name="appointment_time"
+                                wire:model="appointment_time">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Status:</label>
+                            <input type="text" class="form-control" readonly required name="status"
+                                wire:model="status">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Reason:</label>
-                            <textarea name="" id="" rows="3" class="form-control " style="resize: horizontal;"></textarea>
+                            <textarea name="reason" rows="3" class="form-control" readonly style="resize: vertical;" wire:model="reason"></textarea>
                         </div>
                     </div>
                 </div>

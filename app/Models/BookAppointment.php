@@ -9,10 +9,15 @@ class BookAppointment extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'appointment_date' => 'date',
+    ];
+
     protected $fillable = [
         'user_id',
         'appointment_date',
         'appointment_time',
         'reason',
+        'status',
     ];
 }
