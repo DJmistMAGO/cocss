@@ -56,7 +56,7 @@ class IndexShow extends Component
         $book_appointment = BookAppointment::find($id);
 
         $this->appointment_id = $book_appointment->id;
-        $this->appointment_date = $book_appointment->appointment_date;
+        $this->appointment_date = $book_appointment->appointment_date->format('Y-m-d');
         $this->appointment_time = $book_appointment->appointment_time;
         $this->reason = $book_appointment->reason;
 
@@ -88,7 +88,7 @@ class IndexShow extends Component
     {
         $book_appointment = BookAppointment::find($id);
 
-        $this->appointment_date = $book_appointment->appointment_date;
+        $this->appointment_date = $book_appointment->appointment_date->format('Y-m-d');
         $this->appointment_time = $book_appointment->appointment_time;
         $this->reason = $book_appointment->reason;
         $this->status = $book_appointment->status;

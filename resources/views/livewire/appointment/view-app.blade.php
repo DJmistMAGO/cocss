@@ -13,20 +13,20 @@
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label class="form-label">Date:</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" wire:model="appointment_date" readonly>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Time:</label>
-                            <input type="time" class="form-control">
+                            <input type="time" class="form-control" wire:model="appointment_time" readonly>
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Reason:</label>
-                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;"></textarea>
+                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;" wire:model="reason" readonly></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
