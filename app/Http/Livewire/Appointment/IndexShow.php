@@ -24,8 +24,9 @@ class IndexShow extends Component
     public $results;
 
     public $medicine_id;
-    public $med_quantity;
+    public $med_qty;
     public $med_name;
+    public $med_time;
 
     protected $listeners = ['delete'];
 
@@ -37,14 +38,17 @@ class IndexShow extends Component
     protected $rules = [
         'results' => 'required',
 
-        'medicine_name' => 'required',
-        'med_quantity' => 'required',
+        'med_name' => 'required',
+        'med_qty' => 'required',
         'med_time' => 'required',
     ];
 
     public function resetInputFields()
     {
         $this->results = '';
+        $this->med_name = '';
+        $this->med_qty = '';
+        $this->med_time = '';
         $this->appointment_time = '';
         $this->reason = '';
     }
@@ -70,11 +74,43 @@ class IndexShow extends Component
         $book_appointment = BookAppointment::find($id);
 
         $this->book_appointment_id = $book_appointment->id;
+        $this->appointment_date = $book_appointment->appointment_date;
+        $this->appointment_time = $book_appointment->appointment_time;
+        $this->reason = $book_appointment->reason;
+        $this->results = $this->results;
 
+        $this->med_name = $this->med_name; //will save id only of medicine
+        $this->med_qty = $this->med_qty;
+        $this->med_time = $this->med_time;
     }
 
     public function checkupSave()
     {
-        
+        $validate = $this->validate();
+        // dd($validate);
+
+        $book_appointment = BookAppointment::find($this->book_appointment_id);
+
+        $book_appointment->status = 'done';
+        $book_appointment->save();
+
+        $appointment = Appointment::create([
+            'book_appointment_id' => $this->book_appointment_id,
+            'results' => $this->results,
+        ]);
+
+        // save medicine
+        $app_medicine = AppointmentMedicine::create([
+            'appointment_id' => $appointment->id,
+            'medicine_name' => $this->med_name,
+            'med_quantity' => $this->med_qty,
+            'med_time' => $this->med_time,
+        ]);
+
+        $this->emit('closeModal', '#checkup');
+
+        $this->resetInputFields();
+
+        return redirect()->route('appointment.index');
     }
 }

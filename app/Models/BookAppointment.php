@@ -25,4 +25,9 @@ class BookAppointment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function appointment()
+    {
+        return $this->hasOne(Appointment::class);
+    }
 }

@@ -47,28 +47,42 @@
 
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
-                        <thead class="text-white" >
+                        <thead class="text-white">
                             <tr style="background-color: #b04f4f !important;">
                                 <th style="width: 25%">Name of Patient</th>
                                 <th style="width: 10%">School ID</th>
                                 <th style="width: 20%">Date & Time</th>
+                                <th>Reason</th>
                                 <th style="width: 25%">Result</th>
                                 <th style="width: 20%">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
-                            <tr style="cursor:pointer;">
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#view">View</button>
-                                <button class="btn btn-info" data-toggle="modal" data-target="#edit">Edit</button>
-                                <button class="btn btn-danger" >Delete</button>
-                        </td>
-            </tr>
-        </tbody>
-    </table>
+                            @forelse ($app_history as $app_his)
+                                <tr style="cursor:pointer;">
+                                    <td style="white-space: nowrap;">{{ $app_his->user->name }}</td>
+                                    <td style="white-space: nowrap;">{{ $app_his->user->school_id }}</td>
+                                    <td style="white-space: nowrap;">{{ $app_his->appointment_date->format('M. d, Y') }}
+                                        || {{ date('h:i A', strtotime($app_his->appointment_time)) }}</td>
+                                    <td>{{ $app_his->reason }}</td>
+                                    <td>{{ $app_his->appointment->results }}</td>
+                                    <td style="white-space: nowrap;">
+                                        <button class="btn btn-success" data-toggle="modal"
+                                            data-target="#view">View</button>
+                                        <button class="btn btn-info" data-toggle="modal"
+                                            data-target="#edit">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5" style="text-align: center;">No data available in table</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-

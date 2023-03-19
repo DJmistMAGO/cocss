@@ -26,8 +26,7 @@
                     <div class="row form-medicine">
                         <div class="form-group col-md-5">
                             <label class="form-label">Medicine Name:</label>
-                            <select name="medicine[]" class="form-control" id="" name="med_name"
-                                wire:model="med_name">
+                            <select class="form-control" name="med_name[]" wire:model="med_name">
                                 <option value="">--Please Select--</option>
                                 @foreach ($medicine as $med)
                                     <option value="{{ $med->id }}">{{ $med->med_name }}</option>
@@ -35,13 +34,14 @@
                             </select>
                         </div>
                         <div class="form-group col-md-2">
-                            <label class="form-label">Qty.:</label>
-                            <input type="number" class="form-control text-right" id="qty0" name="med_qty[]">
+                            <label class="form-label">Quantity:</label>
+                            <input type="number" class="form-control text-right" id="qty0" min="1"
+                                wire:model="med_qty" placeholder="Quantity" name="med_qty[]">
                         </div>
                         <div class="form-group col-md-5">
                             <label class="form-label">Time to Take:</label>
-                            <textarea name="" id="time0" rows="1" class="form-control" name="med_time[]" style="resize: vertical;"
-                                name="time[]"></textarea>
+                            <textarea id="time0" rows="1" class="form-control" wire:model="med_time" placeholder="ex. 3x a day"
+                                style="resize: vertical;" name="med_time[]"></textarea>
                         </div>
                     </div>
                 </div>
