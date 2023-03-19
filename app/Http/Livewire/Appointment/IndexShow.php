@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Appointment;
 
 use Livewire\Component;
+use App\Models\BookAppointment;
+
 
 class IndexShow extends Component
 {

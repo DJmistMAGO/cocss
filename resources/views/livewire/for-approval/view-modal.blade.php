@@ -1,4 +1,4 @@
-<form wire:submit.prevent="view">
+<form wire:submit.prevent="update">
     <div wire:ignore.self class="modal fade" id="view" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
@@ -10,24 +10,26 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group col-md-12">
-                            <label class="form-label">Date:</label>
-                            <input type="date" class="form-control">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label">Set Date:</label>
+                            <input type="date" min="{{ date('Y-m-d') }}" class="form-control" name="appointment_date"
+                                wire:model="appointment_date">
                         </div>
-                        <div class="form-group col-md-12">
-                            <label class="form-label">Time:</label>
-                            <input type="time" class="form-control">
+                        <div class="form-group">
+                            <label class="form-label">Set Time:</label>
+                            <input type="time" class="form-control" required name="appointment_time"
+                                wire:model="appointment_time">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group">
                             <label class="form-label">Reason:</label>
-                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;"></textarea>
+                            <textarea name="reason" rows="3" class="form-control" style="resize: vertical;" wire:model="reason"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Approve</button>
+                    <button type="submit" class="btn btn-primary">Approve</button>
                 </div>
             </div>
         </div>

@@ -117,7 +117,7 @@ class IndexShow extends Component
 
     public function render()
     {
-        $book_appointments = BookAppointment::where('user_id', auth()->user()->id)->get();
+        $book_appointments = BookAppointment::where('status', 'pending')->where('user_id', auth()->user()->id)->get();
 
         return view('livewire.book-appointment.index-show', compact('book_appointments'));
     }
