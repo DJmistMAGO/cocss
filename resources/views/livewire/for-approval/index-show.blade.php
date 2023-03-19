@@ -6,7 +6,8 @@
                 <div class="card-body" style="padding-top: 1rem; padding-bottom: .9rem;">
                     <div class="row page-titles" style="padding-bottom: 0px;">
                         <div class="col-md-6 align-self-center">
-                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal" data-target="#create">For Approval</h3>
+                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal"
+                                data-target="#create">For Approval</h3>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,7 @@
 
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
-                        <thead class="text-white" >
+                        <thead class="text-white">
                             <tr style="background-color: #b04f4f !important;">
                                 <th style="width: 25%">Name of Patient</th>
                                 <th style="width: 10%">School ID</th>
@@ -56,17 +57,24 @@
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
-                            <tr style="cursor:pointer;">
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#view">Approval</button>
-                                <button class="btn btn-danger">Cancel</button>
-                        </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                            @forelse ($book_appointment as $ba)
+                                <tr style="cursor:pointer;">
+                                    <td>{{ $ba->user->name }}</td>
+                                    <td>{{ $ba->user->school_id }}</td>
+                                    <td>{{ $ba->appointment_date->format('F d, Y') }} || {{ date('h:i A', strtotime($ba->appointment_time)) }}</td>
+                                    <td>{{ $ba->reason }}</td>
 
+                                    <td style="white-space: nowrap;">
+                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                            data-target="#view" wire:click="edit({{ $ba->id }})">Approval</button>
+
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5" style="text-align: center;">No data available in table</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
