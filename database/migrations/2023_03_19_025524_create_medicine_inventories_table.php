@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('medicine_inventories', function (Blueprint $table) {
             $table->id();
+            $table->string('med_name');
+            $table->string('med_description');
+            $table->integer('med_quantity');
             $table->timestamps();
         });
     }

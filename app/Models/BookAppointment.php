@@ -21,7 +21,6 @@ class BookAppointment extends Model
         'status',
     ];
 
-    //get user
     public function user()
     {
         return $this->belongsTo(User::class);

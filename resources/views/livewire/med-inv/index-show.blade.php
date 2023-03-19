@@ -9,11 +9,13 @@
                 <div class="card-body" style="padding-top: 1rem; padding-bottom: .9rem;">
                     <div class="row page-titles" style="padding-bottom: 0px;">
                         <div class="col-md-6 align-self-center">
-                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal" data-target="#create">Medicine Inventory</h3>
+                            <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal"
+                                data-target="#create">Medicine Inventory</h3>
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
                             <div>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+                                <button type="button" class="btn btn-primary" wire:click="resetInputFields()" data-toggle="modal"
+                                    data-target="#create">
                                     Add Medicine
                                 </button>
                             </div>
@@ -56,25 +58,35 @@
 
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
-                        <thead class="text-white" >
+                        <thead class="text-white">
                             <tr style="background-color: #b04f4f !important;">
                                 <th style="width: 25%">Medicine Name</th>
+                                <th style="width: 25%">Description</th>
                                 <th style="width: 25%">Quantity</th>
                                 <th style="width: 25%">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
                             <tr style="cursor:pointer;">
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#restock">Restock</button>
-                                <button class="btn btn-success" data-toggle="modal" data-target="#view">View</button>
-                                <button class="btn btn-info" data-toggle="modal" data-target="#edit">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                        </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
+                                @forelse ($med_inv as $med)
+                                    <td>{{ $med->med_name }}</td>
+                                    <td>{{ $med->med_description }}</td>
+                                    <td>{{ $med->med_quantity }}</td>
+                                    <td style="white-space: nowrap;">
+                                        <button class="btn btn-sm btn-primary" data-toggle="modal"
+                                            data-target="#restock" wire:click="addStock({{ $med->id }})">Restock</button>
+                                        <button class="btn btn-sm btn-success" data-toggle="modal"
+                                            data-target="#view"  wire:click="view({{ $med->id }})">View</button>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal"
+                                            data-target="#edit" wire:click="edit({{ $med->id }})">Edit</button>
+                                        <button class="btn btn-sm btn-danger" wire:click='deleteConfirm({{ $med->id }})'>Delete</button>
+                                    </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5" style="text-align: center;">No data available in table</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
