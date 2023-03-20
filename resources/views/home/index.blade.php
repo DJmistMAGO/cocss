@@ -6,7 +6,7 @@
 
 <div class="container-fluid" style="padding: 12px 12px;">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
@@ -41,6 +41,16 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="height: 100%;">
+                <div class="card-header" style="background-color: #bc2c2c">
+                    <h3 class="mb-0 text-white">Announcement</h3>
+                </div>
+                <div class="card-body">
+                    swds
+                </div>
             </div>
         </div>
     </div>
