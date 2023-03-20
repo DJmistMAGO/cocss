@@ -8,9 +8,11 @@
                     <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2">
 
                         <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth()->user()->name }}</span>
+                        <span
+                            class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth()->user()->name }}</span>
                         <span class="symbol symbol-35 symbol-light-success">
-                        <span class="symbol-label font-size-h5 font-weight-bold">{{ substr(auth()->user()->name, 0, 1) }}</span>
+                            <span
+                                class="symbol-label font-size-h5 font-weight-bold">{{ substr(auth()->user()->name, 0, 1) }}</span>
                         </span>
                     </div>
                 </div>
@@ -31,7 +33,7 @@
                             <form method="get" action="{{ route('auth.logout') }}">
                                 @csrf
                                 <a href="#" target="_blank" class="btn btn-light-danger font-weight-bold"
-                                onclick="event.preventDefault();this.closest('form').submit();">Sign Out</a>
+                                    onclick="event.preventDefault();this.closest('form').submit();">Sign Out</a>
                             </form>
                         </div>
                     </div>

@@ -13,29 +13,31 @@
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label class="form-label">Date:</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" wire:model="date">
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Time:</label>
-                            <input type="time" class="form-control">
+                            <input type="time" class="form-control" wire:model="time">
                         </div>
                         <div class="form-group col-md-12">
                             <label class="form-label">Result:</label>
-                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;"></textarea>
+                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;"
+                                wire:model="result"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label class="form-label">Qty.:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" wire:model="med_qty">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="form-label">Medicine Name:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" wire:model="med_name">
                         </div>
                         <div class="form-group col-md-4">
                             <label class="form-label">Time to Take:</label>
-                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;"></textarea>
+                            <textarea name="" id="" rows="1" class="form-control " style="resize: vertical;"
+                                wire:model="med_time"></textarea>
                         </div>
                     </div>
                 </div>

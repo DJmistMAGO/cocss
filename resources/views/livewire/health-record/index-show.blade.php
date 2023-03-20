@@ -73,9 +73,10 @@
                         <tbody id="tblappointmentlist">
                             @forelse ($hrs as $hr)
                                 <tr style="cursor:pointer;">
-                                    <td style="white-space: nowrap;">{{ $hr->date }}</td>
-                                    <td style="white-space: nowrap;">{{ $hr->time }}</td>
-                                    <td style="white-space: nowrap;">{{ $hr->result }}</td>
+                                    <td style="white-space: nowrap;">{{ $hr->appointment_date->format('F d, Y') }}</td>
+                                    <td style="white-space: nowrap;">
+                                        {{ date('h:i A', strtotime($hr->appointment_time)) }}</td>
+                                    <td style="white-space: nowrap;">{{ $hr->appointment->results }}</td>
                                     <td style="white-space: nowrap;">
                                         <button class="btn btn-success btn-sm" data-toggle="modal"
                                             data-target="#view">View</button>
