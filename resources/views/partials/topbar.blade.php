@@ -15,8 +15,8 @@
                 <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><h3 class="text-white mb-0" style="font-weight: 700 !important;">SORSU-BC Clinic</h3></a> </li>
                 <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="icon-arrow-left-circle"></i></a> </li>
             </ul>
-            <a href="{{ route('login') }}" class="nav-item text-light mr-3">Log In</a>
-            <a href="{{ route('register') }}" class="nav-item  text-light">Sign Up</a>
+            <a href="{{ route('login') }}" class="nav-item text-light mr-3" style="text-decoration: none">Log In</a>
+            <a href="{{ route('register') }}" class="nav-item  text-light" style="text-decoration: none">Sign Up</a>
         </div>
     </nav>
 </header>

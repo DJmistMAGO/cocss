@@ -14,17 +14,12 @@
     <!-- Bootstrap Core CSS -->
     <link href="assets1/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets1/plugins/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets1/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
     <link href="css/colors/green.css" id="theme" rel="stylesheet">
-    <link href="assets1/plugins/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
     <link rel="stylesheet" href="assets1/fontawesome/css/fontawesome.css" />
     <link rel="stylesheet" href="assets1/fontawesome/css/brands.css" />
     <link rel="stylesheet" href="assets1/fontawesome/css/solid.css" />
-    <link href="assets1/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-    <link href="assets1/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
     <script src="assets1/plugins/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="assets1/plugins/dropify/dist/css/dropify.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
 
@@ -48,12 +43,12 @@
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
-    <div class="preloader">
+    {{-- <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2"
                 stroke-miterlimit="10" />
         </svg>
-    </div>
+    </div> --}}
     <div id="main-wrapper">
         @include('partials.topbar')
 
@@ -89,25 +84,7 @@
     <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
     <script src="assets1/plugins/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
     <script src="assets1/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <script src="js/bootstrap-table.init.js"></script>
-    <script src="js/toastr.js"></script>
-    <script></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    <script src="assets1/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-    <!--Custom JavaScript -->
-    <script src="assets1/plugins/moment/moment.js"></script>
-    <script src="assets1/plugins/wizard/jquery.steps.min.js"></script>
-    <script src="assets1/plugins/wizard/jquery.validate.min.js"></script>
-
-    <script src="assets1/plugins/sweetalert/sweetalert.min.js"></script>
-    <script src="assets1/plugins/wizard/steps.js"></script>
-
-    <script src="assets1/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="assets1/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="assets1/plugins/echarts/echarts-all.js"></script>
-    <script src="assets1/plugins/tableHeadFixer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
 

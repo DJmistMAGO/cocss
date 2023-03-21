@@ -7,7 +7,7 @@ use App\Models\BookAppointment;
 use App\Models\MedicineInventory;
 use App\Models\AppointmentMedicine;
 use App\Models\Appointment;
-
+use Termwind\Components\Dd;
 
 class IndexShow extends Component
 {
@@ -87,7 +87,15 @@ class IndexShow extends Component
     public function checkupSave()
     {
         $validate = $this->validate();
-        // dd($validate);
+
+        $medicine = MedicineInventory::find($this->med_name);
+
+        if ($medicine->med_quantity < $this->med_qty) {
+            return redirect()->back()->with('error', 'Medicine quantity is not enough');
+        }
+
+        $medicine->med_quantity = $medicine->med_quantity - $this->med_qty;
+        $medicine->save();
 
         $book_appointment = BookAppointment::find($this->book_appointment_id);
 
@@ -99,7 +107,6 @@ class IndexShow extends Component
             'results' => $this->results,
         ]);
 
-        // save medicine
         $app_medicine = AppointmentMedicine::create([
             'appointment_id' => $appointment->id,
             'medicine_name' => $this->med_name,
