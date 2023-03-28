@@ -14,17 +14,12 @@
     <!-- Bootstrap Core CSS -->
     <link href="assets1/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets1/plugins/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets1/plugins/toast-master/css/jquery.toast.css" rel="stylesheet">
     <link href="css/colors/green.css" id="theme" rel="stylesheet">
-    <link href="assets1/plugins/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
     <link rel="stylesheet" href="assets1/fontawesome/css/fontawesome.css" />
     <link rel="stylesheet" href="assets1/fontawesome/css/brands.css" />
     <link rel="stylesheet" href="assets1/fontawesome/css/solid.css" />
-    <link href="assets1/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-    <link href="assets1/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
     <script src="assets1/plugins/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="assets1/plugins/dropify/dist/css/dropify.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
 
@@ -48,12 +43,12 @@
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
-    <div class="preloader">
+    {{-- <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2"
                 stroke-miterlimit="10" />
         </svg>
-    </div>
+    </div> --}}
     <div id="main-wrapper">
         @include('partials.topbar')
 
@@ -89,94 +84,13 @@
     <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
     <script src="assets1/plugins/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
     <script src="assets1/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <script src="js/bootstrap-table.init.js"></script>
-    <script src="js/toastr.js"></script>
-    <script></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    <script src="assets1/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-    <!--Custom JavaScript -->
-    <script src="assets1/plugins/moment/moment.js"></script>
-    <script src="assets1/plugins/wizard/jquery.steps.min.js"></script>
-    <script src="assets1/plugins/wizard/jquery.validate.min.js"></script>
-
-    <script src="assets1/plugins/sweetalert/sweetalert.min.js"></script>
-    <script src="assets1/plugins/wizard/steps.js"></script>
-
-    <script src="assets1/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="assets1/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
-    <script src="assets1/plugins/echarts/echarts-all.js"></script>
-    <script src="assets1/plugins/tableHeadFixer.js"></script>
-    <script src="assets1/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-    <script src="assets1/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="assets1/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
-    <script src="assets1/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
-    <script src="assets1/plugins/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-    <script src="js/mask.init.js"></script>
 
-    <script type="text/javascript">
-        $(document).on('show.bs.modal', '.modal', function() {
-            var zIndex = 1040 + (10 * $('.modal:visible').length);
-            $(this).css('z-index', zIndex);
-            setTimeout(function() {
-                $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-            }, 0);
-        });
-        var zIndex = Math.max.apply(null, Array.prototype.map.call(document.querySelectorAll('*'), function(el) {
-            return +el.style.zIndex;
-        })) + 10;
-        $(document).on('hidden.bs.modal', '.modal', function() {
-            $('.modal:visible').length && $(document.body).addClass('modal-open');
-        });
-    </script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <script src="assets1/plugins/dropify/dist/js/dropify.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Basic
-            $('.dropify').dropify();
 
-            // Translated
-            $('.dropify-fr').dropify({
-                messages: {
-                    default: 'Glissez-déposez un fichier ici ou cliquez',
-                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-                    remove: 'Supprimer',
-                    error: 'Désolé, le fichier trop volumineux'
-                }
-            });
 
-            // Used events
-            var drEvent = $('#input-file-events').dropify();
-
-            drEvent.on('dropify.beforeClear', function(event, element) {
-                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-            });
-
-            drEvent.on('dropify.afterClear', function(event, element) {
-                alert('File deleted');
-            });
-
-            drEvent.on('dropify.errors', function(event, element) {
-                console.log('Has Errors');
-            });
-
-            var drDestroy = $('#input-file-to-destroy').dropify();
-            drDestroy = drDestroy.data('dropify')
-            $('#toggleDropify').on('click', function(e) {
-                e.preventDefault();
-                if (drDestroy.isDropified()) {
-                    drDestroy.destroy();
-                } else {
-                    drDestroy.init();
-                }
-            })
-        });
-    </script>
 </body>
 
 </html>

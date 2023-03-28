@@ -11,7 +11,7 @@ class IndexShow extends Component
     public $appointment_time;
     public $reason;
     public $status;
-    public $appointment_id; // do not create $id variable
+    public $appointment_id; 
 
     protected $listeners = ['delete'];
 

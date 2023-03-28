@@ -31,70 +31,83 @@
         </div>
     </div>
 
-    @role('admin')
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row page-titles" style="padding-bottom: 0px;">
-                            <div class="chart-container col-md-12">
-                                <div id="chart"></div>
-                            </div>
+    {{-- @role('admin') --}}
+    <div class="row">
+        <div class="col-md-6 mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row page-titles" style="padding-bottom: 0px;">
+                        <div class="chart-container col-md-12">
+                            <div id="chart"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endrole
-@endsection
 
-@push('scripts')
-    @livewireScripts
+        <div class="col-md-6 mt-2">
+            <div class="card card-custom">
+                <div class="card-header" style="background-color: #b31313">
+                    <div class="card-title">
+                        <h3 class="card-label text-white">Annoucement</h3>
+                    </div>
+                </div>
+                <div class="card-body pt-2" style="overflow: auto; height: 355px;">
+                    @livewire('announce.index-show')
+                </div>
+            </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3/dist/apexcharts.min.js"></script>
+        {{-- @endrole --}}
+    @endsection
 
-    <script>
-        $(document).ready(function() {
-            var options = {
-                chart: {
-                    type: 'bar',
-                    height: 350,
-                    width: '100%'
-                },
-                series: <?php echo json_encode($data); ?>,
-                xaxis: {
-                    categories: <?php echo json_encode($categories); ?>
+    @push('scripts')
+        @livewireScripts
+
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3/dist/apexcharts.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                var options = {
+                    chart: {
+                        type: 'bar',
+                        height: 350,
+                        width: '100%'
+                    },
+                    series: <?php echo json_encode($data); ?>,
+                    xaxis: {
+                        categories: <?php echo json_encode($categories); ?>
+                    }
                 }
+
+                var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+                chart.render();
+            });
+        </script>
+        <script>
+            // Update the clock every second
+            setInterval(function() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var amOrPm = hours >= 12 ? 'PM' : 'AM';
+
+                hours = hours % 12;
+                hours = hours ? hours : 12; // Zero should be 12
+
+                var timeString = hours + ':' + padZero(minutes) + ':' + padZero(seconds) + ' ' + amOrPm;
+
+                // var dateString = now.toDateString();
+
+                var clockElement = $('#clock');
+                clockElement.html(timeString);
+            }, 1000);
+
+
+            function padZero(number) {
+                return number < 10 ? '0' + number : number;
             }
-
-            var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-            chart.render();
-        });
-    </script>
-    <script>
-        // Update the clock every second
-        setInterval(function() {
-            var now = new Date();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var seconds = now.getSeconds();
-            var amOrPm = hours >= 12 ? 'PM' : 'AM';
-
-            hours = hours % 12;
-            hours = hours ? hours : 12; // Zero should be 12
-
-            var timeString = hours + ':' + padZero(minutes) + ':' + padZero(seconds) + ' ' + amOrPm;
-
-            // var dateString = now.toDateString();
-
-            var clockElement = $('#clock');
-            clockElement.html(timeString);
-        }, 1000);
-
-
-        function padZero(number) {
-            return number < 10 ? '0' + number : number;
-        }
-    </script>
-@endpush
+        </script>
+    @endpush

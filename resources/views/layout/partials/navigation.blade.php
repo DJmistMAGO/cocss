@@ -76,6 +76,16 @@
                 @endrole
 
                 @role('admin')
+                <li class="menu-item {{ !request()->routeIs('announcement.index')?:'menu-item-active' }} "
+                    aria-haspopup="true">
+                    <a href="{{ route('announcement.index') }}" class="menu-link">
+                        <i class="menu-icon fas fa-bullhorn"></i>
+                        <span class="menu-text text-nowrap">Announcement</span>
+                    </a>
+                </li>
+                @endrole
+
+                @role('admin')
                 <li class="menu-item {{ !request()->routeIs('forecasting.index')?:'menu-item-active' }}"
                     aria-haspopup="true">
                     <a href="{{ route('forecasting.index') }}" class="menu-link">
