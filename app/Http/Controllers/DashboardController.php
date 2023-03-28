@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MedicineInventory;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -21,6 +22,10 @@ class DashboardController extends Controller
                 'data' => array((int)$medicine->med_quantity)
             );
         }
+
+        // $dateNow = date('Y-m-d');
+
+        // $announcements = Announcement::where('date', '>=', date('Y-m-d'))->orderBy('date', 'asc')->get();
 
 
         return view('modules.dashboard', compact('categories', 'data'));

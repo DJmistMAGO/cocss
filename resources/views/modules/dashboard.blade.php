@@ -33,7 +33,7 @@
 
     {{-- @role('admin') --}}
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mt-2">
             <div class="card">
                 <div class="card-body">
                     <div class="row page-titles" style="padding-bottom: 0px;">
@@ -45,15 +45,15 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="card card-stretch card-custom">
+        <div class="col-md-6 mt-2">
+            <div class="card card-custom">
                 <div class="card-header" style="background-color: #b31313">
                     <div class="card-title">
                         <h3 class="card-label text-white">Annoucement</h3>
                     </div>
-                    <div class="card-body">
-
-                    </div>
+                </div>
+                <div class="card-body pt-2" style="overflow: auto; height: 355px;">
+                    @livewire('announce.index-show')
                 </div>
             </div>
         </div>

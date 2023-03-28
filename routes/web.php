@@ -13,6 +13,7 @@ use App\Http\Controllers\AppointmentHistoryController;
 use App\Http\Controllers\MedicineInvController;
 use App\Http\Controllers\ForecastingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AnnouncementController;
 
 
 
@@ -38,5 +39,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/med-inv', [MedicineInvController::class, 'index'])->name('med.index');
     Route::get('/forecasting', [ForecastingController::class, 'index'])->name('forecasting.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement.index');
 
 });

@@ -114,6 +114,8 @@ class IndexShow extends Component
             'med_time' => $this->med_time,
         ]);
 
+
+
         $this->emit('closeModal', '#checkup');
 
         $this->resetInputFields();

@@ -75,15 +75,15 @@
                 </li>
                 @endrole
 
-                {{-- @role('admin')
-                <li class="menu-item {{-- !request()->routeIs('med.index')?:'menu-item-active' "
+                @role('admin')
+                <li class="menu-item {{ !request()->routeIs('announcement.index')?:'menu-item-active' }} "
                     aria-haspopup="true">
-                    <a href="" class="menu-link">
-                        <i class="menu-icon far fa-calendar-alt"></i>
-                        <span class="menu-text text-nowrap">Events</span>
+                    <a href="{{ route('announcement.index') }}" class="menu-link">
+                        <i class="menu-icon fas fa-bullhorn"></i>
+                        <span class="menu-text text-nowrap">Announcement</span>
                     </a>
                 </li>
-                @endrole --}}
+                @endrole
 
                 @role('admin')
                 <li class="menu-item {{ !request()->routeIs('forecasting.index')?:'menu-item-active' }}"
