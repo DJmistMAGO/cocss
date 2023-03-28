@@ -58,9 +58,18 @@
 
 
         <div class="col-md-6 mt-3">
-            <img class="img-responsive" src="assets1/ssu5.jpg" alt="First slide" id="homeonlineimg1"
-                style="min-height:408px; max-height:408px;">
+            <div class="card card-custom">
+                <div class="card-header" style="background-color: #b31313">
+                    <div class="card-title">
+                        <h3 class="card-label text-white">Annoucement</h3>
+                    </div>
+                </div>
+                <div class="card-body pt-2" style="overflow: auto; height: 355px;">
+                    @livewire('announce.index-show')
+                </div>
+            </div>
         </div>
+
     </div>
 
     <div class="row mt-3">
@@ -73,11 +82,11 @@
                             <p class="card-text">If you want information about us, fill out our form and we will get in
                                 touch with you as soon as possible.</p>
 
-                            <h4 class="mt-4 mb-2" style="font-weight: 300;"><i class="fas fa-envelope"
+                            <h4 class="mt-2 mb-1" style="font-weight: bold;"><i class="fas fa-envelope"
                                     style="color:#1f87c0;"></i> <span id="">kevingime@gmail.com</span></h4>
-                            <h4 class="mt-4 mb-2" style="font-weight: 300;"><i class="fas fa-phone"
+                            <h4 class="mt-2 mb-1" style="font-weight: bold;"><i class="fas fa-phone"
                                     style="color:#1f87c0;"></i> <span id="">0917 666 6666</span></h4>
-                            <h4 class="mt-4 mb-2" style="font-weight: 300;"><i class="fa fa-map-marker"
+                            <h4 class="mt-2 mb-3" style="font-weight: bold;"><i class="fa fa-map-marker"
                                     style="color:#1f87c0;"></i> <span id="txtmyprofaddress">Sorsogon, Bulan</span></h4>
                             <div id="map-box2">
                             </div>

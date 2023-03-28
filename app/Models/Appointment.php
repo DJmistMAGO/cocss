@@ -9,6 +9,10 @@ class Appointment extends Model
 {
     use HasFactory;
 
+    protected $table = 'appointments';
+
+    protected $guarded = [];
+
     protected $fillable = [
         'book_appointment_id',
         'results'
@@ -19,7 +23,7 @@ class Appointment extends Model
         return $this->belongsTo(BookAppointment::class);
     }
 
-    public function medicine()
+    public function appointmentMedicine()
     {
         return $this->hasMany(AppointmentMedicine::class);
     }

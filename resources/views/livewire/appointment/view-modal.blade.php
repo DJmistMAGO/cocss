@@ -34,7 +34,7 @@
                             </select>
                             @if (session()->has('error'))
                                 <p class="text-danger">{{ session('error') }}</p>
-                            @endif 
+                            @endif
                         </div>
                         <div class="form-group col-md-2">
                             <label class="form-label">Quantity:</label>

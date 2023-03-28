@@ -10,45 +10,85 @@
 @endpush
 
 @section('content')
-    @livewire('appointment.index-show')
-@endsection
-@push('scripts')
-    @livewireScripts
+    <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="margin-bottom: 0px;">
+                    <div class="card-body" style="padding-top: 1rem; padding-bottom: .9rem;">
+                        <div class="row page-titles" style="padding-bottom: 0px;">
+                            <div class="col-md-6 align-self-center">
+                                <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal"
+                                    data-target="#create">Appointment</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid"
+            style="padding: 15px 15px; background-color: white; min-height: auto; margin-top: 15px;">
+            <div class="row" style="margin-bottom: .5rem;">
+                <div class="col-md-8" style="margin-bottom: 10px;">
+                    <div class="row">
+                        <div class="col-md-6 colsearchorders">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text searchinputorder"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control searchinputorder" id="txtsearchappointment"
+                                    placeholder="Search . . .">
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="padding-left: 0px;">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var counter = 1;
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            $('.add-medicine').click(function(e) {
-                e.preventDefault();
+            <div class="row">
+                <div class="col-md-12">
+                    <hr class="hrpayment" style="margin-top: 0px;">
+                </div>
+            </div>
 
-                if (counter == 1) {
-                    $('.delete-medicine').show();
-                }
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-3" style="overflow: auto;">
 
-                var newForm = $('.form-medicine:first').clone(true);
-                newForm.find('input, textarea').each(function() {
-                    $(this).attr('name', $(this).attr('name') + counter);
-                    $(this).attr('id', $(this).attr('id').replace('0', counter));
-                    $(this).val('');
-                });
-
-                $('.form-medicine:last').after(newForm);
-
-                counter++;
-            });
-
-            $('.delete-medicine').click(function() {
-                var count = $('.form-medicine').length;
-                if (count > 1) {
-                    $('.form-medicine').last().remove();
-                    counter--;
-                    if (counter == 1) {
-                        $('.delete-medicine').hide();
-                    }
-                }
-            });
-        });
-    </script>
-@endpush
+                        <table data-height="350" class="table table-bordered fixTable table-hover"
+                            style="margin-bottom: 0px;">
+                            <thead class="text-white">
+                                <tr style="background-color: #b04f4f !important;">
+                                    <th style="width: 25%">Name of Patient</th>
+                                    <th style="width: 10%">School ID</th>
+                                    <th style="width: 20%">Date & Time</th>
+                                    <th style="width: 25%">Reason</th>
+                                    <th style="width: 20%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblappointmentlist">
+                                @forelse ($book_appointment as $appointment)
+                                    <tr style="cursor:pointer;">
+                                        <td>{{ $appointment->user->name }}</td>
+                                        <td>{{ $appointment->user->school_id }}</td>
+                                        <td>{{ $appointment->appointment_date->format('F d, Y') }} ||
+                                            {{ date('h:i A', strtotime($appointment->appointment_time)) }}</td>
+                                        <td>{{ $appointment->reason }}</td>
+                                        <td style="white-space: nowrap;">
+                                            <a href="{{ route('appointment.checkup', $appointment->id) }}"
+                                                class="btn btn-sm btn-success">Check Up</a>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="5" style="text-align: center;">No data available in table</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                @endsection
+                @push('scripts')
+                    @livewireScripts
+                @endpush
