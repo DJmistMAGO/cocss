@@ -22,10 +22,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
-
-
     <link href="css/style.css" rel="stylesheet">
     <link href="css/mystyle.css" rel="stylesheet">
+
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -63,32 +62,19 @@
     </div>
 
     <script src="assets1/plugins/jquery/jquery.min.js"></script>
-    <script src="assets1/plugins/calendar/jquery-ui.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <!-- Bootstrap tether Core JavaScript -->
     <script src="assets1/plugins/bootstrap/js/popper.min.js"></script>
     <script src="assets1/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
-    <!--Wave Effects -->
-    <script src="js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <!-- <script src="assets1/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script> -->
-    <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <script src="assets1/plugins/toast-master/js/jquery.toast.js"></script>
-    <!-- Chart JS -->
-    <script src="assets1/plugins/bootstrap-table/dist/bootstrap-table.min.js"></script>
-    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <script src="assets1/plugins/bootstrap-table/dist/bootstrap-table-locale-all.min.js"></script>
-    <script src="assets1/plugins/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
 
-
+    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+    <script>
+        var URL = '{{ config('app.url') }}'
+    </script>
+    @stack('scripts')
 
 
 </body>

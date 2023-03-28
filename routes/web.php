@@ -34,11 +34,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
     Route::get('/approval', [ApprovalController::class, 'index'])->name('approval.index');
-    Route::get('/appointment', [AppointmentController::class, 'index'])->name('appointment.index');
     Route::get('/appointment-history', [AppointmentHistoryController::class, 'index'])->name('appointhistory.index');
     Route::get('/med-inv', [MedicineInvController::class, 'index'])->name('med.index');
     Route::get('/forecasting', [ForecastingController::class, 'index'])->name('forecasting.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement.index');
 
+    Route::controller(AppointmentController::class)->group(function () {
+        Route::prefix('appointment')->group(function () {
+            Route::get('/', 'index')->name('appointment.index');
+            Route::get('/checkup/{book_appointment}', 'edit')->name('appointment.checkup');
+            Route::post('/checkup/store', 'store')->name('appointment.store');
+        });
+    });
 });
