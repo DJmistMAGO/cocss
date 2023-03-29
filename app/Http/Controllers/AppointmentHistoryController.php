@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BookAppointment;
+use App\Models\Appointment;
+use App\Models\MedicineInventory;
+use App\Models\AppointmentMedicine;
+use Termwind\Components\Dd;
 
 class AppointmentHistoryController extends Controller
 {
@@ -14,5 +18,12 @@ class AppointmentHistoryController extends Controller
         return view('modules.appointment-history.index', compact('book_appointment'));
     }
 
+    public function show(BookAppointment $bookappointment)
+    {
+        $appointmentMedicine = AppointmentMedicine::where('appointment_id', $bookappointment->appointment->id)->get();
 
+        $medicine = MedicineInventory::all();
+
+        return view('modules.appointment-history.view', compact('bookappointment' , 'appointmentMedicine', 'medicine'));
+    }
 }

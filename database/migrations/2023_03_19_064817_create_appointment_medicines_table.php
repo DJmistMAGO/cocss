@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('appointment_medicines', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('appointment_id')->references('id')->on('appointments')->cascadeOnDelete();
+            $table->foreignId('appointment_id')->references('id')->on('book_appointments')->cascadeOnDelete();
             $table->string('medicine_name');
             $table->integer('med_quantity');
             $table->string('med_time');

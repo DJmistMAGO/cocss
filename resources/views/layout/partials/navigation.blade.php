@@ -26,7 +26,7 @@
                 @endrole
 
                 @role('user')
-                <li class="menu-item {{ !request()->routeIs('healthRecord.index')?:'menu-item-active' }}"
+                <li class="menu-item {{ !request()->routeIs('healthRecord.*')?:'menu-item-active' }}"
                     aria-haspopup="true">
                     <a href="{{ route('healthRecord.index') }}" class="menu-link">
                         <i class="menu-icon fas fa-book-medical"></i>
@@ -46,7 +46,7 @@
                 @endrole
 
                 @role('admin')
-                <li class="menu-item {{ !request()->routeIs('appointment.index')?:'menu-item-active' }}"
+                <li class="menu-item {{ !request()->routeIs('appointment.*')?:'menu-item-active' }}"
                     aria-haspopup="true">
                     <a href="{{ route('appointment.index') }}" class="menu-link">
                         <i class="menu-icon fas fa-first-aid"></i>
@@ -56,7 +56,7 @@
                 @endrole
 
                 @role('admin')
-                <li class="menu-item {{ !request()->routeIs('appointhistory.index')?:'menu-item-active' }}"
+                <li class="menu-item {{ !request()->routeIs('appointhistory.*')?:'menu-item-active' }}"
                     aria-haspopup="true">
                     <a href="{{ route('appointhistory.index') }}" class="menu-link">
                         <i class="menu-icon fas fa-book-medical"></i>

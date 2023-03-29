@@ -74,7 +74,7 @@
                                         <td>{{ $appointment->appointment_date->format('F d, Y') }} ||
                                             {{ date('h:i A', strtotime($appointment->appointment_time)) }}</td>
                                         <td style="white-space: nowrap;">
-                                            <a href="{{ route('appointment.checkup', $appointment->id) }}"
+                                            <a href="{{ route('appointhistory.show', $appointment->id) }}"
                                                 class="btn btn-sm btn-success">View</a>
                                         </td>
                                     </tr>
@@ -86,8 +86,11 @@
                             </tbody>
                         </table>
                     </div>
-
-                @endsection
-                @push('scripts')
-                    @livewireScripts
-                @endpush
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@push('scripts')
+    @livewireScripts
+@endpush

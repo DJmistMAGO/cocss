@@ -33,8 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
     Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
+    Route::get('/health-record/view/{bookappointment}', [HealthRecordController::class, 'show'])->name('healthRecord.show');
     Route::get('/approval', [ApprovalController::class, 'index'])->name('approval.index');
     Route::get('/appointment-history', [AppointmentHistoryController::class, 'index'])->name('appointhistory.index');
+    Route::get('/appointment-history/view/{bookappointment}', [AppointmentHistoryController::class, 'show'])->name('appointhistory.show');
     Route::get('/med-inv', [MedicineInvController::class, 'index'])->name('med.index');
     Route::get('/forecasting', [ForecastingController::class, 'index'])->name('forecasting.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
