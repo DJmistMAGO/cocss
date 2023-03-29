@@ -105,9 +105,9 @@
                             {{-- maximum year for birthdate is -15 years ago from current date --}}
                             <div class="form-group col-md-6 mb-2">
                                 <label>Birthdate</label>
-                                <input type="date" name="bdate"
+                                <input type="date" name="bdate" id="bdate"
                                     class="form-control @error('bdate') is-invalid @enderror"
-                                    value="{{ old('bdate') }}" max="<?php echo date('Y', strtotime('-10 years')) . '-12-31'; ?>" required>
+                                    value="{{ old('bdate') }}" max="<?php echo date('Y', strtotime('-15 years')) . '-12-31'; ?>" required>
                                 @error('bdate')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -175,6 +175,8 @@
     </div>
 
     <script src="{{ asset('bs5/js/bootstrap.bundle.min.js') }}"></script>
+
+ 
 </body>
 
 </html>
