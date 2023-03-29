@@ -18,11 +18,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="mb-3" style="overflow: auto;">
-                    Medicine To Order:
-                    <br>
-                // A comment!!!
-                <br>
-                must be a graph!
+                     
                 </div>
             </div>
         </div>

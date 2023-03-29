@@ -45,7 +45,7 @@
 
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
-                        <thead class="text-white" >
+                        <thead class="text-white">
                             <tr style="background-color: #b04f4f !important;">
                                 <th style="width: 20%">User's Name</th>
                                 <th style="width: 20%">School ID</th>
@@ -55,17 +55,26 @@
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
-                            <tr style="cursor:pointer;">
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">test</td>
-                            <td style="white-space: nowrap;">
-                                <button class="btn btn-success" data-toggle="modal" data-target="#view">View</button> 
-                                <button class="btn btn-danger" >Deactivate</button>
-                        </td>
-            </tr>
-        </tbody>
-    </table>
+                            @forelse ($users as $user)
+                                <tr style="cursor:pointer;">
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->school_id }}</td>
+                                    <td>{{ $user->sorsu_email }}</td>
+                                    <td>{{ $user->phone_no }}</td>
+                                    <td style="white-space: nowrap;">
+                                        <button class="btn btn-success" data-toggle="modal"
+                                            data-target="#view">View</button>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5" style="text-align: center;">No Data Available</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
