@@ -15,20 +15,17 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="img-responsive slideimg" src="assets1/ssu1.jpg" alt="First slide"
-                            style="max-height:500px;">
+                        <img class="img-responsive slideimg" src="assets1/ssu1.jpg" alt="First slide">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets1/ssu2.jpg" alt="Second slide"
-                            style="max-height:500px;">
+                        <img class="img-responsive slideimg" src="assets1/ssu2.jpg" alt="Second slide">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets1/ssu3.jpg" alt="Third slide"
-                            style="max-height:500px;">
+                        <img class="img-responsive slideimg" src="assets1/ssu3.jpg" alt="Third slide">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
@@ -50,18 +47,22 @@
             <div class="card text-center"
                 style="min-height:408px; max-height:408px; margin-bottom:0px; background: linear-gradient(319deg, rgba(128,0,0,1) 0%, rgba(255,0,0,1) 74%);">
                 <div class="card-body">
-                    <h1 class="card-title text-white" style="font-weight: 500; font-size: 38px;">SorSU Bulan Campus Clinic</h1>
-                    <p class="card-text text-white" style="font-size: 18px;">A web-based capstone project, the Patient Management System with Medicine Demand Forecasting for SorSU Bulan Campus streamlines patient care and medication management. It enables healthcare providers to manage patient information, appointments, and medical histories while forecasting medicine demand using advanced analytics. This user-friendly system improves healthcare operations at SorSU Bulan Campus.</p>
+                    <h1 class="card-title text-white" style="font-weight: 500; font-size: 38px;">SorSU Bulan Campus
+                        Clinic</h1>
+                    <p class="card-text text-white" style="font-size: 18px;">A web-based capstone project, the Patient
+                        Management System with Medicine Demand Forecasting for SorSU Bulan Campus streamlines patient
+                        care and medication management. It enables healthcare providers to manage patient information,
+                        appointments, and medical histories while forecasting medicine demand using advanced analytics.
+                        This user-friendly system improves healthcare operations at SorSU Bulan Campus.</p>
                 </div>
             </div>
         </div>
-
 
         <div class="col-md-6 mt-3">
             <div class="card card-custom">
                 <div class="card-header" style="background-color: #b31313">
                     <div class="card-title">
-                        <h3 class="card-label text-white">Annoucement</h3>
+                        <h3 class="card-label text-white">Announcement</h3>
                     </div>
                 </div>
                 <div class="card-body pt-2" style="overflow: auto; height: 355px;">

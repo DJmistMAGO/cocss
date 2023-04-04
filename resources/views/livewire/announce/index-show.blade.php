@@ -2,7 +2,7 @@
     @include('livewire.announce.view')
     @forelse ($announcements as $announce)
         <a type="button" class="col-md-12 p-0" data-toggle="modal" data-target="#view"
-        wire:click="view({{ $announce->id }})">
+            wire:click="view({{ $announce->id }})">
             <div class="row" style="border-bottom: solid 1px; margin:5px 0px; padding: 10px 0px; ">
                 <div class="subject p-0 col-md-8 d-flex align-items-center">
                     <h6 class="mb-0 text-dark text-wrap">{{ $announce->subject }}</h6>
@@ -18,7 +18,7 @@
     @empty
         <div class="row">
             <div class="col-md-12">
-                <h6 class="text-center">No Annoucement</h6>
+                <h6 class="text-center">No Announcement</h6>
             </div>
         </div>
     @endforelse

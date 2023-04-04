@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="assets1/fontawesome/css/brands.css" />
     <link rel="stylesheet" href="assets1/fontawesome/css/solid.css" />
     <script src="assets1/plugins/jquery/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9N071f-dwiyVB3WtyD3KH1LySx4bf6HA"></script>
     <script src="assets1/gmaps/gmaps.js"></script>
     <link href="css/style.css" rel="stylesheet">
@@ -39,6 +40,19 @@
         ga('create', 'UA-85622565-1', 'auto');
         ga('send', 'pageview');
     </script>
+
+    <style>
+        .carousel-item {
+            height: 500px;
+        }
+
+        .slideimg {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover
+        }
+    </style>
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
@@ -53,7 +67,7 @@
 
         <div class="page-wrapper">
 
-    @include('home.index')
+            @include('home.index')
 
             <footer class="footer">
                 © 2022 Clinic Online Consultation
@@ -75,7 +89,6 @@
         var URL = '{{ config('app.url') }}'
     </script>
     @stack('scripts')
-
 
 </body>
 

@@ -1,84 +1,78 @@
 <script type="text/javascript">
-	$(function(){
+    $(function() {
         getLocation();
-	});
+    });
 
-	function closerec(){
-        $.ajax ({
+    function closerec() {
+        $.ajax({
             type: 'POST',
             url: 'home/class.php',
-            data: 'form=closerec' ,
+            data: 'form=closerec',
             success: function(data) {
-                window.location = "index.php?url="+data+"";
+                window.location = "index.php?url=" + data + "";
             }
         })
     }
 
-    function getLocation(){
-        GMaps.geocode({
-        address: $("#txtmyprofaddress").text(),
-            callback: function(results, status) {
-            if (status == 'OK') {
-              var latlng = results[0].geometry.location;
-              var maps = new GMaps({
-                    el: '#map-box2',
-                    lat: latlng.lat(),
-                    lng: latlng.lng(),
-                    width: '100%',
-                    height: '20em',
-              });
-              maps.addMarker({
-                    lat: latlng.lat(),
-                    lng: latlng.lng(),
-                    title: 'Your Address'
-              });
-            }
-          }
+    function getLocation() {
+        var maps = new GMaps({
+            el: '#map-box2',
+            lat: 12.667016,
+            lng: 123.881324,
+            width: '100%',
+            height: '20em',
         });
 
-        if (navigator.geolocation){
-            } else{
+        maps.addMarker({
+            lat: 12.667016,
+            lng: 123.881324,
+            title: 'Sorsogon State University - Bulan Campus Clinic'
+        });
+
+        if (navigator.geolocation) {} else {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
 
-    function gotologinpatientuser(){
+    function gotologinpatientuser() {
         window.location = 'patient/';
     }
 
-    function gotologinnurseuser(){
+    function gotologinnurseuser() {
         window.location = 'nurse/';
     }
 
-    function gotologinadminuser(){
+    function gotologinadminuser() {
         window.location = 'admin/';
     }
 
-    function sendmessage(){
+    function sendmessage() {
         var textcontactname = $("#txtcontactname").val();
         var textcontactemail = $("#txtcontactemail").val();
         var textcontactmessage = $("#txtcontactmessage").val();
 
-        $(".preloader").show().css('background','rgba(255,255,255,0.5)');
+        $(".preloader").show().css('background', 'rgba(255,255,255,0.5)');
         $.ajax({
             type: 'POST',
             url: 'home/class.php',
-            data: 'textcontactname=' + textcontactname + '&textcontactemail=' + encodeURIComponent(textcontactemail) + '&textcontactmessage=' + encodeURIComponent(textcontactmessage) + '&form=sendmessage',
-            success: function(data){
-                setTimeout(function(){
-                    $(".preloader").hide().css('background','');
+            data: 'textcontactname=' + textcontactname + '&textcontactemail=' + encodeURIComponent(
+                    textcontactemail) + '&textcontactmessage=' + encodeURIComponent(textcontactmessage) +
+                '&form=sendmessage',
+            success: function(data) {
+                setTimeout(function() {
+                    $(".preloader").hide().css('background', '');
                     Swal.fire(
-                      'Success!',
-                      'Message Sent.',
-                      'success'
+                        'Success!',
+                        'Message Sent.',
+                        'success'
                     )
                     clearmessage();
-                },2000);
+                }, 2000);
             }
         });
     }
 
-    function clearmessage(){
+    function clearmessage() {
         $("#txtcontactname").val("");
         $("#txtcontactemail").val("");
         $("#txtcontactmessage").val("");
