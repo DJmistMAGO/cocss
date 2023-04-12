@@ -13,6 +13,8 @@ class BookAppointment extends Model
         'appointment_date' => 'date',
     ];
 
+    
+
     protected $fillable = [
         'user_id',
         'appointment_date',

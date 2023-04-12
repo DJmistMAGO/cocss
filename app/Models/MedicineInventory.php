@@ -11,7 +11,16 @@ class MedicineInventory extends Model
 
     protected $fillable = [
         'med_name',
+        'exp_date',
         'med_description',
         'med_quantity',
+    ];
+
+    protected $casts = [
+        'exp_date' => 'date',
+    ];
+
+    protected $dates = [
+        'exp_date',
     ];
 }
