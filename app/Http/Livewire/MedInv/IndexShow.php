@@ -4,10 +4,12 @@ namespace App\Http\Livewire\MedInv;
 
 use Livewire\Component;
 use App\Models\MedicineInventory;
+use Termwind\Components\Dd;
 
 class IndexShow extends Component
 {
     public $med_name;
+    public $exp_date;
     public $med_description;
     public $med_quantity;
     public $medicine_id;
@@ -17,6 +19,7 @@ class IndexShow extends Component
 
     protected $rules = [
         'med_name' => 'required',
+        'exp_date' => 'required',
         'med_description' => 'required',
         'med_quantity' => 'required',
     ];
@@ -30,6 +33,7 @@ class IndexShow extends Component
     public function resetInputFields()
     {
         $this->med_name = '';
+        $this->exp_date = '';
         $this->med_description = '';
         $this->med_quantity = '';
     }
@@ -38,12 +42,14 @@ class IndexShow extends Component
     {
         $validated = $this->validate([
             'med_name' => 'required|string|max:255',
+            'exp_date' => 'required|date',
             'med_description' => 'required|string|max:255',
             'med_quantity' => 'required|integer',
         ]);
 
         MedicineInventory::create([
             'med_name' => $validated['med_name'],
+            'exp_date' => $validated['exp_date'],
             'med_description' => $validated['med_description'],
             'med_quantity' => $validated['med_quantity'],
         ]);
@@ -57,9 +63,11 @@ class IndexShow extends Component
     public function edit($id)
     {
         $med_inv = MedicineInventory::find($id);
+        // dd( $med_inv->exp_date);
 
         $this->medicine_id = $med_inv->id;
         $this->med_name = $med_inv->med_name;
+        $this->exp_date = $med_inv->exp_date->format('Y-m-d');
         $this->med_description = $med_inv->med_description;
         $this->med_quantity = $med_inv->med_quantity;
     }
@@ -68,6 +76,7 @@ class IndexShow extends Component
     {
         $validated = $this->validate([
             'med_name' => 'required|string|max:255',
+            'exp_date' => 'required|date',
             'med_description' => 'required|string|max:255',
             'med_quantity' => 'required|integer',
         ]);
@@ -76,6 +85,7 @@ class IndexShow extends Component
 
         $med_inv->update([
             'med_name' => $validated['med_name'],
+            'exp_date' => $validated['exp_date'],
             'med_description' => $validated['med_description'],
             'med_quantity' => $validated['med_quantity'],
         ]);
@@ -89,9 +99,10 @@ class IndexShow extends Component
     public function view($id)
     {
         $med_inv = MedicineInventory::find($id);
-
+        
         $this->medicine_id = $med_inv->id;
         $this->med_name = $med_inv->med_name;
+        $this->exp_date = $med_inv->exp_date->format('Y-m-d');
         $this->med_description = $med_inv->med_description;
         $this->med_quantity = $med_inv->med_quantity;
     }

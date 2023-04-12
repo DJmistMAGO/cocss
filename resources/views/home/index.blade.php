@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-md-6 mt-3">
             <div class="card text-center"
-                style="min-height:408px; max-height:408px; margin-bottom:0px; background: linear-gradient(319deg, rgba(128,0,0,1) 0%, rgba(255,0,0,1) 74%);">
+                style="min-height:408px; max-height:408px; margin-bottom:0px; background-color: #b31313;">
                 <div class="card-body">
                     <h1 class="card-title text-white" style="font-weight: 500; font-size: 38px;">SorSU Bulan Campus
                         Clinic</h1>

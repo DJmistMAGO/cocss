@@ -14,6 +14,7 @@ use App\Http\Controllers\MedicineInvController;
 use App\Http\Controllers\ForecastingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\UserManagementController;
 
 
 
@@ -47,6 +48,16 @@ Route::middleware('auth')->group(function () {
             Route::get('/', 'index')->name('appointment.index');
             Route::get('/checkup/{book_appointment}', 'edit')->name('appointment.checkup');
             Route::post('/checkup/store', 'store')->name('appointment.store');
+            Route::get('/walk-in', 'walkIn')->name('appointment.walkin');
+            Route::post('/walk-in/store', 'storeWalkIn')->name('appointment.storeWalkIn');
+        });
+    });
+
+    Route::controller(UserManagementController::class)->group(function () {
+        Route::prefix('user-management')->group(function () {
+            Route::get('/user/{userId}', 'view')->name('user.view');
+            Route::post('/user', 'updateProfile')->name('user.updateProfile');
         });
     });
 });
+//
