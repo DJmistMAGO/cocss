@@ -49,7 +49,7 @@
             <div class="card card-custom">
                 <div class="card-header" style="background-color: #b31313">
                     <div class="card-title">
-                        <h3 class="card-label text-white">Annoucement</h3>
+                        <h3 class="card-label text-white">Announcement</h3>
                     </div>
                 </div>
                 <div class="card-body pt-2" style="overflow: auto; height: 355px;">

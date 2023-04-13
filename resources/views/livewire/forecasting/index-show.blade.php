@@ -18,7 +18,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="mb-3" style="overflow: auto;">
-                     
+                    {{-- graph for forecasting using php-ml regression --}}
+                    <div class="chart-container" style="position: relative; height: 40vh; width: 80vw;">
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

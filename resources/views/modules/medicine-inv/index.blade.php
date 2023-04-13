@@ -1,8 +1,7 @@
 @extends('layout.app')
 
-
 @section('title')
-    Medicince Inventory
+    Medicine Inventory
 @endsection
 
 @push('links')
