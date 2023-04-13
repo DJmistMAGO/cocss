@@ -20,6 +20,9 @@
                                 <h3 class="text-themecolor mb-0 mt-0" style="font-weight: 500" data-toggle="modal"
                                     data-target="#create">Appointment</h3>
                             </div>
+                            <div class="col-md-6 d-flex justify-content-end">
+                                <a href="{{ route('appointment.walkin') }}" class="btn btn-primary">Walk-in Appointment</a>
+                            </div>
                         </div>
                     </div>
                 </div>

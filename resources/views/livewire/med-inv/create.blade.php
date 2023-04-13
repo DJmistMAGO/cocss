@@ -16,6 +16,10 @@
                             <input type="text" class="form-control" wire:model="med_name">
                         </div>
                         <div class="form-group">
+                            <label class="form-label">Expiration Date:</label>
+                            <input type="date" class="form-control" wire:model="exp_date">
+                        </div>
+                        <div class="form-group">
                             <label class="form-label">Medicine Description:</label>
                             <textarea name="reason" rows="3" class="form-control" style="resize: vertical;" wire:model="med_description"></textarea>
                         </div>

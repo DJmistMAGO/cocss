@@ -9,6 +9,8 @@ use App\Models\AppointmentMedicine;
 use App\Models\Appointment;
 use App\Http\Requests\MedAppointment\StoreRequest;
 use Termwind\Components\Dd;
+use App\Models\User;
+use Illuminate\Support\Carbon;
 
 class AppointmentController extends Controller
 {
@@ -30,7 +32,7 @@ class AppointmentController extends Controller
     {
         $validated = $request->validated();
 
-        $appointment = Appointment::create([ 
+        $appointment = Appointment::create([
             'results' => $validated['result'],
         ]);
 
@@ -45,6 +47,57 @@ class AppointmentController extends Controller
         $book_appointment = BookAppointment::find($validated['book_appointment_id']);
         $book_appointment->status = 'completed';
         $book_appointment->save();
+
+        return redirect()->route('appointment.index');
+    }
+
+    public function walkIn()
+    {
+        $medicine = MedicineInventory::all();
+
+        // get all users with a role of user
+        $users = User::role('user')->get();
+
+        return view('modules.appointment.create', compact('medicine', 'users'));
+    }
+
+    public function storeWalkIn(Request $request)
+    {
+        $patient = $request->input('patient');
+        $result = $request->input('result');
+
+        $medicine_name = $request->input('medicine_name');
+        $med_quantity = $request->input('med_quantity');
+        $med_time = $request->input('med_time');
+
+        $date = Carbon::now();
+        $time = Carbon::now()->format('h:i:s');
+
+        BookAppointment::create([
+            'user_id' => $patient,
+            'appointment_date' => $date,
+            'appointment_time' => $time,
+            'reason' => 'Walk-in',
+            'status' => 'completed',
+        ]);
+
+        $book_appointment_id = BookAppointment::latest()->first()->id;
+
+        Appointment::create([
+            'book_appointment_id' => $book_appointment_id,
+            'results' => $result,
+        ]);
+
+        $appointment_id = Appointment::latest()->first()->id;
+
+        foreach ($medicine_name as $key => $value) {
+            AppointmentMedicine::create([
+                'appointment_id' => $appointment_id,
+                'medicine_name' => $medicine_name[$key],
+                'med_quantity' => $med_quantity[$key],
+                'med_time' => $med_time[$key],
+            ]);
+        }
 
         return redirect()->route('appointment.index');
     }
