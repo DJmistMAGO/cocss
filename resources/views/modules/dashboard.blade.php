@@ -74,6 +74,11 @@
                         height: 350,
                         width: '100%'
                     },
+                    title: {
+                        text: 'Medicine Inventory',
+                        align: 'center',
+                        margin: 20,
+                    },
                     series: <?php echo json_encode($data); ?>,
                     xaxis: {
                         categories: <?php echo json_encode($categories); ?>
