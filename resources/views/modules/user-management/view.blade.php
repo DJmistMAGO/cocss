@@ -10,6 +10,26 @@
 @endpush
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-custom alert-success fade show mb-1 py-2" role="alert">
+            <div class="alert-text"> {{ session('success') }}</div>
+            <div class="alert-close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                </button>
+            </div>
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="alert alert-custom alert-danger fade show mb-1 py-2" role="alert">
+            <div class="alert-text"> {{ session('error') }}</div>
+            <div class="alert-close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                </button>
+            </div>
+        </div>
+    @endif
     <div class="row">
         <div class="col-md-5 mt-5">
             <div class="card card-custom card-stretch">
@@ -18,24 +38,37 @@
                         <h2 class="card-label font-weight-bolder text-dark">User's Avatar</h2>
                     </div>
                 </div>
-                <form method="POST" action="{{ route('user.updateProfile') }}" enctype="multipart/form-data">
+                <form action="{{ route('user.updateProfile', [$user]) }}" method="post"" enctype="multipart/form-data">
                     @csrf
-                    @if (session('success'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('success') }}
+                    @method('PUT')
+                    <div class="card-body">
+                        @if ($errors->has('profile_picture'))
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <p class="text-danger text-center">{{ $errors->first('profile_picture') }}</p>
+                                </div>
                             </div>
                         @endif
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-center align-items-center">
-                                <img id="preview_image"
-                                    src="{{ $profilePictureUrl }}"
-                                    alt="" width="250" height="250" style="border-radius: 100%;">
+
+                        @if ($user->profile_picture == null)
+                            <div class="row">
+                                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                                    <img id="preview_image" src="/uploads/default.jpg" alt="" width="250"
+                                        height="250" style="border-radius: 100%;">
+                                </div>
                             </div>
-                        </div>
+                        @elseif($user->profile_picture != null)
+                            <div class="row">
+                                <div class="col-md-12 d-flex justify-content-center align-items-center">
+                                    <img id="preview_image" src="/uploads/{{ $user->profile_picture }}" alt=""
+                                        width="250" height="250" style="border-radius: 100%;">
+                                </div>
+                            </div>
+                        @endif
+
                         <div class="row mt-3">
                             <div class="form-group col-md-12">
-                                <input type="file" name="avatar" class="form-control" id="profile_picture">
+                                <input type="file" name="profile_picture" class="form-control" id="profile_picture">
                             </div>
                             <div class="form-group col-md-12 d-flex justify-content-center">
                                 <button type="submit" class="btn btn-success col-md-6">Upload Avatar</button>
@@ -68,37 +101,39 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="kt_tab_pane_7_1" role="tabpanel"
                             aria-labelledby="kt_tab_pane_7_1">
-                            <form action="">
+                            <form action="{{ route('user.updateInfo', [$user]) }}" method="post">
+                                @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label class="form-label font-weight-bold">User Name:</label>
-                                        <input type="text" class="form-control" placeholder=""
-                                            value="{{ $userId->user_name }}" />
+                                        <input type="text" name="user_name" class="form-control" placeholder=""
+                                            value="{{ $user->user_name }}" />
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="form-label font-weight-bold">School ID:</label>
-                                        <input type="text" class="form-control" placeholder=""
-                                            value="{{ $userId->school_id }}" />
+                                        <input type="text" class="form-control" name="school_id" placeholder=""
+                                            value="{{ $user->school_id }}" />
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label class="form-label font-weight-bold">Name:</label>
-                                        <input type="text" class="form-control" placeholder="User Name"
-                                            value="{{ $userId->name }}" />
+                                        <input type="text" class="form-control" name="name" placeholder="User Name"
+                                            value="{{ $user->name }}" />
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label class="form-label font-weight-bold">E-mail Address:</label>
-                                        <input type="text" class="form-control" placeholder=""
-                                            value="{{ $userId->sorsu_email }}" />
+                                        <input type="text" class="form-control" name="sorsu_email" placeholder=""
+                                            value="{{ $user->sorsu_email }}" />
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="form-label font-weight-bold">Birthday:</label>
-                                        <input type="date" class="form-control" placeholder=""
-                                            value="{{ $userId->bdate }}" />
+                                        <input type="date" class="form-control" placeholder="" name="bdate"
+                                            value="{{ $user->bdate }}" />
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="form-label font-weight-bold">Phone No.:</label>
-                                        <input type="text" class="form-control" placeholder=""
-                                            value="{{ $userId->phone_no }}" />
+                                        <input type="text" class="form-control" placeholder="" name="phone_no"
+                                            value="{{ $user->phone_no }}" />
                                     </div>
                                     <div class="col-md-12">
                                         <button class="btn btn-primary col-md-12">Update Changes</button>
@@ -107,20 +142,26 @@
                             </form>
                         </div>
 
-                        <div class="tab-pane fade" id="kt_tab_pane_7_2" role="tabpanel" aria-labelledby="kt_tab_pane_7_2">
-                            <form action="">
+                        <div class="tab-pane fade" id="kt_tab_pane_7_2" role="tabpanel"
+                            aria-labelledby="kt_tab_pane_7_2">
+                            <form action="{{ route('user.updatePassword', [$user]) }}" method="post">
+                                @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label class="form-label font-weight-bold">Old Password:</label>
-                                        <input type="password" class="form-control" placeholder="" value="" />
+                                        <input type="password" name="old_password" class="form-control" placeholder=""
+                                            value="" />
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label class="form-label font-weight-bold">New Password:</label>
-                                        <input type="password" class="form-control" placeholder="" value="" />
+                                        <input type="password" class="form-control" name="new_password" placeholder=""
+                                            value="" />
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label class="form-label font-weight-bold">Confirm Password:</label>
-                                        <input type="password" class="form-control" placeholder="" value="" />
+                                        <input type="password" class="form-control" name="confirm_password"
+                                            placeholder="" value="" />
                                     </div>
                                     <div class="col-md-12">
                                         <button class="btn btn-primary col-md-12">Update Password</button>
@@ -129,10 +170,6 @@
                             </form>
                         </div>
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>

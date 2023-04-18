@@ -43,6 +43,7 @@ class IndexShow extends Component
             'appointment_time' => $validated['appointment_time'],
             'reason' => $validated['reason'],
         ]);
+ 
 
         $this->resetInputFields();
         $this->emit('hideModal', '#create');
