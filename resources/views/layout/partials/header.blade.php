@@ -2,7 +2,12 @@
     <div class="container-fluid d-flex align-items-stretch justify-content-between">
         <div></div>
         <div class="topbar">
-
+            @role('admin')
+            @livewire('notification.notification')
+            @endrole
+            @role('user')
+            @livewire('user-notification.user-notification')
+            @endrole
             <div class="dropdown">
                 <div class="topbar-item" data-toggle="dropdown" data-offset="0px,0px">
                     {{-- <h4 class="">Welcome Admin!</h4> --}}

@@ -11,9 +11,10 @@ class BookAppointment extends Model
 
     protected $casts = [
         'appointment_date' => 'date',
+        'appointment_time' => 'datetime:H:i',
     ];
 
-    
+
 
     protected $fillable = [
         'user_id',
