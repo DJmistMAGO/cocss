@@ -30,27 +30,13 @@
 
     <link href="admin/css/style.css" rel="stylesheet">
     <link href="admin/css/mystyle.css" rel="stylesheet">
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85622565-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+
     <style type="text/css">
         .auth {
             position: absolute;
             width: 100%;
             height: 100%;
             left: 0;
-            background-color: #325170;
             overflow-x: hidden;
             overflow-y: auto;
         }
@@ -92,14 +78,10 @@
 </head>
 
 <body>
-    <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2"
-                stroke-miterlimit="10" />
-        </svg>
-    </div>
-
-    <div class="auth">
+    <div class="auth"
+        style="background-image: url({{ asset('assets1/ssu1.jpg') }}); background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;">
         <div class="auth-container">
             <div class="card">
                 <header class="auth-header d-flex align-items-center justify-content-center"
@@ -249,21 +231,6 @@
 <script src="admin/assets/plugins/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 <script src="admin/js/mask.init.js"></script>
 
-<script type="text/javascript">
-    $(document).on('show.bs.modal', '.modal', function() {
-        var zIndex = 1040 + (10 * $('.modal:visible').length);
-        $(this).css('z-index', zIndex);
-        setTimeout(function() {
-            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-        }, 0);
-    });
-    var zIndex = Math.max.apply(null, Array.prototype.map.call(document.querySelectorAll('*'), function(el) {
-        return +el.style.zIndex;
-    })) + 10;
-    $(document).on('hidden.bs.modal', '.modal', function() {
-        $('.modal:visible').length && $(document.body).addClass('modal-open');
-    });
-</script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="admin/assets/plugins/dropify/dist/js/dropify.min.js"></script>
 {{-- <script>
@@ -309,39 +276,6 @@
     });
 </script> --}}
 <script type="text/javascript">
-    // function loginuser() {
-    //     var txtusername = $("#txtusername").val();
-    //     var txtpassword = $("#txtpassword").val();
-    //     $(".preloader").show().css('background', 'rgba(255,255,255,0.5)');
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: 'adminclass.php',
-    //         data: 'txtusername=' + txtusername +
-    //             '&txtpassword=' + txtpassword +
-    //             '&form=loginuser',
-    //         success: function(data) {
-    //             setTimeout(function() {
-    //                 $(".preloader").hide().css('background', '');
-    //                 if (data == 1) {
-    //                     window.location = 'index.php';
-    //                 } else if (data == 3) {
-    //                     Swal.fire(
-    //                         'USER INACTIVE',
-    //                         'Your account is currently inactive, Please contact your admin.',
-    //                         'warning'
-    //                     )
-    //                 } else {
-    //                     Swal.fire(
-    //                         'USER NOT FOUND',
-    //                         'You have entered invalid username or password.',
-    //                         'warning'
-    //                     )
-    //                 }
-    //             }, 1000);
-    //         }
-    //     })
-    // }
-
     function fncloginpassattribHash() {
         $("#txtpassword").attr("type", "password");
         $("#logineye").attr("onclick", "fncloginpassattribunHash()");

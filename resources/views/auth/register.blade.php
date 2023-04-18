@@ -16,7 +16,6 @@
         }
 
         .auth {
-            background-color: #325170;
             height: 100vh;
             display: flex;
             justify-content: center !important;
@@ -60,7 +59,10 @@
 </head>
 
 <body>
-    <div class="auth">
+    <div class="auth"
+    style="background-image: url({{ asset('assets1/ssu1.jpg') }}); background-repeat: no-repeat;
+background-position: center;
+background-size: cover;">
         <div class="col-md-8 auth-container">
             <div class="card">
                 <header class="auth-header d-flex align-items-center justify-content-center"

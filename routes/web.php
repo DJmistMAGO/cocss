@@ -55,8 +55,10 @@ Route::middleware('auth')->group(function () {
 
     Route::controller(UserManagementController::class)->group(function () {
         Route::prefix('user-management')->group(function () {
-            Route::get('/user/{userId}', 'view')->name('user.view');
-            Route::post('/user', 'updateProfile')->name('user.updateProfile');
+            Route::get('/user/{user}', 'view')->name('user.view');
+            Route::put('/user-avatar{user}', 'updateProfile')->name('user.updateProfile');
+            Route::put('/user-update/{user}', 'updateInfo')->name('user.updateInfo');
+            Route::put('/user-update-pass/{user}', 'updatePassword')->name('user.updatePassword');
         });
     });
 });

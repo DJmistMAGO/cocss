@@ -30,12 +30,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
-    protected $attributes = [
-        'profile_picture' => 'default_avatar.png',
-    ];
+    
 }
