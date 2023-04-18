@@ -2,7 +2,7 @@
     <div class="container-fluid d-flex align-items-stretch justify-content-between">
         <div></div>
         <div class="topbar">
-
+            @livewire('notification.notification')
             <div class="dropdown">
                 <div class="topbar-item" data-toggle="dropdown" data-offset="0px,0px">
                     {{-- <h4 class="">Welcome Admin!</h4> --}}

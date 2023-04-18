@@ -12,8 +12,8 @@
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
                             <div>
-                                <button type="button" class="btn btn-primary" wire:click="resetInputFields()" data-toggle="modal"
-                                    data-target="#create">
+                                <button type="button" class="btn btn-primary" wire:click="resetInputFields()"
+                                    data-toggle="modal" data-target="#create">
                                     Book an Appointment
                                 </button>
                             </div>

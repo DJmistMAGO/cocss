@@ -14,18 +14,18 @@
             <div class="card" style="margin-bottom: 15px;">
                 <div class="card-body paddingbreadcard" style="padding-top: 25px; padding-bottom: 25px;">
                     <div class="row page-titles" style="padding-bottom: 0px;">
+
                         <div class="col-md-6 align-self-center">
                             <h3 class="mb-0 mt-0 textdashboardbread3"><span>Welcome, </span> <span
                                     class="text-themecolor textdashboardbread3" style="font-weight: 500; font-size: 25px;"
                                     id="txtuserFname">{{ auth()->user()->name }}</span></h3>
                         </div>
-                        
-                        <div class="col-md-6 align-self-center">
-                            <h4 class="mb-0 mt-0 float-right textdashboardbread textdashboardbread2"
+                        <div class="col-md-6 d-flex justify-content-end">
+
+                            <h4 class="mb-0 mt-0 textdashboardbread textdashboardbread2"
                                 style="font-weight: 400; color: #5f5f5f;"><span class="textdashboardbread"
                                     id="txtdatex">{{ date('l, F d, Y') }}</span> <span id="clock"
                                     class="textdashboardbread"></span></h4>
-
                         </div>
                     </div>
                 </div>
