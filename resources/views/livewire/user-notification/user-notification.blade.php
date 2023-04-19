@@ -39,7 +39,8 @@
                             href="#topbar_notifications_notifications">Approval {{ $countBook }}</a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_events">Appointment {{ $countApprove }}</a>
+                        <a class="nav-link active show" data-toggle="tab"
+                            href="#topbar_notifications_events">Appointment {{ $countApprove }}</a>
                     </li>
                 </ul>
                 <!--end::Tabs-->
@@ -47,29 +48,33 @@
             <!--end::Header-->
             <!--begin::Content-->
             <div class="tab-content">
-                
+
                 <!--begin::Tabpane-->
                 <div class="tab-pane active show " id="topbar_notifications_events" role="tabpanel">
                     <!--begin::Nav-->
                     <div class="navi navi-hover scroll my-4 ps" data-scroll="true" data-height="300"
                         data-mobile-height="200" style="height: 300px; overflow: hidden;">
-                    @forelse ($appointment as $app)
-                    <!--begin::Item-->
-                    <a href="{{ route('appointment.index') }}" class="navi-item">
-                        <div class="navi-link">
-                            <div class="navi-icon mr-2">
-                                <i class="flaticon2-user flaticon2-line- text-success"></i>
+                        @forelse ($appointment as $app)
+                                <!--begin::Item-->
+                                <a href="{{ route('healthRecord.index') }}" class="navi-item">
+                                    <div class="navi-link">
+                                        <div class="navi-icon mr-2">
+                                            <i class="flaticon2-user flaticon2-line- text-success"></i>
+                                        </div>
+                                        <div class="navi-text">
+                                            <div class="font-weight-bold">Your appointment has been approved on
+                                                {{ $app->appointment_date->format('F d, Y') }} at
+                                                {{ $app->appointment_time->format('h:i a') }}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!--end::Item-->
+
+                        @empty
+                            <div class="d-flex flex-center text-center text-muted min-h-200px">All caught up!
+                                <br>No new notifications.
                             </div>
-                            <div class="navi-text">
-                                <div class="font-weight-bold">Your appointment has been approved on {{ $app->appointment_date->format('F d, Y') }} at {{ $app->appointment_time->format('h:i a') }}</div>
-                            </div>
-                        </div>
-                    </a>
-                    <!--end::Item-->
-                    @empty
-                    <div class="d-flex flex-center text-center text-muted min-h-200px">All caught up!
-                        <br>No new notifications.</div>
-                    @endforelse
+                        @endforelse
 
                         <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
                             <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
