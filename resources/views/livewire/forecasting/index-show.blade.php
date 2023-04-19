@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{ $medicine->med_name }}</td>
                                 <td>{{ $medicine->med_quantity }}</td>
-                                <td>{{ $medicine->exp_date->format('YF d, Y') }}</td>
+                                <td>{{ $medicine->exp_date->format('F d, Y') }}</td>
                             </tr>
                         @empty
                             <tr>
