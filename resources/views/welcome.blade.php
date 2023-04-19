@@ -70,7 +70,7 @@
             @include('home.index')
 
             <footer class="footer">
-                © 2022 Clinic Online Consultation
+                © 2023 Clinic Online Consultation
             </footer>
         </div>
     </div>
