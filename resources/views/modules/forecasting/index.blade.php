@@ -1,6 +1,5 @@
 @extends('layout.app')
 
-
 @section('title')
     Forecasting
 @endsection
@@ -12,6 +11,7 @@
 @section('content')
     @livewire('forecasting.index-show')
 @endsection
+
 @push('scripts')
     @livewireScripts
 @endpush

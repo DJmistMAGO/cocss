@@ -14,8 +14,8 @@
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
                             <div>
-                                <button type="button" class="btn btn-primary" wire:click="resetInputFields()" data-toggle="modal"
-                                    data-target="#create">
+                                <button type="button" class="btn btn-primary" wire:click="resetInputFields()"
+                                    data-toggle="modal" data-target="#create">
                                     Add Medicine
                                 </button>
                             </div>
@@ -58,12 +58,13 @@
 
                     <table data-height="350" class="table table-bordered fixTable table-hover"
                         style="margin-bottom: 0px;">
-                        <thead class="text-white">
+                        <thead class="text-white text-center">
                             <tr style="background-color: #b04f4f !important;">
                                 <th style="width: 25%">Medicine Name</th>
                                 <th style="width: 25%">Description</th>
-                                <th style="width: 25%">Quantity</th>
-                                <th style="width: 25%">Action</th>
+                                <th>Quantity</th>
+                                <th>EXP Date</th>
+                                <th style="width: 20%">Action</th>
                             </tr>
                         </thead>
                         <tbody id="tblappointmentlist">
@@ -72,14 +73,24 @@
                                     <td>{{ $med->med_name }}</td>
                                     <td>{{ $med->med_description }}</td>
                                     <td>{{ $med->med_quantity }}</td>
+                                    <td>
+                                        @if ($med->exp_date->format('Y-m-d') < date('Y-m-d', strtotime('+1 month')))
+                                            <span
+                                                class="badge badge-danger">{{ $med->exp_date->format('M. d, Y') }}</span>
+                                        @else
+                                            {{ $med->exp_date->format('M. d, Y') }}
+                                        @endif
+                                    </td>
                                     <td style="white-space: nowrap;">
                                         <button class="btn btn-sm btn-primary" data-toggle="modal"
-                                            data-target="#restock" wire:click="addStock({{ $med->id }})">Restock</button>
-                                        <button class="btn btn-sm btn-success" data-toggle="modal"
-                                            data-target="#view"  wire:click="view({{ $med->id }})">View</button>
-                                        <button class="btn btn-sm btn-info" data-toggle="modal"
-                                            data-target="#edit" wire:click="edit({{ $med->id }})">Edit</button>
-                                        <button class="btn btn-sm btn-danger" wire:click='deleteConfirm({{ $med->id }})'>Delete</button>
+                                            data-target="#restock"
+                                            wire:click="addStock({{ $med->id }})">Restock</button>
+                                        <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#view"
+                                            wire:click="view({{ $med->id }})">View</button>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#edit"
+                                            wire:click="edit({{ $med->id }})">Edit</button>
+                                        <button class="btn btn-sm btn-danger"
+                                            wire:click='deleteConfirm({{ $med->id }})'>Delete</button>
                                     </td>
                             </tr>
                         @empty
