@@ -16,35 +16,44 @@
         style="padding: 15px 15px; background-color: white; min-height: auto; margin-top: 15px;">
         <div class="row">
             <div class="col-6">
-                <div class="mb-3" style="overflow: auto;">
-                    <div id="exp_chart">
+                <div class="card mb-3">
+                    <div class="card-body" style="overflow: auto;">
+                        <div id="exp_chart"></div>
                     </div>
                 </div>
             </div>
+
             <div class="col-6">
-                <table class="table table-bordered text-center">
-                    <thead>
-                        <tr>
-                            <th>Medicine</th>
-                            <th>Quantity</th>
-                            <th>Exp. Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($medicines as $medicine)
-                            <tr>
-                                <td>{{ $medicine->med_name }}</td>
-                                <td>{{ $medicine->med_quantity }}</td>
-                                <td>{{ $medicine->exp_date->format('F d, Y') }}</td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="3">No Medicine Near Expiry Date</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                <div class="card mb-3">
+                    <div class="card-body" style="overflow: auto;">
+                        <div wire:ignore id="chart"></div>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div>
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>
+                        <th>Quantity</th>
+                        <th>Exp. Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($medicines as $medicine)
+                        <tr>
+                            <td>{{ $medicine->med_name }}</td>
+                            <td>{{ $medicine->med_quantity }}</td>
+                            <td>{{ $medicine->exp_date->format('F d, Y') }}</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="3">No Medicine Near Expiry Date</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
@@ -75,5 +84,40 @@
 
             chart.render();
         });
+    </script>
+
+    <script>
+        var orders = @json($orders);
+
+        var options = {
+            chart: {
+                type: 'bar',
+                height: 350,
+                width: '100%'
+            },
+            series: [{
+                name: 'Order Quantity',
+                data: orders.map(order => order.quantity)
+            }],
+            xaxis: {
+                categories: orders.map(order => order.name),
+            },
+            title: {
+                text: 'Medicines to Order',
+                align: 'center',
+                margin: 20,
+            },
+            tooltip: {
+                y: {
+                    formatter: function(val) {
+                        return val + " pcs"
+                    }
+                }
+            }
+        }
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+        chart.render();
     </script>
 @endpush
