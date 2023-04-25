@@ -1,7 +1,7 @@
 <div class="dropdown">
     <!--begin::Toggle-->
     <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="false">
-        <div class="btn btn-icon btn-primary btn-dropdown btn-lg mr-3 pr-2 pulse pulse-primary">
+        <div class="btn text-white btn-icon btn-dropdown btn-lg mr-3 pr-2 " style="background-color: #8b0000">
             <span class="svg-icon svg-icon-xl mr-0 svg-icon-light">
                 <!--begin::Svg Icon | path:assets/media/svg/icons/Code/Compiling.svg-->
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -15,7 +15,7 @@
                     </g>
                 </svg>
                 <!--end::Svg Icon-->
-            </span> {{ $addCount }}
+            </span>{{ $addCount }}
             <span class="pulse-ring"></span>
         </div>
     </div>
@@ -54,7 +54,7 @@
 
                         @forelse ($bookApp as $bookApt)
                             <!--begin::Item-->
-                            <a href="{{ route('bookAppointment.index') }}" class="navi-item">
+                            <a href="{{ route('approval.index') }}" class="navi-item">
                                 <div class="navi-link">
                                     <div class="navi-icon mr-2">
                                         <i class="flaticon2-user flaticon2-line- text-success"></i>
