@@ -1,7 +1,8 @@
 <div class="">
-    @include('livewire.announce.view')
+
     @forelse ($announcements as $announce)
-        <a type="button" class="col-md-12 p-0" data-toggle="modal" data-target="#view"
+    @include('livewire.announce.view')
+    <a type="button" class="col-md-12 p-0" data-toggle="modal" data-target="#view"
             wire:click="view({{ $announce->id }})">
             <div class="row" style="border-bottom: solid 1px; margin:5px 0px; padding: 10px 0px; ">
                 <div class="subject p-0 col-md-8 d-flex align-items-center">

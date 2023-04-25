@@ -43,7 +43,7 @@ class IndexShow extends Component
             'appointment_time' => $validated['appointment_time'],
             'reason' => $validated['reason'],
         ]);
- 
+
 
         $this->resetInputFields();
         $this->emit('hideModal', '#create');
@@ -118,7 +118,7 @@ class IndexShow extends Component
 
     public function render()
     {
-        $book_appointments = BookAppointment::where('status', 'pending')->where('user_id', auth()->user()->id)->get();
+        $book_appointments = BookAppointment::where('status', ['approved', 'pending'])->where('user_id', auth()->user()->id)->get();
 
         return view('livewire.book-appointment.index-show', compact('book_appointments'));
     }
