@@ -43,6 +43,11 @@ class AppointmentController extends Controller
                 'med_quantity' => $validated['med_quantity'][$key],
                 'med_time' => $validated['med_time'][$key],
             ]);
+
+            //subtract the quantity of medicine in the inventory
+            $medicine = MedicineInventory::where('id',$validated['medicine_name'][$key])->first();
+            $medicine->med_quantity = $medicine->med_quantity - $validated['med_quantity'][$key];
+            $medicine->save();
         }
 
         $book_appointment = BookAppointment::find($validated['book_appointment_id']);
@@ -100,7 +105,7 @@ class AppointmentController extends Controller
             ]);
 
             //subtract the quantity of medicine in the inventory
-            $medicine = MedicineInventory::where('id', $medicine_name[$key])->first(); 
+            $medicine = MedicineInventory::where('id', $medicine_name[$key])->first();
             $medicine->med_quantity = $medicine->med_quantity - $med_quantity[$key];
             $medicine->save();
         }
