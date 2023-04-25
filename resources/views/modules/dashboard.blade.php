@@ -83,9 +83,12 @@
                     },
                     series: <?php echo json_encode($data); ?>,
                     xaxis: {
-                        categories: <?php echo json_encode($categories); ?>
+                        categories: <?php echo json_encode($categories); ?>,
+                        labels: {
+                            show: false
+                        }
                     }
-                }
+                };
 
                 var chart = new ApexCharts(document.querySelector("#chart"), options);
 
