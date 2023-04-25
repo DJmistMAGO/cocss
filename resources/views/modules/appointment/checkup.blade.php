@@ -25,21 +25,22 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label >Patient Name:<span class="text-danger">*</span></label>
+                                    <label>Patient Name:<span class="text-danger">*</span></label>
                                     <input type="text" name="patient_name" class="form-control"
                                         value="{{ $book_appointment->user->name }}" placeholder="Enter Patient Name"
                                         readonly />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label >Patient Name:<span class="text-danger">*</span></label>
+                                    <label>Date:<span class="text-danger">*</span></label>
                                     <input type="date" name="patient_name" class="form-control"
                                         value="{{ $book_appointment->appointment_date->format('Y-m-d') }}"
                                         placeholder="Enter Patient Name" readonly />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label >Patient Name:<span class="text-danger">*</span></label>
-                                    <input type="time" name="patient_name" class="form-control"
-                                        value="{{ $book_appointment->appointment_time }}" placeholder="Enter Patient Name"
+                                    <label>Time:<span class="text-danger">*</span></label>
+                                    <input type="input" name="patient_name" class="form-control"
+                                        value="{{ date("h:i A", strtotime($book_appointment->appointment_time)) }}
+                                        " placeholder="Enter Patient Name"
                                         readonly />
                                 </div>
                                 <div class="form-group col-md-12">
@@ -90,8 +91,8 @@
                         <div class="col-md-12 d-flex flex-wrap">
                             <div class="form-group col-md-4">
                                 <label>Medicine:<span class="text-danger">*</span></label>
-                                <select name="medicine_name[]" class="form-control @error('medicine_name') is-invalid @enderror"
-                                    required>
+                                <select name="medicine_name[]"
+                                    class="form-control @error('medicine_name') is-invalid @enderror" required>
                                     <option value="">--Please Select--</option>
                                     @foreach ($medicine as $med)
                                         <option value="{{ $med->id }}" @selected(old('medicine_name.0') == $med->id)>

@@ -98,6 +98,11 @@ class AppointmentController extends Controller
                 'med_quantity' => $med_quantity[$key],
                 'med_time' => $med_time[$key],
             ]);
+
+            //subtract the quantity of medicine in the inventory
+            $medicine = MedicineInventory::where('id', $medicine_name[$key])->first(); 
+            $medicine->med_quantity = $medicine->med_quantity - $med_quantity[$key];
+            $medicine->save();
         }
 
         return redirect()->route('appointment.index');
