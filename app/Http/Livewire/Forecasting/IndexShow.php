@@ -64,6 +64,9 @@ class IndexShow extends Component
         return $orders; // will return the order quantity of the medicine
     }
 
+
+
+
     public function render()
     {
 
