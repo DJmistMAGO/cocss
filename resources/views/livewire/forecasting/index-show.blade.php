@@ -76,7 +76,10 @@
                 },
                 series: <?php echo json_encode($data); ?>,
                 xaxis: {
-                    categories: <?php echo json_encode($categories); ?>
+                    categories: <?php echo json_encode($categories); ?>,
+                    labels: {
+                        show: false
+                    }
                 },
             }
 
@@ -93,14 +96,18 @@
             chart: {
                 type: 'bar',
                 height: 350,
-                width: '100%'
+                width: '100%',
             },
+
             series: [{
                 name: 'Order Quantity',
                 data: orders.map(order => order.quantity)
             }],
             xaxis: {
                 categories: orders.map(order => order.name),
+                labels: {
+                    show: false
+                }
             },
             title: {
                 text: 'Medicines to Order',
@@ -113,6 +120,10 @@
                         return val + " pcs"
                     }
                 }
+            },
+            legend: {
+                show: true,
+                position: 'bottom',
             }
         }
 
