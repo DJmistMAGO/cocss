@@ -75,10 +75,14 @@
                                     <td>{{ $med->med_quantity }}</td>
                                     <td>
                                         @if ($med->exp_date->format('Y-m-d') < date('Y-m-d', strtotime('+1 month')))
-                                            <span
+                                            <span title="Expired/Will expire in a month"
                                                 class="badge badge-danger">{{ $med->exp_date->format('M. d, Y') }}</span>
+                                        @elseif($med->exp_date->format('Y-m-d') < date('Y-m-d', strtotime('+3 month')))
+                                            <span title="Will expire in 3 months"
+                                                class="badge badge-warning">{{ $med->exp_date->format('M. d, Y') }}</span>
                                         @else
-                                            {{ $med->exp_date->format('M. d, Y') }}
+                                            <span
+                                                class="badge badge-success">{{ $med->exp_date->format('M. d, Y') }}</span>
                                         @endif
                                     </td>
                                     <td style="white-space: nowrap;">
