@@ -26,7 +26,7 @@ class MedicineInvController extends Controller
         // }
 
 
-        return view('forecasting.index-show');
+        return view('modules.forecasting.index');
     }
 
     // public function regression()

@@ -33,6 +33,7 @@ class AppointmentController extends Controller
         $validated = $request->validated();
 
         $appointment = Appointment::create([
+            'book_appointment_id' => $validated['book_appointment_id'],
             'results' => $validated['result'],
         ]);
 
