@@ -15,4 +15,9 @@ class AppointmentMedicine extends Model
     {
         return $this->belongsTo(Appointment::class, 'appointment_id');
     }
+
+    public function medicine()
+    {
+        return $this->belongsTo(MedicineInventory::class, 'medicine_id');
+    }
 }

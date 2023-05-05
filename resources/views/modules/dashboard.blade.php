@@ -35,17 +35,19 @@
 
     {{-- @role('admin') --}}
     <div class="row">
-        <div class="col-md-6 mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row page-titles" style="padding-bottom: 0px;">
-                        <div class="chart-container col-md-12">
-                            <div id="chart"></div>
+        @role('admin')
+            <div class="col-md-6 mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row page-titles" style="padding-bottom: 0px;">
+                            <div class="chart-container col-md-12">
+                                <div id="chart"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endrole
 
         <div class="col-md-6 mt-2">
             <div class="card card-custom">
@@ -87,7 +89,34 @@
                         labels: {
                             show: false
                         }
-                    }
+                    },
+                    tooltip: {
+                        x: {
+                            show: false
+                        }
+                    },
+                    legend: {
+                        show: true,
+                        position: 'bottom',
+                        formatter: function(val, opts) {
+                            return val + '<br>';
+                        },
+                        offsetY: 10,
+                        offsetX: 0,
+                        height: 'auto',
+                        itemMargin: {
+                            vertical: 5
+                        }
+                    },
+                    colors: [
+                        '#EE3722', '#F57E26', '#900C3F', '#F4EC08', '#4DB847', '#FFC400', '#2A2F84',
+                        '#8307F5', '#0793F5', '#07F54F', '#F58307', '#F507C8', '#F50744', '#07F583', '#39CCCC',
+                        '#3D9970', '#2ECC40', '#01FF70', '#FFDC00', '#FF8529', '#FF4139', '#85144c', '#F012BE',
+                        '#B10DC9', '#00BFFF', '#ADD8E6', '#87CEFA', '#6495ED', '#1E90FF', '#FF1493', '#FF69B4',
+                        '#FFC0CB', '#FF7F50', '#FFA07A', '#CD5C5C', '#8B0000', '#FFDAB9', '#FFEFF5', '#FFDAD9',
+                        '#FFEFD5', '#F0FFF0', '#FFFFE0', '#F5DEB3', '#EEE8AA', '#BDB76B', '#D2691E', '#A0522D',
+                        '#8B4513', '#BAFFE6'
+                    ]
                 };
 
                 var chart = new ApexCharts(document.querySelector("#chart"), options);

@@ -23,4 +23,9 @@ class MedicineInventory extends Model
     protected $dates = [
         'exp_date',
     ];
+
+    public function appointment()
+    {
+        return $this->hasMany(AppointmentMedicine::class, 'medicine_id');
+    }
 }
