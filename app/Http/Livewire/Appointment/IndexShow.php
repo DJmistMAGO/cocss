@@ -2,12 +2,11 @@
 
 namespace App\Http\Livewire\Appointment;
 
-use Livewire\Component;
+use App\Models\Appointment;
+use App\Models\AppointmentMedicine;
 use App\Models\BookAppointment;
 use App\Models\MedicineInventory;
-use App\Models\AppointmentMedicine;
-use App\Models\Appointment;
-use Termwind\Components\Dd;
+use Livewire\Component;
 
 class IndexShow extends Component
 {
@@ -23,7 +22,6 @@ class IndexShow extends Component
 
     public $results;
 
-    public $medicine_id;
     public $med_qty;
     public $med_name;
     public $med_time;
@@ -37,7 +35,6 @@ class IndexShow extends Component
 
     protected $rules = [
         'results' => 'required',
-
         'med_name' => 'required',
         'med_qty' => 'required',
         'med_time' => 'required',
@@ -82,6 +79,7 @@ class IndexShow extends Component
         $this->med_name = $this->med_name; //will save id only of medicine
         $this->med_qty = $this->med_qty;
         $this->med_time = $this->med_time;
+
     }
 
     public function checkupSave()
@@ -112,6 +110,7 @@ class IndexShow extends Component
             'medicine_name' => $this->med_name,
             'med_quantity' => $this->med_qty,
             'med_time' => $this->med_time,
+            'medicine_id' => $this->med_name,
         ]);
 
         $this->emit('closeModal', '#checkup');
