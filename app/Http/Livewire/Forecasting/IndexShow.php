@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Forecasting;
 
+use App\Models\AppointmentMedicine;
 use App\Models\MedicineInventory;
 use Carbon\Carbon;
 use Livewire\Component;
@@ -9,127 +10,123 @@ use Livewire\Component;
 class IndexShow extends Component
 {
 
-    // public  $historicalData = [
-    //     ['Biogesic', 40, '2020-1-1'], //
-    //     ['Poten-C', 60, '2020-1-1'], //
-    //     ['Neozep', 16, '2020-1-1'], //
-    //     ['Neozep', 18, '2020-2-1'], //
-    //     ['Biogesic', 12, '2020-2-1'], //
-    //     ['Ascorbic Acid', 20, '2020-2-1'], //
-    //     ['Poten-C', 20, '2020-3-1'], //
-    //     ['Biogesic', 18, '2020-3-1'], //
-    //     ['Alaxan', 12, '2020-3-1'], //
-    //     ['Neozep', 10, '2020-3-1'], //
-    //     ['Ceterizin', 12, '2020-4-1'], //
-    //     ['Immune pro', 32, '2020-4-1'], //
-    //     ['Biogesic', 20, '2020-4-1'], //
-    //     ['Alaxan', 20, '2020-5-1'], //
-    //     ['Neozep', 40, '2020-5-1'], //
-    //     ['Biogesic', 20, '2020-6-1'], //
-    //     ['Ascorbic Acid', 40, '2020-6-1'], //
-    //     ['Biogesic', 10, '2020-7-1'], //
-    //     ['Amoxicillin', 12, '2020-7-1'], //
-    //     ['Ascorbic Acid', 30, '2020-7-1'], //
-    //     ['Alaxan', 12, '2020-8-1'], //
-    //     ['Bioflu', 10, '2020-8-1'], //
-    //     ['Solmux', 24, '2020-9-1'], //
-    //     ['Immune pro', 32, '2020-9-1'], //
-    //     ['Biogesic', 32, '2020-10-1'], //
-    //     ['Bioflu', 20, '2020-10-01'], //
-    //     ['Immune pro', 24, '2020-11-01'], //
-    //     ['Ascorbic Acid', 30, '2020-11-01'], //
-    //     ['Neozep', 32, '2020-11-01'], //
-    //     ['Biogesic', 40, '2020-12-01'],
-    //     ['Poten-C', 60, '2020-12-01'],
-    //     ['Alaxan', 34, '2020-12-01'],
-    //     ['Biogesic', 10, '2021-01-01'],
-    //     ['Neozep', 5, '2021-01-01'],
-    //     ['Alaxan', 10, '2021-01-01'],
-    //     ['Ascorbic Acid', 10, '2021-01-01'],
-    //     ['Neozep', 4, '2021-02-01'],
-    //     ['Stress Tabs', 20, '2021-02-01'],
-    //     ['Ascorbic Acid', 10, '2021-02-01'],
-    //     ['Biogesic', 10, '2021-03-01'],
-    //     ['Ascorbic Acid', 20, '2021-04-01'],
-    //     ['Neozep', 8, '2021-05-01'],
-    //     ['Biogesic', 10, '2021-05-01'],
-    //     ['Alaxan', 10, '2021-05-01'],
-    //     ['Stress Tabs', 10, '2021-06-01'],
-    //     ['Biogesic', 10, '2021-07-01'],
-    //     ['Stress Tabs', 10, '2021-07-01'],
-    //     ['Alaxan', 10, '2021-08-01'],
-    //     ['Stress Tabs', 20, '2021-08-01'],
-    //     ['Ascorbic Acid', 10, '2021-08-01'],
-    //     ['Bioflu', 10, '2021-09-01'],
-    //     ['Biogesic', 10, '2021-09-01'],
-    //     ['Neozep', 20, '2021-09-01'],
-    //     ['Bioflu', 10, '2021-10-01'],
-    //     ['Neozep', 10, '2021-10-01'],
-    //     ['Biogesic', 10, '2021-11-01'],
-    //     ['Neozep', 5, '2021-11-01'],
-    //     ['Ascorbic Acid', 30, '2021-11-01'],
-    //     ['Ascorbic Acid', 20, '2021-12-01'],
-    //     ['Biogesic', 10, '2021-12-01'],
-    //     ['Neozep', 10, '2021-12-01'],
-    //     ['Biogesic', 205, '2022-01-01'],
-    //     ['Neozep', 82, '2022-01-01'],
-    //     ['Solmux', 20, '2022-01-01'],
-    //     ['Alaxan', 96, '2022-01-01'],
-    //     ['Ascorbic Acid', 20, '2022-01-01'],
-    //     ['Neozep', 10, '2022-02-01'],
-    //     ['Alaxan', 10, '2022-02-01'],
-    //     ['Stress Tabs', 20, '2022-02-01'],
-    //     ['Neurogen-E', 20, '2022-02-01'],
-    //     ['Amoxicillin', 10, '2022-02-01'],
-    //     ['Solmux', 12, '2022-03-01'],
-    //     ['Biogesic', 10, '2022-03-01'],
-    //     ['Alaxan', 4, '2022-04-01'],
-    //     ['Solmux', 12, '2022-04-01'],
-    //     ['Ascorbic Acid', 24, '2022-05-01'],
-    //     ['Biogesic', 13, '2022-05-01'],
-    //     ['Solmux', 15, '2022-05-01'],
-    //     ['Alaxan', 20, '2022-05-01'],
-    //     ['Stress Tabs', 40, '2022-05-01'],
-    //     ['Neurogen-E', 10, '2022-05-01'],
-    //     ['Stress Tabs', 10, '2022-06-01'],
-    //     ['Cataflam', 96, '2022-06-01'],
-    //     ['Amoxicillin', 21, '2022-06-01'],
-    //     ['Solmux', 12, '2022-06-01'],
-    //     ['Stress Tabs', 20, '2022-07-01'],
-    //     ['Alaxan', 20, '2022-07-01'],
-    //     ['Ceterizin', 15, '2022-07-01'],
-    //     ['Biogesic', 40, '2022-07-01'],
-    //     ['Stress Tabs', 40, '2022-08-01'],
-    //     ['Immune pro', 490, '2022-08-01'],
-    //     ['Biogesic', 15, '2022-08-01'],
-    //     ['Alaxan', 10, '2022-08-01'],
-    //     ['Neozep', 70, '2022-08-01'],
-    //     ['Ascorbic Acid', 20, '2022-08-01'],
-    //     ['Amoxicillin', 10, '2022-08-01'],
-    //     ['Stress Tabs', 10, '2022-09-01'],
-    //     ['Neozep', 20, '2022-09-01'],
-    //     ['Biogesic', 20, '2022-09-01'],
-    //     ['Alaxan', 20, '2022-09-01'],
-    //     ['Ascorbic Acid', 50, '2022-09-01'],
-    //     ['Bioflu', 20, '2022-09-01'],
-    //     ['Biogesic', 20, '2022-10-01'],
-    //     ['Bioflu', 40, '2022-10-01'],
-    //     ['Neozep', 10, '2022-10-01'],
-    //     ['Neozep', 10, '2022-11-01'],
-    //     ['Ascorbic Acid', 340, '2022-11-01'],
-    //     ['Neurogen-E', 40, '2022-11-01'],
-    //     ['Biogesic', 30, '2022-11-01'],
-    //     ['Alaxan', 30, '2022-11-01'],
-    //     ['Bioflu', 40, '2022-11-01'],
-    //     ['Mefenamic', 20, '2022-11-01'],
-    //     ['Ascorbic Acid', 110, '2022-12-01'],
-    //     ['Biogesic', 60, '2022-12-01'],
-    //     ['Solmux', 10, '2022-12-01'],
-    //     ['Neozep', 40, '2022-12-01'],
-    //     ['Alaxan', 30, '2022-12-01'],
-    //     ['Ceterizin', 30, '2022-12-01'],
-    //     ['Mefenamic', 30, '2022-12-01']
-    // ];
+    public function predict()
+    {
+        $data = [];
+        $handle = fopen(storage_path('app/medInv.csv'), 'r');
+        while (($row = fgetcsv($handle)) !== false) {
+            $data[] = [
+                'medicine_name' => $row[0],
+                'quantity' => (int) $row[1],
+                'purchase_date' => $row[2],
+            ];
+        }
+        fclose($handle);
+
+        $appMed = AppointmentMedicine::with('medicine')->get();
+
+        $appMedData = array();
+        foreach ($appMed as $app) {
+            $appMedData[] = array(
+                'medicine_name' => $app->medicine->med_name,
+                'quantity' => (int) $app->med_quantity,
+                'purchase_date' => $app->created_at->format('Y-m-d'),
+            );
+        }
+
+        $mergedData = array_merge($data, $appMedData);
+
+        $start_date = '2021-01-01';
+        $end_date = date('Y-m-d');
+
+        //use regression method to forecast what medicine to buy the next month based from historical data in $mergedData
+        $forecast = array();
+        foreach ($mergedData as $data) {
+            if (!isset($forecast[$data['medicine_name']])) {
+                $forecast[$data['medicine_name']] = array();
+            }
+
+            $forecast[$data['medicine_name']][$data['purchase_date']] = $data['quantity'];
+        }
+
+        $forecastData = array();
+        foreach ($forecast as $medicine => $values) {
+            $forecastData[$medicine] = $this->forecast($values, $start_date, $end_date);
+        }
+
+        return $forecastData;
+    }
+
+    public function forecast($values, $start_date, $end_date)
+    {
+        $start_date = strtotime($start_date);
+        $end_date = strtotime($end_date);
+
+        $data = array();
+        foreach ($values as $date => $value) {
+            $data[] = array(
+                'x' => strtotime($date),
+                'y' => $value,
+            );
+        }
+
+        $data = array_reverse($data);
+
+        $forecast = array();
+        $forecast['data'] = array();
+        $forecast['start_date'] = $start_date;
+        $forecast['end_date'] = $end_date;
+
+        $forecast['data'] = $this->holtWinters($data, 12, 0.1, 0.1, 0.1, 0.1, 0.1);
+
+        return $forecast;
+    }
+
+    public function holtWinters($data, $seasonLength, $alpha, $beta, $gamma, $initialLevel, $initialTrend)
+    {
+        $n = count($data);
+        $result = array();
+
+        // Initialize level, trend and seasonal components
+        $seasonals = array_fill(0, $seasonLength, 0);
+        $seasonalIndices = array();
+        for ($i = 0; $i < $n; $i++) {
+            $seasonalIndices[$i] = $i % $seasonLength;
+            $seasonals[$seasonalIndices[$i]] += $data[$i]['y'];
+        }
+        $seasonals = array_map(function ($seasonal) use ($seasonLength) {
+            return $seasonal / $seasonLength;
+        }, $seasonals);
+        $levels = array_fill(0, $seasonLength, $initialLevel);
+        $trends = array_fill(0, $seasonLength, $initialTrend);
+
+        // Apply Holt-Winters method
+        for ($i = 0; $i < $n; $i++) {
+            $value = $data[$i]['y'];
+            $seasonal = $seasonals[$seasonalIndices[$i]];
+            $level = $levels[$i % $seasonLength];
+            $trend = $trends[$i % $seasonLength];
+
+            // Calculate forecasts
+            $lastLevel = $level;
+            $level = $alpha * ($value - $seasonal) + (1 - $alpha) * ($level + $trend);
+            $trend = $beta * ($level - $lastLevel) + (1 - $beta) * $trend;
+            $seasonal = $gamma * ($value - $level) + (1 - $gamma) * $seasonal;
+            $seasonals[$seasonalIndices[$i]] = $seasonal;
+            $levels[$i % $seasonLength] = $level;
+            $trends[$i % $seasonLength] = $trend;
+
+            // Save forecast
+            if ($data[$i]['x'] >= $data[0]['x']) {
+                $result[] = array(
+                    'x' => $data[$i]['x'],
+                    'y' => $level + $trend + $seasonals[$seasonalIndices[$i % $seasonLength]],
+                );
+            }
+        }
+
+        return $result;
+    }
 
     public $dataset = [
         '2020-01-01' => ['Biogesic' => 40, 'Poten-C' => 60, 'Neozep' => 16],
@@ -170,7 +167,7 @@ class IndexShow extends Component
         '2022-12-01' => ['Ascorbic Acid' => 110, 'Biogesic' => 60, 'Solmux' => 10, 'Neozep' => 40, 'Alaxan' => 30, 'Ceterizin' => 30, 'Mefenamic' => 30],
     ];
 
-    public function forecast()
+    public function getAppointmentMedicine()
     {
         $data = [];
         $handle = fopen(storage_path('app/medInv.csv'), 'r');
@@ -183,41 +180,30 @@ class IndexShow extends Component
         }
         fclose($handle);
 
-        $start_date = '2022-01-01';
-        $end_date = date('Y-m-d');
+        $appMed = AppointmentMedicine::with('medicine')->get();
 
-        $filtered_data = array_filter($data, function ($medicine) use ($start_date, $end_date) {
-            return ($medicine['purchase_date'] >= $start_date && $medicine['purchase_date'] <= $end_date);
-        });
-
-        $medicine_totals = [];
-
-        foreach ($filtered_data as $medicine) {
-            if (isset($medicine_totals[$medicine['medicine_name']])) {
-                $medicine_totals[$medicine['medicine_name']] += $medicine['quantity'];
-            } else {
-                $medicine_totals[$medicine['medicine_name']] = $medicine['quantity'];
-            }
+        $appMedData = array();
+        foreach ($appMed as $app) {
+            $appMedData[] = array(
+                'medicine_name' => $app->medicine->med_name,
+                'quantity' => (int) $app->med_quantity,
+                'purchase_date' => $app->created_at->format('Y-m-d'),
+            );
         }
 
-        arsort($medicine_totals);
+        $mergedData = array_merge($data, $appMedData);
 
-        $predicted_medicines = [];
-
-        for ($i = $start_date; $i <= $end_date; $i = date('Y-m-d', strtotime($i . ' +1 month'))) {
-            $month_medicines = [];
-
-            foreach ($data as $medicine) {
-                if ($medicine['purchase_date'] >= $i && $medicine['purchase_date'] < date('Y-m-d', strtotime($i . ' +1 month'))) {
-                    $month_medicines[$medicine['medicine_name']] = $medicine['quantity'];
-                }
+        // filter $appMedData by date using the purchase_date column and combine all the medicine in an array with the same year and month
+        $filtered = array();
+        foreach ($mergedData as $data) {
+            if (!isset($filtered[$data['purchase_date']])) {
+                $filtered[$data['purchase_date']] = array();
             }
 
-            $predicted_medicines[$i] = $month_medicines;
+            $filtered[$data['purchase_date']][$data['medicine_name']] = $data['quantity'];
         }
 
-        // dd($predicted_medicines);
-        return $predicted_medicines;
+        return $filtered;
     }
 
     public function render()
@@ -248,46 +234,48 @@ class IndexShow extends Component
 
         // timeline (third graph)
         // Perform Holt-Winters method on each product
+        // dd($this->getAppointmentMedicine());
+
+        $filteredData = $this->getAppointmentMedicine();
+
         $timeline = [];
-        foreach ($this->dataset as $date => $values) {
-            foreach ($values as $product => $value) {
-                if (!isset($timeline[$product])) {
-                    $timeline[$product] = [
-                        'name' => $product,
-                        'data' => [],
-                    ];
-                }
-                $timeline[$product]['data'][] = [
-                    strtotime($date) * 1000,
-                    $value,
-                ];
-            }
-        }
 
-        // second graph
-        // dd($this->forecast());
-        $dataForecast = $this->forecast();
-
-        $categoriesForecast = [];
-        $seriesForecast = [];
-
-        foreach ($dataForecast as $date => $medicines) {
-            $categoriesForecast[] = $date;
-
+        foreach ($filteredData as $date => $medicines) {
             foreach ($medicines as $medicine => $quantity) {
-                if (!isset($seriesForecast[$medicine])) {
-                    $seriesForecast[$medicine] = [
+                if (!isset($timeline[$medicine])) {
+                    $timeline[$medicine] = [
                         'name' => $medicine,
                         'data' => [],
                     ];
                 }
-
-                $seriesForecast[$medicine]['data'][] = $quantity;
+                $timeline[$medicine]['data'][] = [
+                    strtotime($date) * 1000,
+                    $quantity,
+                ];
             }
         }
 
-        // dd($categoriesForecast, $seriesForecast);
+        // return array_values($timeline);
+        $timeline = array_values($timeline);
 
-        return view('livewire.forecasting.index-show', compact('data', 'categories', 'timeline', 'seriesForecast', 'categoriesForecast'));
+        // second graph
+        $seriesForecast = [];
+        $categoriesForecast = [];
+        foreach ($this->predict() as $medicine => $values) {
+            $seriesForecast[] = [
+                'name' => $medicine,
+                'data' => $values['data'],
+            ];
+            foreach ($values['data'] as $datapoint) {
+                $categoriesForecast[] = $datapoint['x'];
+            }
+        }
+        $categoriesForecast = array_unique($categoriesForecast);
+        sort($categoriesForecast);
+
+        $prediction = $this->predict();
+        // dd($prediction);
+
+        return view('livewire.forecasting.index-show', compact('data', 'categories', 'timeline', 'seriesForecast', 'categoriesForecast', 'prediction'));
     }
 }

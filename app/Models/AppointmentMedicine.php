@@ -11,6 +11,14 @@ class AppointmentMedicine extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'appointment_id',
+        'medicine_id',
+        'med_quantity',
+        'medicine_name',
+        'med_time',
+    ];
+
     public function appointment()
     {
         return $this->belongsTo(Appointment::class, 'appointment_id');
@@ -18,6 +26,6 @@ class AppointmentMedicine extends Model
 
     public function medicine()
     {
-        return $this->belongsTo(MedicineInventory::class, 'medicine_id');
+        return $this->belongsTo(MedicineInventory::class, 'medicine_name');
     }
 }

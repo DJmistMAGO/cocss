@@ -15,7 +15,7 @@ class Appointment extends Model
 
     protected $fillable = [
         'book_appointment_id',
-        'results'
+        'results',
     ];
 
     public function book_appointment()

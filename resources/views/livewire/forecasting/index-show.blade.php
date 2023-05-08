@@ -15,14 +15,14 @@
     <div class="container-fluid"
         style="padding: 15px 15px; background-color: white; min-height: auto; margin-top: 15px;">
         <div class="row">
-            <div class="col-6">
+            {{-- <div class="col-12">
                 <div class="card mb-3">
                     <div class="card-body" style="overflow: auto;">
                         <div id="exp_chart"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6">
+            </div> --}}
+            <div class="col-12">
                 <div class="card mb-3">
                     <div class="card-body" style="overflow: auto;">
                         <div wire:ignore id="pred_chart"></div>
@@ -55,7 +55,7 @@
             plotOptions: {
                 bar: {
                     horizontal: false,
-                    columnWidth: '100%',
+                    columnWidth: '200%',
                 },
             },
             title: {
@@ -67,7 +67,7 @@
                 enabled: false
             },
             legend: {
-                show: false
+                show: true
             },
             series: [],
             xaxis: {
@@ -79,14 +79,29 @@
             yaxis: {
                 title: {
                     text: 'Quantity'
+                },
+                // remove decimals in y-axis
+                labels: {
+                    formatter: function(val) {
+                        return val.toFixed(0);
+                    }
                 }
             },
             tooltip: {
-                y: {
-                    formatter: function(val) {
-                        return val
+                 x: {
+                        show: false
+                    },
+                    y: {
+                        formatter: function(val, opts) {
+                            var seriesName = opts.seriesName;
+                            var datapointIndex = opts.dataPointIndex;
+                            var datapoint = opts.w.config.series[opts.seriesIndex].data[datapointIndex];
+                            var medicineName = datapoint.name;
+                            var quantity = datapoint.y;
+                            return '(' + quantity.toFixed(0) + ')';
+                        }
                     }
-                }
+
             },
             colors: [
                 '#EE3722', '#F57E26', '#900C3F', '#F4EC08', '#4DB847', '#FFC400', '#2A2F84',
@@ -154,8 +169,6 @@
             chart.render();
         });
     </script>
-
-
 
     <script>
         var timeline = @json($timeline);
