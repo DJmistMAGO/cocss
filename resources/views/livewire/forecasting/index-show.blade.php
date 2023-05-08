@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        {{-- <div>
             <table class="table table-bordered text-center">
                 <thead>
                     <tr>
@@ -54,7 +54,7 @@
                     @endforelse
                 </tbody>
             </table>
-        </div>
+        </div> --}}
     </div>
 </div>
 
@@ -81,7 +81,25 @@
                         show: false
                     }
                 },
-            }
+                tooltip: {
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        formatter: function(val, opts) {
+                            var seriesName = opts.seriesName;
+                            var datapointIndex = opts.dataPointIndex;
+                            var datapoint = opts.w.config.series[opts.seriesIndex].data[datapointIndex];
+                            var medicineName = datapoint.name;
+                            var quantity = datapoint.y;
+                            return '(' + quantity + ')';
+                        }
+                    }
+                },
+                legend: {
+                    show: false
+                }
+            };
 
             var chart = new ApexCharts(document.querySelector("#exp_chart"), options);
 
@@ -90,45 +108,66 @@
     </script>
 
     <script>
-        var orders = @json($orders);
-
         var options = {
             chart: {
-                type: 'bar',
-                height: 350,
-                width: '100%',
+                type: 'line'
             },
-
             series: [{
-                name: 'Order Quantity',
-                data: orders.map(order => order.quantity)
+                name: 'Medicine Quantity',
+                data: <?php echo json_encode($chartData['series']); ?>
             }],
             xaxis: {
-                categories: orders.map(order => order.name),
-                labels: {
-                    show: false
-                }
-            },
-            title: {
-                text: 'Medicines to Order',
-                align: 'center',
-                margin: 20,
-            },
-            tooltip: {
-                y: {
-                    formatter: function(val) {
-                        return val + " pcs"
-                    }
-                }
-            },
-            legend: {
-                show: true,
-                position: 'bottom',
+                categories: <?php echo json_encode($chartData['labels']); ?>
             }
         }
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
 
         chart.render();
+    </script>
+
+    //
+    <script>
+        //     var orders = @json($orders);
+
+        //     var options = {
+        //         chart: {
+        //             type: 'bar',
+        //             height: 350,
+        //             width: '100%',
+        //         },
+
+        //         series: [{
+        //             name: 'Order Quantity',
+        //             data: orders.map(order => order.quantity)
+        //         }],
+        //         xaxis: {
+        //             categories: orders.map(order => order.name),
+        //             labels: {
+        //                 show: false
+        //             }
+        //         },
+        //         title: {
+        //             text: 'Medicines to Order',
+        //             align: 'center',
+        //             margin: 20,
+        //         },
+        //         tooltip: {
+        //             y: {
+        //                 formatter: function(val) {
+        //                     return val + " pcs"
+        //                 }
+        //             }
+        //         },
+        //         legend: {
+        //             show: true,
+        //             position: 'bottom',
+        //         }
+        //     }
+
+        //     var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+        //     chart.render();
+        // 
     </script>
 @endpush
