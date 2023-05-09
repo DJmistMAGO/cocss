@@ -1,3 +1,5 @@
+{{-- @include('livewire.users.view') --}}
+
 <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
     <div class="row">
         <div class="col-12">
@@ -62,8 +64,9 @@
                                     <td>{{ $user->sorsu_email }}</td>
                                     <td>{{ $user->phone_no }}</td>
                                     <td style="white-space: nowrap;">
-                                        <button class="btn btn-success" data-toggle="modal"
-                                            data-target="#view">View</button>
+                                        {{-- <button class="btn btn-success" data-toggle="modal"
+                                            data-target="#viewUser" wire:click='view({{ $user->id }})'>View</button> --}}
+                                        <a href="{{ route('user-info.view', $user->id) }}" class="btn btn-sm btn-success">View</a>
                                     </td>
                                 </tr>
                             @empty
@@ -78,3 +81,4 @@
         </div>
     </div>
 </div>
+ 
