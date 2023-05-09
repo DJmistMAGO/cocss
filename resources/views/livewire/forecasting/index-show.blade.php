@@ -212,49 +212,4 @@
         var chart = new ApexCharts(document.querySelector('#chart'), options);
         chart.render();
     </script>
-
-    //
-    <script>
-        //     var orders = @json($orders);
-
-        //     var options = {
-        //         chart: {
-        //             type: 'bar',
-        //             height: 350,
-        //             width: '100%',
-        //         },
-
-        //         series: [{
-        //             name: 'Order Quantity',
-        //             data: orders.map(order => order.quantity)
-        //         }],
-        //         xaxis: {
-        //             categories: orders.map(order => order.name),
-        //             labels: {
-        //                 show: false
-        //             }
-        //         },
-        //         title: {
-        //             text: 'Medicines to Order',
-        //             align: 'center',
-        //             margin: 20,
-        //         },
-        //         tooltip: {
-        //             y: {
-        //                 formatter: function(val) {
-        //                     return val + " pcs"
-        //                 }
-        //             }
-        //         },
-        //         legend: {
-        //             show: true,
-        //             position: 'bottom',
-        //         }
-        //     }
-
-        //     var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-        //     chart.render();
-        //
-    </script>
 @endpush

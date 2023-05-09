@@ -79,7 +79,7 @@
 
 <body>
     <div class="auth"
-        style="background-image: url({{ asset('assets1/ssu1.jpg') }}); background-repeat: no-repeat;
+        style="background-image: url({{ asset('img-slide/bg.jpg') }}); background-repeat: no-repeat;
     background-position: center;
     background-size: cover;">
         <div class="auth-container">

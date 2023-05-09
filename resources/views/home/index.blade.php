@@ -12,20 +12,38 @@
                     <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators3" data-slide-to="5"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="img-responsive slideimg" src="assets1/ssu1.jpg" alt="First slide">
+                        <img class="img-responsive slideimg" src="img-slide/1.jpg" alt="First slide">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets1/ssu2.jpg" alt="Second slide">
+                        <img class="img-responsive slideimg" src="img-slide/2.jpg" alt="Second slide">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="img-responsive slideimg" src="assets1/ssu3.jpg" alt="Third slide">
+                        <img class="img-responsive slideimg" src="img-slide/3.jpg" alt="Third slide">
+                        <div class="carousel-caption bottomneed">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-responsive slideimg" src="assets1/ssu1.jpg" alt="Fourth slide">
+                        <div class="carousel-caption bottomneed">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-responsive slideimg" src="assets1/ssu2.jpg" alt="Fifth slide">
+                        <div class="carousel-caption bottomneed">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-responsive slideimg" src="assets1/ssu3.jpg" alt="Sixth slide">
                         <div class="carousel-caption bottomneed">
                         </div>
                     </div>

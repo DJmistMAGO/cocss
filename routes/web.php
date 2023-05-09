@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/med-inv', [MedicineInvController::class, 'index'])->name('med.index');
     Route::get('/forecasting', [ForecastingController::class, 'index'])->name('forecasting.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/view/{user}', [UserController::class, 'view'])->name('user-info.view');
     Route::get('/announcement', [AnnouncementController::class, 'index'])->name('announcement.index');
 
     Route::controller(AppointmentController::class)->group(function () {
