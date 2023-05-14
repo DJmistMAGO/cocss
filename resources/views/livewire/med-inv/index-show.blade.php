@@ -86,9 +86,9 @@
                                         @endif
                                     </td>
                                     <td style="white-space: nowrap;">
-                                        <button class="btn btn-sm btn-primary" data-toggle="modal"
+                                        {{-- <button class="btn btn-sm btn-primary" data-toggle="modal"
                                             data-target="#restock"
-                                            wire:click="addStock({{ $med->id }})">Restock</button>
+                                            wire:click="addStock({{ $med->id }})">Restock</button> --}}
                                         <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#view"
                                             wire:click="view({{ $med->id }})">View</button>
                                         <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#edit"

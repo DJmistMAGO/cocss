@@ -1,21 +1,28 @@
-<div class="">
-
+<div style="overflow-y: scroll; height: 359px;">
     @forelse ($announcements as $announce)
-    @include('livewire.announce.view')
-    <a type="button" class="col-md-12 p-0" data-toggle="modal" data-target="#view"
-            wire:click="view({{ $announce->id }})">
-            <div class="row" style="border-bottom: solid 1px; margin:5px 0px; padding: 10px 0px; ">
-                <div class="subject p-0 col-md-8 d-flex align-items-center">
-                    <h6 class="mb-0 text-dark text-wrap">{{ $announce->subject }}</h6>
-                </div>
-                <div class="schedule p-0 col-md-4 d-flex justify-content-center flex-column">
-                    <p class="date mb-0 text-right font-weight-bolder text-dark">{{ $announce->date->format('F d, Y') }}
-                    </p>
-                    <p class="time mb-0 text-right">{{ date('h:i A', strtotime($announce->time)) }}</p>
-                </div>
-            </div>
-        </a>
+    <div class="card-body pt-0 pb-2">
+        <!--begin::Item-->
+        <div class="d-flex align-items-center mb-1 bg-light-danger rounded p-5">
 
+            <!--begin::Title-->
+            <div class="d-flex flex-column flex-grow-1 mr-2">
+                <p class="font-weight-bolder h6 text-dark text-hover-primary font-size-lg mb-1">{{ $announce->subject }}</p>
+                <span class="text-dark ">{{ $announce->date->format('F d, Y') }} | {{ date('h:i A', strtotime($announce->time)) }}</span>
+                <span class="text-dark ">What: {{ $announce->what }}</span>
+                <span class="text-dark ">Where: {{ $announce->where }}</span>
+            </div>
+            <!--end::Title-->
+        </div>
+        <!--end::Item-->
+    </div>
+            {{-- <div class="row" style="border-bottom: solid 1px; margin:5px 0px; padding: 10px 0px; ">
+                <div class="col-mf-12">
+                    <h6 class="text-dark"><b>{{ $announce->subject }}</b></h6>
+                    <p class="mb-1 text-dark">{{ $announce->date->format('F d, Y') }} | {{ date('h:i A', strtotime($announce->time)) }}</p>
+                    <p class="mb-0 text-dark"><b>What</b> {{ $announce->what }}</p>
+                    <p class="mb-0 text-dark"><b>Where:</b> {{ $announce->where }}</p>
+                </div>
+            </div> --}}
     @empty
         <div class="row">
             <div class="col-md-12">
@@ -24,3 +31,6 @@
         </div>
     @endforelse
 </div>
+
+
+

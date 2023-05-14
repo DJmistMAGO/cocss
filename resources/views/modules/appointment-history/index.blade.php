@@ -10,7 +10,7 @@
 @endpush
 
 @section('content')
-    <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
+    {{-- <div class="container-fluid containerfluidneed" style="padding: 20px 20px;">
         <div class="row">
             <div class="col-12">
                 <div class="card" style="margin-bottom: 0px;">
@@ -32,11 +32,11 @@
                     <div class="row">
                         <div class="col-md-6 colsearchorders">
                             <div class="input-group">
-                                {{-- <div class="input-group-prepend">
+                                <div class="input-group-prepend">
                                     <span class="input-group-text searchinputorder"><i class="fas fa-search"></i></span>
                                 </div>
                                 <input type="text" class="form-control searchinputorder" id="txtsearchappointment"
-                                    placeholder="Search . . ."> --}}
+                                    placeholder="Search . . .">
                             </div>
                         </div>
                         <div class="col-md-3" style="padding-left: 0px;">
@@ -89,7 +89,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+    @livewire('appointment-history.index-show')
 @endsection
 @push('scripts')
     @livewireScripts

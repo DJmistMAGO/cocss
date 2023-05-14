@@ -17,7 +17,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Expiration Date:</label>
-                            <input type="date" class="form-control" wire:model="exp_date">
+                            <input type="date" min="{{ date('Y-m-d') }}" class="form-control" wire:model="exp_date">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Medicine Description:</label>
