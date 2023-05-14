@@ -21,11 +21,9 @@
                 <div class="row">
                     <div class="col-md-6 colsearchorders">
                         <div class="input-group">
-                            {{-- <div class="input-group-prepend">
-                                <span class="input-group-text searchinputorder"><i class="fas fa-search"></i></span>
-                            </div>
-                            <input type="text" class="form-control searchinputorder" id="txtsearchappointment"
-                                placeholder="Search . . ."> --}}
+                            <input type="text" wire:model="search" class="form-control searchinputorder"
+                                placeholder="Search . . .">
+                            <span><button wire:click="search" class="btn btn-primary ml-2">Search</button></span>
                         </div>
                     </div>
                     <div class="col-md-3" style="padding-left: 0px;">
@@ -67,11 +65,11 @@
                                     <td>{{ $app_his->reason }}</td>
                                     <td>{{ $app_his->appointment->results }}</td>
                                     <td style="white-space: nowrap;">
-                                        <button class="btn btn-success" data-toggle="modal"
-                                            data-target="#view">View</button>
-                                        <button class="btn btn-info" data-toggle="modal"
+                                        <a href="{{ route('appointhistory.show', $app_his->id) }}"
+                                            class="btn btn-sm btn-success">View</a>
+                                        {{-- <button class="btn btn-info" data-toggle="modal"
                                             data-target="#edit">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <button class="btn btn-danger">Delete</button> --}}
                                     </td>
                                 </tr>
                             @empty

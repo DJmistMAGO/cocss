@@ -26,4 +26,15 @@ class AppointmentHistoryController extends Controller
 
         return view('modules.appointment-history.view', compact('bookappointment' , 'appointmentMedicine', 'medicine'));
     }
+
+    public function search(Request $request)
+    {
+        //search in ajax
+        $query = $request->get('query');
+
+        $result = BookAppointment::where('name', 'like', '%{{$query}}%')->get();
+
+        return response()->json($result);
+
+    }
 }

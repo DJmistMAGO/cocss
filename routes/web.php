@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');
+    Route::get('/search', [AppointmentHistoryController::class, 'search'])->name('search');
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');
     Route::get('/book-appointment', [BookAppointmentController::class, 'index'])->name('bookAppointment.index');
     Route::get('/health-record', [HealthRecordController::class, 'index'])->name('healthRecord.index');

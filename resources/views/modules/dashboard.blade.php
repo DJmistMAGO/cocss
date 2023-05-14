@@ -36,7 +36,7 @@
     {{-- @role('admin') --}}
     <div class="row">
         @role('admin')
-            <div class="col-md-6 mt-2">
+            <div class="col-md-6 mt-2" >
                 <div class="card">
                     <div class="card-body">
                         <div class="row page-titles" style="padding-bottom: 0px;">
@@ -49,7 +49,7 @@
             </div>
         @endrole
 
-        <div class="col-md-6 mt-2">
+        {{-- <div class="col-md-6 mt-2">
             <div class="card card-custom">
                 <div class="card-header" style="background-color: #b31313">
                     <div class="card-title">
@@ -60,7 +60,24 @@
                     @livewire('announce.index-show')
                 </div>
             </div>
+        </div> --}}
+
+<div class="col-lg-6 mt-2" >
+    <!--begin::List Widget 11-->
+    <div class="card card-custom card-stretch gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0">
+            <h3 class="card-title font-weight-bolder text-dark">Announcement</h3>
+
         </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        @livewire('announce.index-show')
+        <!--end::Body-->
+    </div>
+    <!--end::List Widget 11-->
+</div>
+
 
         {{-- @endrole --}}
     @endsection
