@@ -77,17 +77,19 @@
             </div>
         </div>
 
-        <div class="col-md-6 mt-3">
-            <div class="card card-custom">
-                <div class="card-header" style="background-color: #b31313">
-                    <div class="card-title">
-                        <h3 class="card-label text-white">Announcement</h3>
-                    </div>
+        <div class="col-lg-6 mt-3">
+            <!--begin::List Widget 11-->
+            <div class="card card-custom mb-2 card-stretch gutter-b">
+                <!--begin::Header-->
+                <div class="card-header border-0 mb-2" style="background-color: #b31313;">
+                    <h3 class="card-title font-weight-bolder text-white">Announcement</h3>
                 </div>
-                <div class="card-body pt-2" style="overflow: auto; height: 355px;">
-                    @livewire('announce.index-show')
-                </div>
+                <!--end::Header-->
+                <!--begin::Body-->
+                @livewire('announce.index-show')
+                <!--end::Body-->
             </div>
+            <!--end::List Widget 11-->
         </div>
 
     </div>

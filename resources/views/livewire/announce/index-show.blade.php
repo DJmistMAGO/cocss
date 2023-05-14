@@ -6,10 +6,10 @@
 
             <!--begin::Title-->
             <div class="d-flex flex-column flex-grow-1 mr-2">
-                <a href="#" class="font-weight-bolder h6 text-dark text-hover-primary font-size-lg mb-1">{{ $announce->subject }}</a>
-                <span class="text-dark font-weight-bold">{{ $announce->date->format('F d, Y') }} | {{ date('h:i A', strtotime($announce->time)) }}</span>
-                <span class="text-dark font-weight-bold">What: {{ $announce->what }}</span>
-                <span class="text-dark font-weight-bold">Where: {{ $announce->where }}</span>
+                <p class="font-weight-bolder h6 text-dark text-hover-primary font-size-lg mb-1">{{ $announce->subject }}</p>
+                <span class="text-dark ">{{ $announce->date->format('F d, Y') }} | {{ date('h:i A', strtotime($announce->time)) }}</span>
+                <span class="text-dark ">What: {{ $announce->what }}</span>
+                <span class="text-dark ">Where: {{ $announce->where }}</span>
             </div>
             <!--end::Title-->
         </div>
